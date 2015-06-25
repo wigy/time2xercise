@@ -52,18 +52,18 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', 'PlaySoun
     $scope.PlaySound = PlaySound;
 
     // TODO: Drop debug
-    $scope.timing.selectTraining('Rugby');
-    $scope.timing.selectProgram('Day 2');
+//    $scope.timing.selectTraining('Rugby');
+//    $scope.timing.selectProgram('Day 2');
 
     var old_title = $scope.timing.getCurrentTitle();
     function refresh(clock) {
-        var sound = $scope.timing.refresh(clock);
-        if(sound)
-            PlaySound(sound, $scope.timing.clock.toString());
         if(DEBUG && old_title != $scope.timing.getCurrentTitle()) {
             old_title = $scope.timing.getCurrentTitle();
             d($scope.timing.clock.toString() + ' ' + $scope.timing.getCurrentTitle())
         }
+        var sound = $scope.timing.refresh(clock);
+        if(sound)
+            PlaySound(sound, $scope.timing.clock.toString());
     }
     refresh();
 
@@ -100,6 +100,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', 'PlaySoun
         var clock = Time.now();
         $scope.testing = true;
         $scope.timing.setStarting(clock);
+        refresh(clock);
         while (!$scope.timing.isOver()) {
             refresh(clock);
             clock.add(0,0,1)

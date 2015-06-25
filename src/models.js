@@ -280,7 +280,7 @@ function TimeTable(program) {
      *
      * @return Sound name to play if any.
      */
-    this.refresh = function(clock) {
+    this.refresh = function(clock, old_clock_seconds) {
 
         if (this.events.length == 0)
             return;
@@ -315,7 +315,20 @@ function TimeTable(program) {
                 this.next = this.events[current + 1];
         }
 
-        return this.sounds[clock.seconds() - this.starting_seconds];
+        var ret;
+        var t0 = old_clock_seconds;
+        var t1 = clock.seconds();
+        if (t1 < t0 || t1 - t0 > 10)
+            return;
+
+        for (var t = t0 + 1; t <= t1; t++) {
+            if (this.sounds[t - this.starting_seconds]) {
+                if (ret)
+                    d("Too slow to play all sounds...");
+                ret = this.sounds[t - this.starting_seconds];
+            }
+        }
+        return ret;
     };
 
     /**
@@ -628,7 +641,6 @@ function TimingSystem() {
      this.setStarting = function(clock) {
         this.starting_time = clock.toString();
         this.recalc();
-        this.refresh(clock);
      };
 
     /**
@@ -637,17 +649,25 @@ function TimingSystem() {
      * This function should be executed once a second.
      */
     this.refresh = function(clock) {
-        var old = this.clock.seconds();
-        if (clock)
+
+        if (clock) {
+            // Test mode.
             this.clock = clock;
-        else
+            var old = clock.seconds() - 1;
+        }
+        else {
+            // Real mode.
+            var old = this.clock.seconds();
             this.clock.setNow();
+        }
+
         // On pause just move all events forward accordingly.
         if (this.pause) {
             this.addSeconds(this.clock.seconds() - old);
             return null;
         }
-        return this.training.schedule.program.timetable.refresh(this.clock);
+
+        return this.training.schedule.program.timetable.refresh(this.clock, old);
     };
 
     /**

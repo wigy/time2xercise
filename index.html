@@ -21,6 +21,7 @@
         <button ng-click="page='clock'; show_menu = false">Clock</button>
         <button ng-click="page='changelog'; show_menu = true">Changelog</button>
         <button ng-click="page='soundtest'; show_menu = true">Sound Test</button>
+        &nbsp;
         <button class="small" ng-click="timing.jumpToPrevious()">&lt;&lt;</button>
         <button class="small" ng-click="timing.togglePause()">{{timing.pause ? '>' : '||'}}</button>
         <button class="small" ng-click="timing.jumpToNext()">&gt;&gt;</button>
@@ -29,13 +30,11 @@
     <div ng-show="page=='admin'">
         <h1>Time2Xercise v{{VERSION}}</h1>
 
-            <h2>Current Time</h2>
-            {{timing.getClock()}}
-
             <h2>Settings</h2>
 
             <label>Starting Time</label>
             <input ng-model="timing.starting_time" ng-pattern="/\d\d:\d\d:\d\d/" ng-change="timing.recalc()"></input>
+            {{timing.getClock()}}
             <label>Training</label>
             <select ng-model="timing.training_name"
                     ng-change="timing.selectTraining(timing.training_name)"
@@ -53,6 +52,8 @@
             <button ng-click="startNow(1)" ng-disabled="!timing.training.schedule.program.name">Start Now</button>
             <button ng-click="startNow(10)" ng-disabled="!timing.training.schedule.program.name">Start In 10s</button>
             <button ng-click="testIt()" ng-if="DEBUG">Test</button>
+
+            <h3>Schedule</h3>
 
             <table ng-if="timing.training.schedule.name">
                 <tr><th class="schedule" colspan=3>{{timing.training.schedule.name}}</th></tr>
@@ -93,6 +94,7 @@
                 <li>Translate <i>Rugby</i>.
                 <li>Any amount of sounds for an event.
                 <li>Descriptions for the events and programs.
+                <li>More robust sound system.
             </ul>
             <h3>v1.5</h3>
             <ul>
