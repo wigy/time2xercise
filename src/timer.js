@@ -52,8 +52,10 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', 'PlaySoun
     $scope.PlaySound = PlaySound;
 
     // TODO: Drop debug
-//    $scope.timing.selectTraining('Rugby');
-//    $scope.timing.selectProgram('Day 2');
+    if (DEBUG) {
+        $scope.timing.selectTraining('Rugby');
+        $scope.timing.selectProgram('Day 1');
+    }
 
     var old_title = $scope.timing.getCurrentTitle();
     function refresh(clock) {
