@@ -1,0 +1,132 @@
+<html ng-app="TimerApp">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/timer.css">
+    <script src="lib/angular-1.3.15.min.js"></script>
+    <script src="lib/angular.audio.js"></script>
+    <script src="src/settings.js"></script>
+    <script src="data/data.js"></script>
+    <script src="data/test.js"></script>
+    <script src="data/generic.js"></script>
+    <script src="data/fitness.js"></script>
+    <script src="data/rugby.js"></script>
+    <script src="src/models.js"></script>
+    <script src="src/timer.js"></script>
+  <head>
+
+  <body ng-controller="TimerController">
+
+    <div class="menu" ng-class="{fixed: show_menu}">
+        <button ng-click="page='admin'; show_menu = true">Admin</button>
+        <button ng-click="page='clock'; show_menu = false">Clock</button>
+        <button ng-click="page='changelog'; show_menu = true">Changelog</button>
+        <button ng-click="page='soundtest'; show_menu = true">Sound Test</button>
+        <button class="small" ng-click="timing.jumpToPrevious()">&lt;&lt;</button>
+        <button class="small" ng-click="timing.togglePause()">{{timing.pause ? '>' : '||'}}</button>
+        <button class="small" ng-click="timing.jumpToNext()">&gt;&gt;</button>
+    </div>
+
+    <div ng-show="page=='admin'">
+        <h1>Sports Timer v{{VERSION}}</h1>
+
+            <h2>Current Time</h2>
+            {{timing.getClock()}}
+
+            <h2>Settings</h2>
+
+            <label>Starting Time</label>
+            <input ng-model="timing.starting_time" ng-pattern="/\d\d:\d\d:\d\d/" ng-change="timing.recalc()"></input>
+            <label>Training</label>
+            <select ng-model="timing.training_name"
+                    ng-change="timing.selectTraining(timing.training_name)"
+                    ng-options="training as training for (training, _) in timing.trainings"></select>
+            <label>Schedule</label>
+            <select ng-model="timing.schedule_name"
+                    ng-change="timing.selectSchedule(timing.schedule_name)"
+                    ng-options="schedule as schedule for (schedule, _) in timing.training.schedules"></select>
+            <label>Program</label>
+            <select ng-model="timing.program_name"
+                    ng-change="timing.selectProgram(timing.program_name)"
+                    ng-options="program as program for (program, _) in timing.training.schedule.programs"></select>
+
+            <h3>Controls</h3>
+            <button ng-click="startNow(1)" ng-disabled="!timing.training.schedule.program.name">Start Now</button>
+            <button ng-click="startNow(10)" ng-disabled="!timing.training.schedule.program.name">Start In 10s</button>
+            <button ng-click="testIt()" ng-if="DEBUG">Test</button>
+
+            <table ng-if="timing.training.schedule.name">
+                <tr><th class="schedule" colspan=3>{{timing.training.schedule.name}}</th></tr>
+                <tr><th class="program" colspan=3>{{timing.training.schedule.program.name}}</th></tr>
+                <tr ng-repeat="event in timing.training.schedule.program.timetable.events">
+                    <td>{{event.time.toString()}}</td><td>{{event.title}}</td><td>{{dur(event.duration)}}</td>
+                </tr>
+                <tr><td>{{timing.training.schedule.program.timetable.events[timing.training.schedule.program.timetable.events.length-1].endTime().toString()}}</td><td></td><td></td></tr>
+            </table>
+    </div>
+
+    <div ng-show="page=='clock'" ng-click="toggleMenu($event)">
+        <div class="title" ng-bind="timing.getCurrentTitle()"></div>
+        <div class="remaining" ng-class="{almost_finished: timing.getRemainingSeconds() < 60}" ng-bind="timing.getRemaining()"></div>
+        <div class="bottom previous" ng-bind="timing.getPrevious()"></div>
+        <div class="bottom clock" ng-bind="timing.getClock()"></div>
+        <div class="bottom next" ng-bind="timing.getNext()"></div>
+        <div class="description" ng-bind-html="getDescription()"></div>
+    </div>
+
+    <div ng-show="page=='soundtest'">
+        <h1>Sports Timer v{{VERSION}}</h1>
+            <h2>Sound Test</h2>
+            <div ng-repeat="sound in PlaySound('list')">
+                <button ng-click="PlaySound(sound)">{{sound}}</button>
+            </div>
+    </div>
+
+    <div ng-show="page=='changelog'">
+        <h1>Sports Timer v{{VERSION}}</h1>
+            <h2>Changelog</h2>
+            <h3>v1.6</h3>
+            <ul>
+                <li>Rename <i>Fitness</i> programs as day names.
+                <li>Reorganize files to sub-directories.
+                <li>Split data to separate files.
+                <li>Support for translations.
+                <li>Translate <i>Rugby</i>.
+                <li>Any amount of sounds for an event.
+                <li>Descriptions for the events and programs.
+            </ul>
+            <h3>v1.5</h3>
+            <ul>
+                <li>Major refactoring of code to split it classes better describing the system.
+                <li>New schedules and programs for <i>Generic</i> and <i>Fitness</i>.
+                <li>Show only the currently selected schedule instead of all.
+            </ul>
+            <h3>v1.4</h3>
+            <ul>
+                <li>Ability to show and hide menus by clicking background.
+                <li>Increased button size.
+                <li>Pause, Next and Previous buttons.
+            </ul>
+            <h3>v1.3</h3>
+            <ul>
+                <li>New selector based system for choosing both schedule and program from dropdown.
+                <li>3 x 15 min program.
+                <li>4 x 10 min program.
+            </ul>
+            <h3>v1.2</h3>
+            <ul>
+                <li>Convert all sounds to MP3.
+                <li>Set correct character set.
+            </ul>
+            <h3>v1.1</h3>
+            <ul>
+                <li>Separate <i>Start Now</i> and <i>Start In 10s</i> buttons.
+                <li>Sound testing.
+            </ul>
+            <h3>v1.0</h3>
+            <ul>
+                <li>Initial release with a selection of some predefied schedules and clock functionality with various different sound effects.</li>
+            </ul>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,127 @@
+body {
+    color: white;
+    background-color: black;
+}
+
+.title {
+    height: 15%;
+    font-size: 15ex;
+    text-align: center;
+}
+
+.remaining {
+    height: 45%;
+    font-size: 40ex;
+    font-weight: bold;
+    text-align: center;
+}
+
+.bottom {
+    height: 10%;
+    float: left;
+    font-size: 5ex;
+}
+
+.previous {
+    text-align: left;
+    width: 40%;
+}
+
+.clock {
+    text-align: center;
+    width: 20%;
+}
+
+.next {
+    text-align: right;
+    width: 40%;
+}
+
+.description {
+    clear: both;
+    padding: 0.5em;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 1em;
+    min-height: 25%;
+}
+
+.description h1 {
+    text-align: left;
+}
+
+.description a {
+    color: gray;
+}
+
+.almost_finished {
+    color: red;
+}
+
+.menu {
+    float: left;
+    height: 40px;
+    width: 100%;
+}
+
+.menu button {
+    display: none;
+    width: 10em;
+}
+
+.menu:hover button, .menu.fixed button {
+    display: inline-block;
+}
+
+h1 {
+    clear: both;
+    text-align: center;
+}
+
+table {
+    border: 1px solid gray;
+    border-radius: 0.5em;
+    float: left;
+    margin: 1em;
+    padding-right: 0.5em;
+}
+
+td {
+    padding-left: 0.5em;
+}
+
+th.schedule {
+    color: rgb(200,200,200);
+}
+
+th.program {
+    color: rgb(150,150,150);
+}
+
+label {
+    display: block;
+}
+
+button, input, select {
+    height: 1.4em;
+    width: 10em;
+    font-size: 20pt;
+}
+
+button.small {
+    width: 2em;
+    height: 2em;
+    border-radius: 0.2em;
+}
+
+select {
+    height: 1.4em;
+    width: 15em;
+    font-size: 20pt;
+}
+
+input {
+}
+
+button {
+    border-radius: 0.5em;
+}
