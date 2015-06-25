@@ -56,6 +56,6 @@ DATA.Fitness = {
         '5 Friday': 'This is Rugby Fitness Bodyweight Challenge Day 5. <br> See <a target="new" href="http://www.youtube.com/watch?v=E6WEriUAw-A">http://www.youtube.com/watch?v=E6WEriUAw-A</a>',
     },
     sounds: {
-        '.*' : {0: 'start', '-4': '3', '-3': '2', '-2': '1', '-1': 'done'}
+        '.*' : {0: 'start', '-1': 'done'}
     }
 };

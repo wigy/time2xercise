@@ -17,6 +17,6 @@ DATA.Test = {
             'Test': 'This is a generic description of the program if there is no <u>better</u> description found from codes.',
         },
         sounds: {
-            '.*' : {0: 'start', 1: 'whistle', '-2': 'buzzer', '-1': 'done'}
+            '.*' : {0: 'start', 1: '1', '-2': '2', '-1': 'done'}
         }
 };
