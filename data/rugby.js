@@ -84,15 +84,30 @@ DATA.Rugby = {
         R1 : '<ol>' +
         '<li>Introduction: trainer, mission, daily program' +
         '<li>Rules variants: 15-players, 7-players, touch rugby' +
-        '<li>Playing field: playing area, goal line, in-goal area, 22-line, 10-line, 5 meter marks' +
+        '<li>Mode of play: kick-off, carrying, passing, kicking' +
+        '<li>Scoring: try, penalty try, conversion goal, penalty goal, dropped goal' +
+        '<li>Knock-on and throw forward: knock-on, throw forward, charge down, bounce forward' +
         '</ol>',
         R2 : '<ol>' +
+        '<li>Playing field: playing area, goal line, in-goal area, 22-line, 10-line, 5 meter marks' +
+        '<li>Advantage' +
+        '<li>Kick-off: kick-off and positioning, kick into touch, kick into in-goal, drop-out and positioning' +
+        '<li>Penalty and free-kick:' +
+        '<li>Ball on the ground: players on the ground' +
         '</ol>',
         R3 : '<ol>' +
+        '<li>Offside: offside in general play, being put onside by team-mate, being put onside by opponents, sanctions' +
+        '<li>Touch and lineout:' +
+        '<li>Mark:' +
         '</ol>',
         R4 : '<ol>' +
+        '<li>Scrum:' +
+        '<li>In-Goal:' +
         '</ol>',
         R5 : '<ol>' +
+        '<li>Tackle: ' +
+        '<li>Ruck: ' +
+        '<li>Maul: ' +
         '</ol>',
     },
     sounds: {
