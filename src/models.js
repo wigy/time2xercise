@@ -355,11 +355,13 @@ function TimeTable(program) {
     };
 
     /**
-     * Get the description of the current event.
+     * Get the description of the event (default: current).
      */
-    this.getDescription = function() {
-        if (this.current && this.current.time)
-            return this.current.description;
+    this.getDescription = function(event) {
+        if (!event)
+            event = this.current;
+        if (event.time)
+            return event.description;
     };
 }
 
@@ -774,7 +776,7 @@ function TimingSystem() {
     /**
      * Get the description text of the current event.
      */
-    this.getDescription = function() {
-        return this.training.schedule.program.timetable.getDescription();
+    this.getEventDescription = function(event) {
+        return this.training.schedule.program.timetable.getDescription(event);
     };
 }

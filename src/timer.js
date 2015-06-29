@@ -120,7 +120,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', 'PlaySoun
          $scope.show_menu = !$scope.show_menu;
      };
 
-     $scope.getDescription = function() {
-         return $sce.trustAsHtml($scope.timing.getDescription());
+     $scope.getEventDescription = function(event) {
+         return $sce.trustAsHtml($scope.timing.getEventDescription(event));
      };
 }]);
