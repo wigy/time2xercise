@@ -123,4 +123,8 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', 'PlaySoun
      $scope.getEventDescription = function(event) {
          return $sce.trustAsHtml($scope.timing.getEventDescription(event));
      };
+
+     $scope.getProgramDescription = function() {
+         return $sce.trustAsHtml($scope.timing.getProgramDescription());
+     };
 }]);

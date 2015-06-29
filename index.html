@@ -58,6 +58,7 @@
             <table ng-if="timing.training.schedule.name">
                 <tr><th class="schedule" colspan=3>{{timing.training.schedule.name}}</th></tr>
                 <tr><th class="program" colspan=3>{{timing.training.schedule.program.name}}</th></tr>
+                <tr><td class="description" colspan=3 ng-bind-html="getProgramDescription()"></td></tr>
                 <tr ng-repeat="event in timing.training.schedule.program.timetable.events">
                     <td>{{event.time.toString()}}</td>
                     <td>{{event.title}}</td>
@@ -88,6 +89,10 @@
     <div ng-show="page=='changelog'">
         <h1>Time2Xercise v{{VERSION}}</h1>
             <h2>Changelog</h2>
+            <h3>v1.7</h3>
+            <ul>
+                <li>Display descriptions on the summary table.
+            </ul>
             <h3>v1.6</h3>
             <ul>
                 <li>Rename <i>Fitness</i> programs as day names.

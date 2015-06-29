@@ -432,10 +432,12 @@ function Program(schedule) {
     };
 
     /**
-     * Get the description of the event by its code.
+     * Get the description of the event by its code or the description of this program (default).
      */
     this.getDescription = function(code) {
-        return this.info[code] || this.info[this.name] || '';
+        if (code)
+            return this.info[code] || '';
+        return this.info[this.name] || '';
     };
 }
 
@@ -778,5 +780,12 @@ function TimingSystem() {
      */
     this.getEventDescription = function(event) {
         return this.training.schedule.program.timetable.getDescription(event);
+    };
+
+    /**
+     * Get the description of the current program.
+     */
+    this.getProgramDescription = function() {
+        return this.training.schedule.program.getDescription();
     };
 }
