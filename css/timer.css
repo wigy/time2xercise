@@ -47,8 +47,15 @@ body {
     min-height: 25%;
 }
 
+td.description {
+    padding: 0 1em 0 1em;
+}
+
 .description h1 {
     text-align: left;
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: bold;
 }
 
 .description a {

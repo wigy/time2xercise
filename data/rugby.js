@@ -1,17 +1,18 @@
 DATA.Rugby = {
 
     schedules: {
-        'Two Hours Course': [[5*60, 0], [15*60, 1], [15*60, 2], [15*60, 3], [2*60, "Break"], [20*60, 4], [3*60, "Break"], [20*60, 5]],
+        "Beginner's Course": [[5*60, 0], [15*60, 1], [15*60, 2], [15*60, 3], [2*60, "Break"], [20*60, 4], [3*60, "Break"], [20*60, 5]],
     },
     programs: {
-        'Day 1': ['R1', 'H1', 'T2', 'T1', 'G1', 'G1'],
-        'Day 2': ['R2', 'H2', 'T2', 'H4', 'G2', 'G2'],
+        // TODO: Here we could actually have notation ['R1', 10*60] to override longer time for session R1.
+        'Day 1': ['R1', 'H1', 'T1', 'T2', 'G1', 'G1'],
+        'Day 2': ['R2', 'H2', 'T3', 'H4', 'G2', 'G2'],
         'Day 3': ['R3', 'H3', 'K1', 'P1', 'G3', 'G3'],
         'Day 4': ['R4', 'H4', 'K2', 'P2', 'G3', 'G4'],
         'Day 5': ['R5', 'H5', '-',  'P3', 'G3', 'G5'],
     },
     suitable: {
-        'Two Hours Course': ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5']
+        "Beginner's Course": ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5']
     },
     codes: {
         R1: 'Rules 1',
@@ -81,34 +82,62 @@ DATA.Rugby = {
     },
     // TODO: Localized info?.
     info: {
-        R1 : '<ol>' +
+        R1 : '<h1>Introduction and Basics of the Game</h1><ol>' +
         '<li>Introduction: trainer, mission, daily program' +
+        '<li>Rugby: history, active areas, current local development, spirit of rugby' +
         '<li>Rules variants: 15-players, 7-players, touch rugby' +
         '<li>Mode of play: kick-off, carrying, passing, kicking' +
         '<li>Scoring: try, penalty try, conversion goal, penalty goal, dropped goal' +
         '<li>Knock-on and throw forward: knock-on, throw forward, charge down, bounce forward' +
         '</ol>',
-        R2 : '<ol>' +
+        H1 : '<h1>Passing Essentials</h1><ol>' +
+        'In groups of 3-4 players each:' +
+        '<li>Form a line and pass sideways with two hands. Rotate positions.' +
+        '<li>Lines can walk from one end to another in playing field. Rotate on the turning point.' +
+        '<li>Increase the speed.' +
+        '</ol>',
+        T1 : '<h1>Defending against attackers</h1><ol>' +
+        '<li>2 attackers vs. 1 defender.' +
+        '<li>3 attackers vs. 2 defenders.' +
+        '<li>4 attackers vs. 3 defenders.' +
+        '</ol>',
+        T2 : '<h1>Game Formation</h1><ol>' +
+        '<li>Distribute all players to teams.' +
+        '<li>Explain player positions and numbers in 15-rugby<ul>' +
+        '  <li>choose one for each team (leave unused numbers if not enough players)' +
+        '  <li>give a shirt or vest' +
+        '  </ul>' +
+        '<li>Essentials of <a target="new" href="http://www.crfu.co.nz/crfuclubs/index.cfm/1,306,0,0,html">Touch rugby</a>: touch, rollball with 5m offside, dummy half, the tap with 10m offside' +
+        '<li>Study tactical attack and defence positioning by walking through the game' +
+        '</ol>',
+        G1 : '<h1>Touch Rugby</h1><ol>' +
+        '<a target="new" href="http://www.crfu.co.nz/crfuclubs/index.cfm/1,306,0,0,html">Basic rules</a> with some variations:' +
+        '<li>Two-hand touch required' +
+        '<li>No limit on number of touches' +
+        '<li>No change on dropped ball' +
+        '</ol>',
+
+        R2 : '<ul>' +
         '<li>Playing field: playing area, goal line, in-goal area, 22-line, 10-line, 5 meter marks' +
         '<li>Advantage' +
         '<li>Kick-off: kick-off and positioning, kick into touch, kick into in-goal, drop-out and positioning' +
         '<li>Penalty and free-kick:' +
         '<li>Ball on the ground: players on the ground' +
-        '</ol>',
-        R3 : '<ol>' +
+        '</ul>',
+        R3 : '<ul>' +
         '<li>Offside: offside in general play, being put onside by team-mate, being put onside by opponents, sanctions' +
         '<li>Touch and lineout:' +
         '<li>Mark:' +
-        '</ol>',
-        R4 : '<ol>' +
+        '</ul>',
+        R4 : '<ul>' +
         '<li>Scrum:' +
         '<li>In-Goal:' +
-        '</ol>',
-        R5 : '<ol>' +
+        '</ul>',
+        R5 : '<ul>' +
         '<li>Tackle: ' +
         '<li>Ruck: ' +
         '<li>Maul: ' +
-        '</ol>',
+        '</ul>',
     },
     sounds: {
         'R\\d+': {},
