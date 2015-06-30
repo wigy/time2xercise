@@ -97,9 +97,10 @@ DATA.Rugby = {
         '<li>Increase the speed.' +
         '</ol>',
         T1 : '<h1>Defending against attackers</h1><ol>' +
-        '<li>2 attackers vs. 1 defender.' +
-        '<li>3 attackers vs. 2 defenders.' +
-        '<li>4 attackers vs. 3 defenders.' +
+        '<img src="pics/rugby/T1-3.png"><img src="pics/rugby/T1-2.png"><img src="pics/rugby/T1-1.png">' +
+        '<li>1 defender vs. 2 attackers.' +
+        '<li>2 defenders vs. 3 attackers.' +
+        '<li>3 defenders vs. 4 attackers.' +
         '</ol>',
         T2 : '<h1>Game Formation</h1><ol>' +
         '<li>Distribute all players to teams.' +
