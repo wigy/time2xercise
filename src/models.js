@@ -700,6 +700,9 @@ function TimingSystem() {
      */
     this.togglePause = function() {
         this.pause = !this.pause;
+        // Set clock to one second before current time to ensure we get signals played.
+        if (!this.pause)
+            this.clock.addSeconds(-1);
     };
 
     /**
