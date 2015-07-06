@@ -1,15 +1,15 @@
 DATA.Rugby = {
 
     schedules: {
-        "Beginner's Course": [[5*60, 0], [15*60, 1], [15*60, 2], [15*60, 3], [2*60, "Break"], [20*60, 4], [3*60, "Break"], [20*60, 5]],
+        "Beginner's Course": [[5*60, 0], [13*60, 1], [2*60, "Break"], [13*60, 2], [2*60, "Break"], [13*60, 3], [2*60, "Break"], [20*60, 4], [3*60, "Break"], [20*60, 5]],
     },
     programs: {
         // TODO: Here we could actually have notation ['R1', 10*60] to override longer time for session R1.
         'Day 1': ['R1', 'H1', 'T1', 'T2', 'G1', 'G1'],
-        'Day 2': ['R2', 'H2', 'T3', 'H4', 'G2', 'G2'], // TODO: Plan
-        'Day 3': ['R3', 'H3', 'K1', 'P1', 'G3', 'G3'], // TODO: Plan
-        'Day 4': ['R4', 'H4', 'K2', 'P2', 'G4', 'G4'], // TODO: Plan
-        'Day 5': ['R5', 'P3', 'H5', 'T3', 'G4', 'G5'], // TODO: Plan
+        'Day 2': ['R2', 'H2', 'K1', 'H3', 'G2', 'G2'],
+        'Day 3': ['R3', '-', '-', 'P1', 'G3', 'G3'],
+        'Day 4': ['R4', '-', '-', 'P2', 'G4', 'G4'],
+        'Day 5': ['R5', '-', 'P3', 'T3', 'G4', 'G5'],
     },
     suitable: {
         "Beginner's Course": ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5']
@@ -104,42 +104,83 @@ DATA.Rugby = {
         '</ol>',
         T2 : '<h1>Game Formation</h1><ol>' +
         '<li>Distribute all players to teams.' +
-        '<li>Explain player positions and numbers in 15-rugby<ul>' +
-        '  <li>choose one for each team (leave unused numbers if not enough players)' +
-        '  <li>give a shirt or vest' +
+        '<li>Explain player positions and numbers in 15-rugby:<ul>' +
+        '  <li>Choose one for each team (leave unused numbers if not enough players).' +
+        '  <li>Give a shirt or a vest.' +
         '  </ul>' +
-        '<li>Essentials of <a target="new" href="http://www.crfu.co.nz/crfuclubs/index.cfm/1,306,0,0,html">Touch rugby</a>: touch, rollball with 5m offside, dummy half, the tap with 10m offside' +
-        '<li>Study tactical attack and defence positioning by walking through the game' +
+        '<li>Essentials of <a target="new" href="http://www.crfu.co.nz/crfuclubs/index.cfm/1,306,0,0,html">Touch rugby</a>: touch, rollball with 5m offside, dummy half, the tap with 10m offside.' +
+        '<li>Study tactical attack and defence positioning by walking through the game.' +
         '</ol>',
-        G1 : '<h1>Touch Rugby</h1><ol>' +
-        '<a target="new" href="http://www.crfu.co.nz/crfuclubs/index.cfm/1,306,0,0,html">Basic rules</a> with some variations:' +
+        G1 : '<h1>Touch Rugby</h1>' +
+        '<a target="new" href="http://www.crfu.co.nz/crfuclubs/index.cfm/1,306,0,0,html">Basic rules</a> with some variations:<ol>' +
         '<li>Two-hand touch could be required' +
         '<li>Optionally no limit on number of touches' +
         '<li>Optionally no change on dropped ball' +
         '</ol>',
 
         R2 : '<ul>' +
-        '<li>Playing field: playing area, goal line, in-goal area, 22-line, 10-line, 5 meter marks' +
-        '<li>Advantage' +
-        '<li>Kick-off: kick-off and positioning, kick into touch, kick into in-goal, drop-out and positioning' +
+        '<li>Playing field: playing area, goal line, in-goal area, 22-line, 10-line, 5 meter marks.' +
+        '<li>Advantage.' +
+        '<li>Kick-off: kick-off and player positioning, kick into touch, kick into in-goal, drop-out and player positioning.' +
         '<li>Penalty and free-kick:' +
-        '<li>Ball on the ground: definition about being on the ground' +
+        '<li>Mark: in-goal or behind 22-line or foot at 22-line, must make clean catch and yell "mark", free kick rules apply' +
+        '<li>Ball on the ground: player can play only when on their feet, when on the ground: get up, pass or release.' +
         '</ul>',
+        H2 : '<h1>Passing around the Corner</h1>' +
+        '<img src="pics/rugby/H2.png">' +
+        'In square formation equal number of players in each corner. Two balls in two of the opposite corners.<ol>' +
+        '<li>Apporoach from opposite diagonals to the center passing to the left after getting around the opposing player.' +
+        '<li>Change side by passing to the right side instead.' +
+        '</ol>Increase the speed while progressing closer to the end.',
+        K1 : '<h1>Kicking and Catching</h1>' +
+        'Divide players to loose groups on the opposite sides of the playing fields.<ol>' +
+        '<li>Kick the ball from hand to other group direction and they catch the ball from the air.' +
+        '<li>Bring groups closer as a circle and everyone does a tap kick to self before passing to left.' +
+        '<li>Change passing direction to the right.' +
+        '<li>Kick from hand in organized manner aiming to pass on a player opposite side of circle.' +
+        '</ol>',
+        H3 : '<h1>Passing in Lines</h1>' +
+        '<img src="pics/rugby/H3.png">' +
+        'A square formation with six starting positions.<ol>' +
+        '<li>One line at time from each side is passing from one player to the next. Short pass in the end switching to next line.' +
+        '<li>Players in lines 1 and 2 do looping, i.e. switch positions.' +
+        '</ol>',
+        G2 : '<h1>Touch Rugby with Kicking</h1>' +
+        'Same rules than <i>Game 1</i> with the following additions:<ul>' +
+        '<li>Game is started with a kick-off (not necessarily dropped kick).' +
+        '<li>Free kicks are performed for other violations than knock-on and throw forward.' +
+        '</ol>',
+
         R3 : '<ul>' +
         '<li>Offside: offside in general play, being put onside by team-mate, being put onside by opponents, sanctions' +
         '<li>Touch and lineout:' +
         '<li>Maul:' +
-        '<li>Mark:' +
         '</ul>',
+        P1 : '<h1>Lineouts and Maul</h1><ol>' +
+        '</ol>',
+        G3 : '<h1>Touch Rugby with Kicking and Lineouts</h1>' +
+        'Same rules than <i>Game 2</i> with the following additions:<ul>' +
+        '<li>Line-outs are handled normally (optionally no lifting).' +
+        '<li>Kicking a penalty or a free-kick into touch awards the team throw-in.' +
+        '</ol>',
+
         R4 : '<ul>' +
         '<li>Scrum:' +
         '<li>In-Goal:' +
         '</ul>',
+        P2 : '<h1>Scrum</h1><ol>' +
+        '</ol>',
+        G4 : '<h1>Touch Rugby with Kicking, Lineouts and Scrums</h1>' +
+        'Same rules than <i>Game 3</i> with the following additions:<ul>' +
+        '<li>Scrums are handled as in 7-a-side rules.' +
+        '</ol>',
+
         R5 : '<ul>' +
         '<li>Tackle: ' +
         '<li>Ruck: ' +
         '</ul>',
-
+        P3 : '<h1>Tackle and Ruck</h1><ol>' +
+        '</ol>',
         T3 : '<h1>Walking into Contact</h1>' +
         'Normal rugby 7-a-side rules except that running anywhere in the field is subject to the penalty kick. Especially attention is paid:<ul>' +
         '<li>Proper positioning of players during a ruck' +
