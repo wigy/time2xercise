@@ -89,6 +89,7 @@ DATA.Rugby = {
         '<li>Mode of play: kick-off, carrying, passing, kicking' +
         '<li>Scoring: try, penalty try, conversion goal, penalty goal, dropped goal' +
         '<li>Knock-on and throw forward: knock-on, throw forward, charge down, bounce forward' +
+        '<li>Advantage.' +
         '</ol>',
         H1 : '<h1>Passing Essentials</h1><ol>' +
         'In groups of 3-4 players each:' +
@@ -118,11 +119,10 @@ DATA.Rugby = {
         '<li>Optionally no change on dropped ball' +
         '</ol>',
 
-        R2 : '<ul>' +
+        R2 : '<h1>Ground and Kicking</h1><ul>' +
         '<li>Playing field: playing area, goal line, in-goal area, 22-line, 10-line, 5 meter marks.' +
-        '<li>Advantage.' +
         '<li>Kick-off: kick-off and player positioning, kick into touch, kick into in-goal, drop-out and player positioning.' +
-        '<li>Penalty and free-kick:' +
+        '<li>Penalty and free-kick: punt or drop kick or place, kick at goal, scrum or lineout alternative, kicker\'s team behind the ball and opponent 10m, charging after kicker moves' +
         '<li>Mark: in-goal or behind 22-line or foot at 22-line, must make clean catch and yell "mark", free kick rules apply' +
         '<li>Ball on the ground: player can play only when on their feet, when on the ground: get up, pass or release.' +
         '</ul>',
