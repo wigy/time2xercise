@@ -6,10 +6,10 @@ DATA.Rugby = {
     programs: {
         // TODO: Here we could actually have notation ['R1', 10*60] to override longer time for session R1.
         'Day 1': ['R1', 'H1', 'T1', 'T2', 'G1', 'G1'],
-        'Day 2': ['R2', 'H2', 'T3', 'H4', 'G2', 'G2'],
-        'Day 3': ['R3', 'H3', 'K1', 'P1', 'G3', 'G3'],
-        'Day 4': ['R4', 'H4', 'K2', 'P2', 'G3', 'G4'],
-        'Day 5': ['R5', 'H5', '-',  'P3', 'G3', 'G5'],
+        'Day 2': ['R2', 'H2', 'T3', 'H4', 'G2', 'G2'], // TODO: Plan
+        'Day 3': ['R3', 'H3', 'K1', 'P1', 'G3', 'G3'], // TODO: Plan
+        'Day 4': ['R4', 'H4', 'K2', 'P2', 'G4', 'G4'], // TODO: Plan
+        'Day 5': ['R5', 'P3', 'H5', 'T3', 'G4', 'G5'], // TODO: Plan
     },
     suitable: {
         "Beginner's Course": ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5']
@@ -113,9 +113,9 @@ DATA.Rugby = {
         '</ol>',
         G1 : '<h1>Touch Rugby</h1><ol>' +
         '<a target="new" href="http://www.crfu.co.nz/crfuclubs/index.cfm/1,306,0,0,html">Basic rules</a> with some variations:' +
-        '<li>Two-hand touch required' +
-        '<li>No limit on number of touches' +
-        '<li>No change on dropped ball' +
+        '<li>Two-hand touch could be required' +
+        '<li>Optionally no limit on number of touches' +
+        '<li>Optionally no change on dropped ball' +
         '</ol>',
 
         R2 : '<ul>' +
@@ -123,11 +123,12 @@ DATA.Rugby = {
         '<li>Advantage' +
         '<li>Kick-off: kick-off and positioning, kick into touch, kick into in-goal, drop-out and positioning' +
         '<li>Penalty and free-kick:' +
-        '<li>Ball on the ground: players on the ground' +
+        '<li>Ball on the ground: definition about being on the ground' +
         '</ul>',
         R3 : '<ul>' +
         '<li>Offside: offside in general play, being put onside by team-mate, being put onside by opponents, sanctions' +
         '<li>Touch and lineout:' +
+        '<li>Maul:' +
         '<li>Mark:' +
         '</ul>',
         R4 : '<ul>' +
@@ -137,8 +138,14 @@ DATA.Rugby = {
         R5 : '<ul>' +
         '<li>Tackle: ' +
         '<li>Ruck: ' +
-        '<li>Maul: ' +
         '</ul>',
+
+        T3 : '<h1>Walking into Contact</h1>' +
+        'Normal rugby 7-a-side rules except that running anywhere in the field is subject to the penalty kick. Especially attention is paid:<ul>' +
+        '<li>Proper positioning of players during a ruck' +
+        '</ul>',
+        G5 : '<h1>Full Contact 7-a-side Rugby</h1><ol>' +
+        'Normal rugby 7 rules',
     },
     sounds: {
         'R\\d+': {},
