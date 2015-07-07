@@ -151,12 +151,19 @@ DATA.Rugby = {
         '<li>Free kicks are performed for other violations than knock-on and throw forward.' +
         '</ol>',
 
-        R3 : '<ul>' +
-        '<li>Offside: offside in general play, being put onside by team-mate, being put onside by opponents, sanctions' +
-        '<li>Touch and lineout:' +
-        '<li>Maul:' +
+        R3 : '<h1>Offside, Touch, Lineout, Maul</h1><ul>' +
+        '<li>Offside: offside in general play, being put onside by team-mate, being put onside by opponents, sanctions.' +
+        '<li>Touch: carried to touch by stepping in the line or beyond, kicking directly into touch, gain in ground, penalty always gains in ground, free kick does not gain in ground, quick throw in.' +
+        '<li>Lineout: thrower decides number of participants, participating players betwen 5m and 15m with 1m gap, optional receiver 2m behind own line, non-throwing hooker 2m behind and 2m from 5m line toward touch line, others 10m behind line of touch,' +
+        ' not allowed: levering or holding or shoving or charging or blocking, lifting allowed after ball is thrown.' +
+        '<li>Maul: when a team mate and opponent binds into ball carrier all on their feet, no intentional collapsing, offside line hindmost foot, join only behind, scrum ordered in 5 seconds if not moving.' +
         '</ul>',
-        P1 : '<h1>Lineouts and Maul</h1><ol>' +
+        P1 : '<h1>Lineouts and Maul</h1>' +
+        '<img src="pics/rugby/P1.png">' +
+        'Form groups with two dedicated throwers, 3-5 men in line and 2 receivers.<ol>' +
+        '<li>Keep throwing in and trying to get ball to the receiver, which tosses it to the thrower on the other end.' +
+        '<li>Optionally: try also lifting.' +
+        '<li>Optionally: move receiver into lineout and try few times forming a maul.' +
         '</ol>',
         G3 : '<h1>Touch Rugby with Kicking and Lineouts</h1>' +
         'Same rules than <i>Game 2</i> with the following additions:<ul>' +
