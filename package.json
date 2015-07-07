@@ -1,0 +1,19 @@
+{
+  "name": "time2xercise",
+  "version": "1.7.0",
+  "description": "Pure HTML-based application for timing various workouts. Just load the index.html and go!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wigy/time2xercise.git"
+  },
+  "author": "Tommi Ronkainen",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/wigy/time2xercise/issues"
+  },
+  "homepage": "https://github.com/wigy/time2xercise"
+}
