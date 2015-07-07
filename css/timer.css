@@ -67,6 +67,7 @@ td.description img {
     border-radius: 0.5em;
     padding: 0.5em;
     margin-left: 0.5em;
+    background-color: rgb(100,100,100);
 }
 
 .description h1 {
@@ -115,6 +116,7 @@ table {
 td {
     padding-left: 0.5em;
     vertical-align: top;
+    white-space: nowrap;
 }
 
 th.schedule {
@@ -127,6 +129,7 @@ th.program {
 
 td.description {
     border: none;
+    white-space: normal;
 }
 
 label {

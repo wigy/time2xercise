@@ -7,7 +7,7 @@ DATA.Rugby = {
         // TODO: Here we could actually have notation ['R1', 10*60] to override longer time for session R1.
         'Day 1': ['R1', 'H1', 'T1', 'T2', 'G1', 'G1'],
         'Day 2': ['R2', 'H2', 'K1', 'H3', 'G2', 'G2'],
-        'Day 3': ['R3', '-', '-', 'P1', 'G3', 'G3'],
+        'Day 3': ['R3', 'H4', 'K2', 'P1', 'G3', 'G3'],
         'Day 4': ['R4', '-', '-', 'P2', 'G4', 'G4'],
         'Day 5': ['R5', '-', 'P3', 'T3', 'G4', 'G5'],
     },
@@ -132,12 +132,11 @@ DATA.Rugby = {
         '<li>Apporoach from opposite diagonals to the center passing to the left after getting around the opposing player.' +
         '<li>Change side by passing to the right side instead.' +
         '</ol>Increase the speed while progressing closer to the end.',
-        K1 : '<h1>Kicking and Catching</h1>' +
+        K1 : '<h1>Kicking, Catching and Tap to Self</h1>' +
         'Divide players to loose groups on the opposite sides of the playing fields.<ol>' +
         '<li>Kick the ball from hand to other group direction and they catch the ball from the air.' +
         '<li>Bring groups closer as a circle and everyone does a tap kick to self before passing to left.' +
         '<li>Change passing direction to the right.' +
-        '<li>Kick from hand in organized manner aiming to pass on a player opposite side of circle.' +
         '</ol>',
         H3 : '<h1>Passing in Lines</h1>' +
         '<img src="pics/rugby/H3.png">' +
@@ -158,12 +157,26 @@ DATA.Rugby = {
         ' not allowed: levering or holding or shoving or charging or blocking, lifting allowed after ball is thrown.' +
         '<li>Maul: when a team mate and opponent binds into ball carrier all on their feet, no intentional collapsing, offside line hindmost foot, join only behind, scrum ordered in 5 seconds if not moving.' +
         '</ul>',
+        H4 : '<h1>Tunnel Run</h1>' +
+        '<img src="pics/rugby/H4.png">' +
+        'Form a queue for runners and a tunnel of 3 gates formed by players each side so that all players on one side are each holding a ball.<ol>' +
+        '<li>A runner runs through the tunnel receiving a ball at each gate and passing it back to the other end of the gate. Turn in the end and repeat the same in reverse direction.' +
+        '<li>After all runners have done one round, rotate 2 runners from the front of the queue to the first gate, all gates moving to the next and the last gate moving to the tail of queue.' +
+        '</ol>',
         P1 : '<h1>Lineouts and Maul</h1>' +
         '<img src="pics/rugby/P1.png">' +
         'Form groups with two dedicated throwers, 3-5 men in line and 2 receivers.<ol>' +
-        '<li>Keep throwing in and trying to get ball to the receiver, which tosses it to the thrower on the other end.' +
+        '<li>Make a normal thrown in and lines are trying to grap a ball to the receiver, which tosses it to the thrower on the thrower in the other end.' +
         '<li>Optionally: try also lifting.' +
         '<li>Optionally: move receiver into lineout and try few times forming a maul.' +
+        '</ol>',
+        K2 : '<h1>Kicking Zig-Zag</h1>' +
+        '<img src="pics/rugby/K2.png">' +
+        '<i>This needs an assistant or two.</i> Divide all players to the zig-zag line and all balls in one end.<ol>' +
+        '<li>Players will kick directly the dropped ball from air aiming to give an easy to catch high ball the next player. In the end assistants deliver ball back to the beginning.' +
+        '<li>Feed balls faster pace to the first kicker.' +
+        '<li>Switch to chip kick.' +
+        '<li>Feed balls faster pace to the first kicker.' +
         '</ol>',
         G3 : '<h1>Touch Rugby with Kicking and Lineouts</h1>' +
         'Same rules than <i>Game 2</i> with the following additions:<ul>' +
