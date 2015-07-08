@@ -611,6 +611,23 @@ function TimingSystem() {
     };
 
     /**
+     * Refresh click handlers on the screen.
+     */
+    this.updateHandlers = function() {
+        // Simple image viewer.
+        $('.description img').unbind('click');
+        $('.description img').on('click', function(event) {
+            $('.image-viewer').remove();
+            var src = $(event.currentTarget).attr('src');
+            $('<div class="image-viewer" style="display: none"><img src="' + src + '" /></div>').appendTo('body');
+            $('.image-viewer').fadeIn();
+            $('.image-viewer').on('click', function() {
+                $('.image-viewer').fadeOut();
+            });
+        });
+    };
+
+    /**
      * Change the current training system.
      */
      this.selectTraining = function(name) {
@@ -636,6 +653,7 @@ function TimingSystem() {
      this.selectProgram = function(name) {
          this.training.schedule.selectProgram(name);
          this.program_name = name;
+         this.updateHandlers();
      };
 
      /**

@@ -75,6 +75,13 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', 'PlaySoun
     }, 1000);
 
     /**
+     * Set up clickable elements.
+     */
+    angular.element(document).ready(function () {
+        $scope.timing.updateHandlers();
+    });
+
+    /**
      * Convert seconds to human readable duration.
      */
     $scope.dur = function(n) {
