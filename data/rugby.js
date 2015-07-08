@@ -8,7 +8,7 @@ DATA.Rugby = {
         'Day 1': ['R1', 'H1', 'T1', 'T2', 'G1', 'G1'],
         'Day 2': ['R2', 'H2', 'K1', 'H3', 'G2', 'G2'],
         'Day 3': ['R3', 'H4', 'K2', 'P1', 'G3', 'G3'],
-        'Day 4': ['R4', '-', '-', 'P2', 'G4', 'G4'],
+        'Day 4': ['R4', 'H5', '-', 'P2', 'G4', 'G4'],
         'Day 5': ['R5', '-', 'P3', 'T3', 'G4', 'G5'],
     },
     suitable: {
@@ -25,6 +25,7 @@ DATA.Rugby = {
         H3: 'Handling 3',
         H4: 'Handling 4',
         H5: 'Handling 5',
+        H6: 'Handling 6',
         T1: 'Tactical 1',
         T2: 'Tactical 2',
         T3: 'Tactical 3',
@@ -58,6 +59,7 @@ DATA.Rugby = {
             H3: 'Käsittely 3',
             H4: 'Käsittely 4',
             H5: 'Käsittely 5',
+            H6: 'Käsittely 6',
             T1: 'Taktinen 1',
             T2: 'Taktinen 2',
             T3: 'Taktinen 3',
@@ -142,7 +144,7 @@ DATA.Rugby = {
         '<img src="pics/rugby/H3.png">' +
         'A square formation with six starting positions.<ol>' +
         '<li>One line at time from each side is passing from one player to the next. Short pass in the end switching to next line.' +
-        '<li>Players in lines 1 and 2 do looping, i.e. switch positions.' +
+        '<li>Players in lines 1 and 2 do looping, i.e. switch positions and passing goes 1 to 2 to 1 to 3.' +
         '</ol>',
         G2 : '<h1>Touch Rugby with Kicking</h1>' +
         'Same rules than <i>Game 1</i> with the following additions:<ul>' +
@@ -175,7 +177,7 @@ DATA.Rugby = {
         '<i>This needs an assistant or two.</i> Divide all players to the zig-zag line and all balls in one end.<ol>' +
         '<li>Players will kick directly the dropped ball from air aiming to give an easy to catch high ball the next player. In the end assistants deliver ball back to the beginning.' +
         '<li>Feed balls faster pace to the first kicker.' +
-        '<li>Switch to chip kick.' +
+        '<li>Switch to Grubber kick.' +
         '<li>Feed balls faster pace to the first kicker.' +
         '</ol>',
         G3 : '<h1>Touch Rugby with Kicking and Lineouts</h1>' +
@@ -188,6 +190,7 @@ DATA.Rugby = {
         '<li>Scrum:' +
         '<li>In-Goal:' +
         '</ul>',
+        H5 : '<h1>Two Men Tunnel Run</h1>',
         P2 : '<h1>Scrum</h1><ol>' +
         '</ol>',
         G4 : '<h1>Touch Rugby with Kicking, Lineouts and Scrums</h1>' +
@@ -200,6 +203,8 @@ DATA.Rugby = {
         '<li>Ruck: ' +
         '</ul>',
         P3 : '<h1>Tackle and Ruck</h1><ol>' +
+        '<li>Offload during tackle and progression.' +
+        '<li>Ruck' +
         '</ol>',
         T3 : '<h1>Walking into Contact</h1>' +
         'Normal rugby 7-a-side rules except that running anywhere in the field is subject to the penalty kick. Especially attention is paid:<ul>' +
