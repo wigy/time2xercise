@@ -8,8 +8,8 @@ DATA.Rugby = {
         'Day 1': ['R1', 'H1', 'T1', 'T2', 'G1', 'G1'],
         'Day 2': ['R2', 'H2', 'K1', 'H3', 'G2', 'G2'],
         'Day 3': ['R3', 'H4', 'K2', 'P1', 'G3', 'G3'],
-        'Day 4': ['R4', 'H5', '-', 'P2', 'G4', 'G4'],
-        'Day 5': ['R5', '-', 'P3', 'T3', 'G4', 'G5'],
+        'Day 4': ['R4', 'H5', '-',  'P2', 'G4', 'G4'],
+        'Day 5': ['R5', 'H6', 'P6', 'T3', 'G4', 'G5'],
     },
     suitable: {
         "Beginner's Course": ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5']
@@ -190,7 +190,12 @@ DATA.Rugby = {
         '<li>Scrum:' +
         '<li>In-Goal:' +
         '</ul>',
-        H5 : '<h1>Two Men Tunnel Run</h1>',
+        H5 : '<h1>Passing in Line and Behind</h1>' +
+        '<img src="pics/rugby/H5.png"><ol>' +
+        '<li>Four lines runs passing from one side to another to the end of square.' +
+        '<li>Runners continue running back with one side of square popping the ball back until the last player gets it.' +
+        '<li>Last player pops it to the next runner.' +
+        '</ol>',
         P2 : '<h1>Scrum</h1><ol>' +
         '</ol>',
         G4 : '<h1>Touch Rugby with Kicking, Lineouts and Scrums</h1>' +
@@ -202,6 +207,7 @@ DATA.Rugby = {
         '<li>Tackle: ' +
         '<li>Ruck: ' +
         '</ul>',
+        H6 : '<h1>Two Men Tunnel Run</h1>',
         P3 : '<h1>Tackle and Ruck</h1><ol>' +
         '<li>Offload during tackle and progression.' +
         '<li>Ruck' +
