@@ -60,7 +60,7 @@
                 <tr><th class="schedule" colspan=4>{{timing.training.schedule.name}}</th></tr>
                 <tr><th class="program" colspan=4>{{timing.training.schedule.program.name}}</th></tr>
                 <tr><td class="description" colspan=4 ng-bind-html="getProgramDescription()"></td></tr>
-                <tr ng-repeat="event in timing.training.schedule.program.timetable.events">
+                <tr ng-repeat="event in timing.training.schedule.program.timetable.events track by $index">
                     <td>{{event.time.toString()}}</td>
                     <td>{{event.title}}</td>
                     <td>{{dur(event.duration)}}</td>
