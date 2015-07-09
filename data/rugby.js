@@ -186,9 +186,12 @@ DATA.Rugby = {
         '<li>Kicking a penalty or a free-kick into touch awards the team throw-in.' +
         '</ol>',
 
-        R4 : '<ul>' +
-        '<li>Scrum:' +
-        '<li>In-Goal:' +
+        R4 : '<h1>Scrum and In-goal</h1><ul>' +
+        '<li>Scrum: 5m from in-goal and touchline, 3 or 8 players, "crouch": lean forward, "bind": loose-head prop on the left puts left hand inside to grip jersey,' +
+        ' "set": may start pushing (no charging), stationary until ball thrown in to the tunnel by the mark of referee, must touch ground before entering the tunnel and must not come out from either end of tunnel, restart or penalty kick on collapse or lifting in the air' +
+        ' wheeling 90 degrees, ends when ball comes out (not from tunnel) or hindmost player picks the ball, offside line for scrum-halves is the ball and 5m behind the hindmost foot for others.' +
+        '<li>In-Goal: both defender and attacker can ground the ball, picking up is not grounding, penalty try always considered between goal posts,' +
+        ' holding the ball up prevents try and awards scrum for attacker, dead ball or grounding by defender awards drop-out restart on 22m.' +
         '</ul>',
         H5 : '<h1>Passing in Line and Behind</h1>' +
         '<img src="pics/rugby/H5.png"><ol>' +
