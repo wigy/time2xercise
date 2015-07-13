@@ -38,15 +38,15 @@
             {{timing.getClock()}}
             <label>Training</label>
             <select ng-model="timing.training_name"
-                    ng-change="timing.selectTraining(timing.training_name)"
+                    ng-change="selectTraining(timing.training_name)"
                     ng-options="training as training for (training, _) in timing.trainings"></select>
             <label>Schedule</label>
             <select ng-model="timing.schedule_name"
-                    ng-change="timing.selectSchedule(timing.schedule_name)"
+                    ng-change="selectSchedule(timing.schedule_name)"
                     ng-options="schedule as schedule for (schedule, _) in timing.training.schedules"></select>
             <label>Program</label>
             <select ng-model="timing.program_name"
-                    ng-change="timing.selectProgram(timing.program_name)"
+                    ng-change="selectProgram(timing.program_name)"
                     ng-options="program as program for (program, _) in timing.training.schedule.programs"></select>
 
             <h3>Controls</h3>
@@ -98,7 +98,7 @@
             <ul>
                 <li>New comprehensive summary table.
                 <li>Pictures added into descriptions.
-                <li>More content on Rugby training.
+                <li>Complete Rugby Beginner's Course.
             </ul>
             <h3>v1.6</h3>
             <ul>

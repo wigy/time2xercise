@@ -31,7 +31,7 @@ TimerApp.service('PlaySound', ['ngAudio', function(ngAudio) {
 /**
  * Actual controller of the application.
  */
-TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', 'PlaySound', function($scope, $interval, $sce, PlaySound) {
+TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout', 'PlaySound', function($scope, $interval, $sce, $timeout, PlaySound) {
 
     $scope.DEBUG = DEBUG;
     $scope.VERSION = VERSION;
@@ -54,7 +54,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', 'PlaySoun
     // TODO: Drop debug
     if (DEBUG) {
         $scope.timing.selectTraining('Rugby');
-        $scope.timing.selectProgram('Day 5');
+        $scope.timing.selectProgram('Day 4');
     }
 
     var old_title = $scope.timing.getCurrentTitle();
@@ -78,7 +78,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', 'PlaySoun
      * Set up clickable elements.
      */
     angular.element(document).ready(function () {
-        $scope.timing.updateHandlers();
+        $scope.updateHandlers();
     });
 
     /**
@@ -116,7 +116,6 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', 'PlaySoun
         }
         $scope.timing.reset(old);
         refresh();
-        // TODO: How to avoid extra sound here?
         $scope.testing = false;
     };
 
@@ -125,6 +124,47 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', 'PlaySoun
      */
      $scope.toggleMenu = function(event) {
          $scope.show_menu = !$scope.show_menu;
+     };
+
+     /**
+      * Refresh click handlers on the screen.
+      */
+     $scope.updateHandlers = function() {
+         // Simple image viewer.
+         $('.description img').unbind('click');
+         $('.description img').on('click', function(event) {
+             $('.image-viewer').remove();
+             var src = $(event.currentTarget).attr('src');
+             $('<div class="image-viewer" style="display: none"><img src="' + src + '" /></div>').appendTo('body');
+             $('.image-viewer').fadeIn();
+             $('.image-viewer').on('click', function() {
+                 $('.image-viewer').fadeOut();
+             });
+         });
+     };
+
+     /**
+      * Change the training and update the screen.
+      */
+     $scope.selectTraining = function(name) {
+         $scope.timing.selectTraining(name);
+         $timeout(function() {$scope.updateHandlers()});
+     };
+
+     /**
+      * Change the schedule and update the screen.
+      */
+     $scope.selectSchedule = function(name) {
+         $scope.timing.selectSchedule(name);
+         $timeout(function() {$scope.updateHandlers()});
+     };
+
+     /**
+      * Change the program and update the screen.
+      */
+     $scope.selectProgram = function(name) {
+         $scope.timing.selectProgram(name);
+         $timeout(function() {$scope.updateHandlers()});
      };
 
      $scope.getEventDescription = function(event) {
