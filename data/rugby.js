@@ -209,9 +209,9 @@ DATA.Rugby = {
 
         G1 : '<h1>Touch Rugby</h1>' +
         '<a target="new" href="http://www.crfu.co.nz/crfuclubs/index.cfm/1,306,0,0,html">Basic rules</a> with some variations:<ol>' +
-        '<li>Two-hand touch could be required' +
-        '<li>Optionally no limit on number of touches' +
-        '<li>Optionally no change on dropped ball' +
+        '<li>Two-hand touch could be required.' +
+        '<li>Optionally no limit on number of touches.' +
+        '<li>Optionally no change on dropped ball.' +
         '</ol>',
         G2 : '<h1>Touch Rugby with Kicking and Lineouts</h1>' +
         'Same rules than <i>Game 1</i> with the following additions:<ul>' +
