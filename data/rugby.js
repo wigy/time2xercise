@@ -96,14 +96,15 @@ DATA.Rugby = {
         ' wheeling 90 degrees, ends when ball comes out (not from tunnel) or hindmost player picks the ball, offside line for scrum-halves is the ball and 5m behind the hindmost foot for others.' +
         '</ul>',
         R4 : '<h1>Tackle and In-Goal</h1><ul>' +
-        '<li>Tackle: below neck, cannot tackle if team member bound to, brought to ground means a knee on the ground or sitting on the ground or on the player on the ground, tackled player must pass or release, tackler must release and not play the ball until getting up, can reach try on momentum.' +
+        '<li>Tackle: dangerous tackle, cannot tackle if team member bound to, brought to ground means a knee on the ground or sitting on the ground or on the player on the ground, tackled player must pass or release, tackler must release and not play the ball until getting up, can reach try on momentum.' +
         '<li>In-Goal: both defender and attacker can ground the ball, picking up is not grounding, penalty try always considered between goal posts,' +
         ' holding the ball up prevents try and awards scrum for attacker, dead ball or grounding by defender awards drop-out restart on 22m.' +
         '</ul>',
         R5 : '<h1>Maul and Ruck</h1><ul>' +
         '<li>Maul: when a team mate and opponent binds into ball carrier all on their feet, no intentional collapsing, offside line hindmost foot, join only behind, scrum ordered in 5 seconds if not moving.' +
-        '<li>Ruck: ' +
-        '<li>Mark: in-goal or behind 22-line or foot at 22-line, must make clean catch and yell "mark", free kick rules apply' +
+        '<li>Ruck: one or more players in contact clost to the ball on the ground, join by binding properly opponent or team member, players in ruck can use only feet to gain ball, can use hands after tackle before ruck has formed if on feet,' +
+        ' offside line is the hindmost foot of the same team player, ends succesfully when ball leaves ruck, unsuccessfully if ball becomes unplayeble it implies a scrum for the team that was moving forward or attcking, when clearly won referee yells "use it".' +
+        '<li>Mark: in-goal or behind 22-line or foot at 22-line, must make clean catch and yell "mark", free kick rules apply.' +
         '</ul>',
 
         H1 : '<h1>Passing Essentials</h1><ol>' +
@@ -136,7 +137,12 @@ DATA.Rugby = {
         '<li>Runners continue running back with one side of square popping the ball back until the last player gets it.' +
         '<li>Last player pops it to the next runner.' +
         '</ol>',
-        H6 : '<h1>Two Men Tunnel Run</h1>',
+        H6 : '<h1>Two Men Tunnel Run</h1>' +
+        '<img src="pics/rugby/H6.png">' +
+        'Form a two queues for runners and a tunnel of 3 gates formed by players each side so that all players on one side are each holding a ball.<ol>' +
+        '<li>Runners runs through the tunnel receiving a ball at each gate and passing it to the fellow runner, which in turn passes it back to the other end of the gate. Turn in the end and repeat the same in reverse direction.' +
+        '<li>After all runners have done one round, rotate 2 runners from the front of the queue to the first gate, all gates moving to the next and the last gate moving to the tail of queue.' +
+        '</ol>',
 
         T1 : '<h1>Defending against attackers</h1><ol>' +
         '<img src="pics/rugby/T1-3.png"><img src="pics/rugby/T1-2.png"><img src="pics/rugby/T1-1.png">' +
@@ -184,15 +190,21 @@ DATA.Rugby = {
         '<li>Three-on-three scrum with correct binding.' +
         '<li>Three-on-three scrum with ball tossed in by scrum-half.' +
         '</ol>',
-        P3 : '<h1>Tackle</h1><ol>' +
+        P3 : '<h1>Tackle</h1>' +
         '<img src="pics/rugby/P3-2.png">' +
-        '<img src="pics/rugby/P3-1.png">' +
+        '<img src="pics/rugby/P3-1.png"><ol>' +
         '<li>Tackle on walking opponent from kneeling position.' +
         '<li>Walk into tackler stopping the progress (not necessarily bringing to the ground), then offload the ball to the next.' +
         '<li>Tackle slowly approaching carrier, which offers ball to scrum-half passing it to next carrier.' +
         '</ol>',
-        P4 : '<h1>Ruck</h1><ol>' +
-        '<li>Ruck' +
+        P4 : '<h1>Ruck Clearing</h1>' +
+        '<img src="pics/rugby/P4-2.png">' +
+        '<img src="pics/rugby/P4-1.png">' +
+        'A line of tacklers with assistant "jackal". Groups of 2-3 players with one ball carrier taken down by the tackler and supported by the rest.' +
+        ' Second assistant works as a scrum-half passing the ball from one group to the next.' +
+        '<li>Repeat the tackle which after support players pushes the jackal out.' +
+        '<li>Change tacklers after every group has been running three times.' +
+        '<li>Move more players to "jackal" side and only one support, which parks on the defence position. Opponent tries to move the defense.' +
         '</ol>',
 
         G1 : '<h1>Touch Rugby</h1>' +
