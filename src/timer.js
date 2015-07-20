@@ -76,6 +76,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
 
     $scope.DEBUG = DEBUG;
     $scope.VERSION = VERSION;
+    $scope.CHANGELOG = CHANGELOG;
     $scope.page = 'admin';
     $scope.timing = new TimingSystem();
     $scope.timing.load('Generic');
@@ -86,11 +87,6 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
     $scope.testing = false;
     $scope.show_menu = true;
     $scope.PlaySound = PlaySound;
-
-    if (DEBUG) {
-        $scope.timing.load('Test');
-        $scope.timing.selectTraining('Rugby');
-    }
 
     var old_title = $scope.timing.getCurrentTitle();
     function refresh(clock) {
@@ -233,5 +229,12 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
          $scope.timing.jumpToNext();
          $timeout(function() {$scope.updateHandlers()});
      };
+
+     // Debug activities.
+     if (DEBUG) {
+         $scope.timing.load('Test');
+         $scope.timing.selectTraining('Rugby');
+         $scope.goPage('changelog');
+     }
 }]);
 })(angular);
