@@ -23,6 +23,7 @@
   <body ng-controller="TimerController">
 
     <div class="container menucontainer" ng-class="{fixedmenu: show_menu}">
+      <span class="glyphicon glyphicon-time"></span>&nbsp;{{timing.getClock()}}
       <div class="btn-group" role="group" aria-label="...">
         <button class="btn btn-default" ng-click="goPage('admin')"><span class="glyphicon glyphicon-cog"></span> Admin</button>
         <button class="btn btn-default" ng-click="goPage('clock')"><span class="glyphicon glyphicon-time"></span> Clock</button>
@@ -37,8 +38,6 @@
     </div>
 
     <div ng-if="page=='admin'" class="container">
-
-            {{timing.getClock()}}
 
             <div class="row">
             <form class="form-inline">
@@ -84,9 +83,9 @@
     <div ng-if="page=='clock'" class="container">
         <div class="title" ng-bind="timing.getCurrentTitle()"></div>
         <div class="remaining" ng-class="{almost_finished: timing.getRemainingSeconds() < 60}" ng-click="toggleMenu()" ng-bind="timing.getRemaining()"></div>
-        <div class="bottom previous" ng-bind="timing.getPrevious()"></div>
-        <div class="bottom clock" ng-bind="timing.getClock()"></div>
-        <div class="bottom next" ng-bind="timing.getNext()"></div>
+        <div class="bottom pull-left" ng-bind="timing.getPrevious()"></div>
+        <div class="bottom pull-right" ng-bind="timing.getNext()"></div>
+        <div class="clearfix"></div>
         <div class="description" ng-bind-html="timing.training.schedule.program.timetable.current.description"></div>
     </div>
 

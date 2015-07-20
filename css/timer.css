@@ -18,23 +18,7 @@ body {
 
 .bottom {
     height: 10%;
-    float: left;
     font-size: 5ex;
-}
-
-.previous {
-    text-align: left;
-    width: 40%;
-}
-
-.clock {
-    text-align: center;
-    width: 20%;
-}
-
-.next {
-    text-align: right;
-    width: 40%;
 }
 
 .almost_finished {
