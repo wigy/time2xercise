@@ -25,10 +25,3 @@ CHANGELOG = [{
             'First functional release with basic functionality.',
         ]
 }];
-
-/**
- * Dump all arguments.
- */
-function d(arg) {
-    console.log.apply(console, arguments);
-}
