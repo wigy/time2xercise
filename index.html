@@ -9,6 +9,7 @@
     <script src="lib/angular-1.3.15.min.js"></script>
     <script src="lib/angular.audio.js"></script>
     <script src="src/settings.js"></script>
+    <script src="src/utils.js"></script>
     <script src="data/data.js"></script>
     <script src="data/test.js"></script>
     <script src="data/generic.js"></script>
@@ -83,63 +84,13 @@
 
     <div ng-if="page=='changelog'" class="container">
         <h1>Time2Xercise v{{VERSION}}</h1>
-            <!-- TODO: Move to settings.js. -->
-            <h2>Changelog</h2>
-            <h3>v1.8</h3>
-            <ul>
-                <li>New 50:10, 55:05 and 60:00 schedules for fitness.
-                <li>Use less CPU.
-                <li>Code clean up in various places.
-            </ul>
-            <h3>v1.7</h3>
-            <ul>
-                <li>New comprehensive summary table.
-                <li>Pictures added into descriptions.
-                <li>Complete Rugby Beginner's Course.
-            </ul>
-            <h3>v1.6</h3>
-            <ul>
-                <li>Rename <i>Fitness</i> programs as day names.
-                <li>Reorganize files to sub-directories.
-                <li>Split data to separate files.
-                <li>Support for translations.
-                <li>Translate <i>Rugby</i>.
-                <li>Any amount of sounds for an event.
-                <li>Descriptions for the events and programs.
-                <li>More robust sound system.
-            </ul>
-            <h3>v1.5</h3>
-            <ul>
-                <li>Major refactoring of code to split it classes better describing the system.
-                <li>New schedules and programs for <i>Generic</i> and <i>Fitness</i>.
-                <li>Show only the currently selected schedule instead of all.
-            </ul>
-            <h3>v1.4</h3>
-            <ul>
-                <li>Ability to show and hide menus by clicking background.
-                <li>Increased button size.
-                <li>Pause, Next and Previous buttons.
-            </ul>
-            <h3>v1.3</h3>
-            <ul>
-                <li>New selector based system for choosing both schedule and program from dropdown.
-                <li>3 x 15 min program.
-                <li>4 x 10 min program.
-            </ul>
-            <h3>v1.2</h3>
-            <ul>
-                <li>Convert all sounds to MP3.
-                <li>Set correct character set.
-            </ul>
-            <h3>v1.1</h3>
-            <ul>
-                <li>Separate <i>Start Now</i> and <i>Start In 10s</i> buttons.
-                <li>Sound testing.
-            </ul>
-            <h3>v1.0</h3>
-            <ul>
-                <li>Initial release with a selection of some predefied schedules and clock functionality with various different sound effects.</li>
-            </ul>
+          <h2>Changelog</h2>
+            <div class="row">
+                <div ng-repeat="entry in CHANGELOG track by $index">
+                    <h3>{{entry.version}}</h3>
+                    <ul><li ng-repeat="text in entry.changes track by $index">{{text}}</ul>
+                </div>
+            <div>
     </div>
 
   </body>
