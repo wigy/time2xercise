@@ -1,3 +1,5 @@
+(function(angular){
+
 var TimerApp = angular.module('TimerApp', ['ngAudio']);
 
 /**
@@ -32,6 +34,38 @@ TimerApp.service('PlaySound', ['ngAudio', function(ngAudio) {
             d((timestamp ? timestamp : '') + "   >>> " + name + " <<<");
         else
             audio[name].play();
+    };
+}]);
+
+/**
+ * Directive to display a time table for an event.
+ *
+ * <timing-schedule timing="TimingModel" />
+ */
+TimerApp.directive('timerSchedule', [function() {
+    return {
+        restrict: 'E',
+        link: function($scope, $elem, $attrs) {
+            var model = $scope.$eval($attrs.timing);
+            $scope.timing = model;
+        },
+        template :
+            '<table ng-if="timing.training.schedule.name">' +
+            '<tr><th class="schedule" colspan=4>{{timing.training.schedule.name}}</th></tr>' +
+            '<tr><th class="program" colspan=4>{{timing.training.schedule.program.name}}</th></tr>' +
+            '<tr><td class="description" colspan=4 ng-bind-html="timing.training.schedule.program.description"></td></tr>' +
+            '<tr ng-repeat="event in timing.training.schedule.program.timetable.events track by $index">' +
+            '    <td>{{event.time.toString()}}</td>' +
+            '    <td>{{event.title}}</td>' +
+            '    <td>{{dur(event.duration)}}</td>' +
+            '    <td class="description" ng-bind-html="event.description"></td>' +
+            '</tr>' +
+            '<tr><td>{{timing.training.schedule.program.timetable.events[timing.training.schedule.program.timetable.events.length-1].endTime().toString()}}</td>' +
+            '    <td></td>' +
+            '    <td></td>' +
+            '    <td></td>' +
+            '</tr>' +
+            '</table>'
     };
 }]);
 
@@ -169,3 +203,4 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
          $timeout(function() {$scope.updateHandlers()});
      };
 }]);
+})(angular);
