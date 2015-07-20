@@ -50,7 +50,7 @@ TimerApp.directive('timerSchedule', [function() {
             $scope.timing = model;
         },
         template :
-            '<table ng-if="timing.training.schedule.name">' +
+            '<table class="table table-bordered" ng-if="timing.training.schedule.name">' +
             '<tr><th class="schedule" colspan=4>{{timing.training.schedule.name}}</th></tr>' +
             '<tr><th class="program" colspan=4>{{timing.training.schedule.program.name}}</th></tr>' +
             '<tr><td class="description" colspan=4 ng-bind-html="timing.training.schedule.program.description"></td></tr>' +
