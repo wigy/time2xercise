@@ -21,21 +21,21 @@
 
   <body ng-controller="TimerController">
 
-    <div class="menu" ng-class="{fixed: show_menu}">
+    <div class="container menucontainer" ng-class="{fixedmenu: show_menu}">
       <div class="btn-group" role="group" aria-label="...">
-          <button class="btn btn-default" ng-click="goPage('admin')"><span class="glyphicon glyphicon-cog"></span> Admin</button>
-          <button class="btn btn-default" ng-click="goPage('clock')"><span class="glyphicon glyphicon-time"></span> Clock</button>
-          <button class="btn btn-default" ng-click="goPage('changelog')"><span class="glyphicon glyphicon-list"></span> Changelog</button>
-          <button class="btn btn-default" ng-click="goPage('soundtest')"><span class="glyphicon glyphicon-sound-dolby"></span> Sound Test</button>
+        <button class="btn btn-default" ng-click="goPage('admin')"><span class="glyphicon glyphicon-cog"></span> Admin</button>
+        <button class="btn btn-default" ng-click="goPage('clock')"><span class="glyphicon glyphicon-time"></span> Clock</button>
+        <button class="btn btn-default" ng-click="goPage('changelog')"><span class="glyphicon glyphicon-list"></span> Changelog</button>
+        <button class="btn btn-default" ng-click="goPage('soundtest')"><span class="glyphicon glyphicon-sound-dolby"></span> Sound Test</button>
       </div>
-
-        &nbsp;
-        <button class="small" ng-click="jumpToPrevious()">&lt;&lt;</button>
-        <button class="small" ng-click="togglePause()">{{timing.pause ? '>' : '||'}}</button>
-        <button class="small" ng-click="jumpToNext()">&gt;&gt;</button>
+      <div class="btn-group" role="group" aria-label="...">
+        <button class="btn btn-default" ng-click="jumpToPrevious()"><span class="glyphicon glyphicon-backward"></span></button>
+        <button class="btn btn-default" ng-click="togglePause()"><span ng-if="!timing.pause" class="glyphicon glyphicon-pause"></span><span ng-if="timing.pause" class="glyphicon glyphicon-play"></span></button>
+        <button class="btn btn-default" ng-click="jumpToNext()"><span class="glyphicon glyphicon-forward"></span></button>
+      </div>
     </div>
 
-    <div ng-if="page=='admin'">
+    <div ng-if="page=='admin'" class="container">
 
             <h2>Settings</h2>
 
@@ -64,7 +64,7 @@
             <timer-schedule timing="timing" />
     </div>
 
-    <div ng-if="page=='clock'">
+    <div ng-if="page=='clock'" class="container">
         <div class="title" ng-bind="timing.getCurrentTitle()"></div>
         <div class="remaining" ng-class="{almost_finished: timing.getRemainingSeconds() < 60}" ng-click="toggleMenu()" ng-bind="timing.getRemaining()"></div>
         <div class="bottom previous" ng-bind="timing.getPrevious()"></div>
@@ -73,7 +73,7 @@
         <div class="description" ng-bind-html="timing.training.schedule.program.timetable.current.description"></div>
     </div>
 
-    <div ng-if="page=='soundtest'">
+    <div ng-if="page=='soundtest'" class="container">
         <h1>Time2Xercise v{{VERSION}}</h1>
             <h2>Sound Test</h2>
             <div ng-repeat="sound in PlaySound('list')">
@@ -81,7 +81,7 @@
             </div>
     </div>
 
-    <div ng-if="page=='changelog'">
+    <div ng-if="page=='changelog'" class="container">
         <h1>Time2Xercise v{{VERSION}}</h1>
             <!-- TODO: Move to settings.js. -->
             <h2>Changelog</h2>

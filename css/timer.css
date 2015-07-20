@@ -85,18 +85,11 @@ td.description img {
     color: red;
 }
 
-.menu {
-    float: left;
-    height: 40px;
-    width: 100%;
-}
-
-.menu button {
+.menucontainer button {
     display: none;
-    width: 10em;
 }
 
-.menu:hover button, .menu.fixed button {
+.menucontainer:hover button, .menucontainer.fixedmenu button {
     display: inline-block;
 }
 
