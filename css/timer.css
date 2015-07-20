@@ -40,7 +40,6 @@ body {
 .description {
     clear: both;
     padding: 0.5em;
-    color: rgba(255,255,255,0.8);
     border: 1px solid rgba(255,255,255,0.5);
     background-color: 1px solid rgba(255,255,255,0.2);
     border-radius: 1em;
@@ -77,10 +76,6 @@ td.description img {
     font-weight: bold;
 }
 
-.description a {
-    color: gray;
-}
-
 .almost_finished {
     color: red;
 }
@@ -91,11 +86,6 @@ td.description img {
 
 .menucontainer:hover button, .menucontainer.fixedmenu button {
     display: inline-block;
-}
-
-h1 {
-    clear: both;
-    text-align: center;
 }
 
 table {
@@ -110,14 +100,6 @@ td {
     padding-left: 0.5em;
     vertical-align: top;
     white-space: nowrap;
-}
-
-th.schedule {
-    color: rgb(200,200,200);
-}
-
-th.program {
-    color: rgb(150,150,150);
 }
 
 td.description {
