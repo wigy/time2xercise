@@ -234,7 +234,6 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
      if (DEBUG) {
          $scope.timing.load('Test');
          $scope.timing.selectTraining('Rugby');
-         $scope.goPage('changelog');
      }
 }]);
 })(angular);

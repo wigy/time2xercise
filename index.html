@@ -27,7 +27,7 @@
         <button class="btn btn-default" ng-click="goPage('admin')"><span class="glyphicon glyphicon-cog"></span> Admin</button>
         <button class="btn btn-default" ng-click="goPage('clock')"><span class="glyphicon glyphicon-time"></span> Clock</button>
         <button class="btn btn-default" ng-click="goPage('changelog')"><span class="glyphicon glyphicon-list"></span> Changelog</button>
-        <button class="btn btn-default" ng-click="goPage('soundtest')"><span class="glyphicon glyphicon-sound-dolby"></span> Sound Test</button>
+        <button class="btn btn-info" ng-click="goPage('soundtest')"><span class="glyphicon glyphicon-sound-dolby"></span> Sound Test</button>
       </div>
       <div class="btn-group" role="group" aria-label="...">
         <button class="btn btn-default" ng-click="jumpToPrevious()"><span class="glyphicon glyphicon-backward"></span></button>
@@ -38,31 +38,47 @@
 
     <div ng-if="page=='admin'" class="container">
 
-            <h2>Settings</h2>
-
-            <label>Starting Time</label>
-            <input ng-model="timing.starting_time" ng-pattern="/\d\d:\d\d:\d\d/" ng-change="timing.recalc()"></input>
             {{timing.getClock()}}
-            <label>Training</label>
-            <select ng-model="timing.training_name"
-                    ng-change="selectTraining(timing.training_name)"
-                    ng-options="training as training for (training, _) in timing.trainings"></select>
-            <label>Schedule</label>
-            <select ng-model="timing.schedule_name"
-                    ng-change="selectSchedule(timing.schedule_name)"
-                    ng-options="schedule as schedule for (schedule, _) in timing.training.schedules"></select>
-            <label>Program</label>
-            <select ng-model="timing.program_name"
-                    ng-change="selectProgram(timing.program_name)"
-                    ng-options="program as program for (program, _) in timing.training.schedule.programs"></select>
 
-            <h3>Controls</h3>
-            <button ng-click="startNow(1)" ng-disabled="!timing.training.schedule.program.name">Start Now</button>
-            <button ng-click="startNow(10)" ng-disabled="!timing.training.schedule.program.name">Start In 10s</button>
-            <button ng-click="testIt()" ng-if="DEBUG">Test</button>
+            <div class="row">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="starting-time">Starting Time</label>
+                    <input id="starting-time" class="form-control" ng-model="timing.starting_time"
+                            ng-pattern="/\d\d:\d\d:\d\d/" ng-change="timing.recalc()"></input>
+                </div>
+                <div class="form-group">
+                    <label for="training">Training</label>
+                    <select id="training" class="form-control" ng-model="timing.training_name"
+                            ng-change="selectTraining(timing.training_name)"
+                            ng-options="training as training for (training, _) in timing.trainings"></select>
+                </div>
+                <div class="form-group">
+                    <label for="schedule">Schedule</label>
+                    <select id="schedule"  class="form-control" ng-model="timing.schedule_name"
+                            ng-change="selectSchedule(timing.schedule_name)"
+                            ng-options="schedule as schedule for (schedule, _) in timing.training.schedules"></select>
+                </div>
+                <div class="form-group">
+                    <label for="program">Program</label>
+                    <select id="program" class="form-control" ng-model="timing.program_name"
+                            ng-change="selectProgram(timing.program_name)"
+                            ng-options="program as program for (program, _) in timing.training.schedule.programs"></select>
+                </div>
+            </form>
+            </div>
 
-            <h3>Schedule</h3>
+            <div class="row">
+            <div class="btn-group" role="group" aria-label="...">
+            <button class="btn btn-default" ng-click="startNow(1)" ng-disabled="!timing.training.schedule.program.name">Start Now</button>
+            <button class="btn btn-default" ng-click="startNow(10)" ng-disabled="!timing.training.schedule.program.name">Start In 10s</button>
+            <button class="btn btn-info" ng-click="testIt()" ng-if="DEBUG">Test</button>
+            </div>
+            </div>
+
+            <div class="row">
             <timer-schedule timing="timing" />
+            </div>
     </div>
 
     <div ng-if="page=='clock'" class="container">
@@ -78,7 +94,7 @@
         <h1>Time2Xercise v{{VERSION}}</h1>
             <h2>Sound Test</h2>
             <div ng-repeat="sound in PlaySound('list')">
-                <button ng-click="PlaySound(sound)">{{sound}}</button>
+                <a ng-click="PlaySound(sound)">{{sound}}</a>
             </div>
     </div>
 
