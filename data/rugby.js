@@ -217,7 +217,9 @@ DATA.Rugby = {
         'Same rules than <i>Game 1</i> with the following additions:<ul>' +
         '<li>Game is started with a kick-off (not necessarily dropped kick).' +
         '<li>Line-outs are handled normally (optionally no lifting).' +
-        '<li>Free from knock-on and throw forward and penalty kicks from other violations.' +
+        '<li>After the line-out touch does not count until the ball have been passed once or it is carried over the line of touch.' +
+        '<li>Optionally mauls can be allowed immediately after the line-out. The touch rules are applied after the maul ends.' +
+        '<li>Free kick from knock-on and throw forward and penalty kicks from other violations.' +
         '<li>Kicking a penalty or a free-kick into touch awards the team throw-in.' +
         '</ol>',
         G3 : '<h1>Touch Rugby with Kicking, Lineouts and Scrums</h1>' +
