@@ -132,35 +132,6 @@ td.description {
     white-space: normal;
 }
 
-label {
-    display: block;
-}
-
-button, input, select {
-    height: 1.4em;
-    width: 10em;
-    font-size: 20pt;
-}
-
-button.small {
-    width: 2em;
-    height: 2em;
-    border-radius: 0.2em;
-}
-
-select {
-    height: 1.4em;
-    width: 15em;
-    font-size: 20pt;
-}
-
-input {
-}
-
-button {
-    border-radius: 0.5em;
-}
-
 .image-viewer {
     position: absolute;
     left: 0;

@@ -89,8 +89,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
 
     if (DEBUG) {
         $scope.timing.load('Test');
-        $scope.timing.selectTraining('Test');
-        $scope.timing.selectProgram('Test');
+        $scope.timing.selectTraining('Rugby');
     }
 
     var old_title = $scope.timing.getCurrentTitle();
