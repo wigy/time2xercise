@@ -213,8 +213,8 @@ function TimeTable(program) {
                     continue;
                 }
 
-                // Create event.
-                event = new Event(i+1, duration, program.getText(code), program.getDescription(code));
+                // Create event
+                event = new Event(i+1, duration, program.getText(code), this.program.info[code]);
 
                 // Find out the sound.
                 for (var regex in program.sounds) {
@@ -353,16 +353,6 @@ function TimeTable(program) {
 
         return new Time();
     };
-
-    /**
-     * Get the description of the event (default: current).
-     */
-    this.getDescription = function(event) {
-        if (!event)
-            event = this.current;
-        if (event.time)
-            return event.description;
-    };
 }
 
 /**
@@ -394,6 +384,7 @@ function Program(schedule) {
         this.sounds = data.sounds || {};
         this.translations = data.translations || {};
         this.info = data.info || {};
+        this.description = this.info[this.name] || '';
     };
 
     /**
@@ -429,15 +420,6 @@ function Program(schedule) {
         if (this.codes[code])
             return this.codes[code];
         return code;
-    };
-
-    /**
-     * Get the description of the event by its code or the description of this program (default).
-     */
-    this.getDescription = function(code) {
-        if (code)
-            return this.info[code] || '';
-        return this.info[this.name] || '';
     };
 }
 
@@ -776,19 +758,5 @@ function TimingSystem() {
      */
     this.getCurrentTitle = function() {
         return this.training.schedule.program.timetable.current.title;
-    };
-
-    /**
-     * Get the description text of the current event.
-     */
-    this.getEventDescription = function(event) {
-        return this.training.schedule.program.timetable.getDescription(event);
-    };
-
-    /**
-     * Get the description of the current program.
-     */
-    this.getProgramDescription = function() {
-        return this.training.schedule.program.getDescription();
     };
 }

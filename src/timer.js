@@ -1,6 +1,13 @@
 var TimerApp = angular.module('TimerApp', ['ngAudio']);
 
 /**
+ * Configure the application.
+ */
+TimerApp.config(function($sceProvider) {
+  $sceProvider.enabled(false);
+});
+
+/**
  * Service to load and play sounds.
  */
 TimerApp.service('PlaySound', ['ngAudio', function(ngAudio) {
@@ -37,24 +44,19 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
     $scope.VERSION = VERSION;
     $scope.page = 'admin';
     $scope.timing = new TimingSystem();
-    if (DEBUG)
-        $scope.timing.load('Test');
     $scope.timing.load('Generic');
     $scope.timing.load('Rugby');
     $scope.timing.load('Fitness');
     $scope.timing.starting_time = '00:00:00';
-    if (DEBUG)
-        $scope.timing.selectTraining('Test');
-    else
-        $scope.timing.selectTraining('Generic');
+    $scope.timing.selectTraining('Generic');
     $scope.testing = false;
     $scope.show_menu = true;
     $scope.PlaySound = PlaySound;
 
-    // TODO: Drop debug
     if (DEBUG) {
-        $scope.timing.selectTraining('Rugby');
-        $scope.timing.selectProgram('Day 5');
+        $scope.timing.load('Test');
+        $scope.timing.selectTraining('Test');
+        $scope.timing.selectProgram('Test');
     }
 
     var old_title = $scope.timing.getCurrentTitle();
@@ -122,7 +124,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
     /**
      * Toggle visibility of the menu.
      */
-     $scope.toggleMenu = function(event) {
+     $scope.toggleMenu = function() {
          $scope.show_menu = !$scope.show_menu;
      };
 
@@ -165,13 +167,5 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
      $scope.selectProgram = function(name) {
          $scope.timing.selectProgram(name);
          $timeout(function() {$scope.updateHandlers()});
-     };
-
-     $scope.getEventDescription = function(event) {
-         return $sce.trustAsHtml($scope.timing.getEventDescription(event));
-     };
-
-     $scope.getProgramDescription = function() {
-         return $sce.trustAsHtml($scope.timing.getProgramDescription());
      };
 }]);

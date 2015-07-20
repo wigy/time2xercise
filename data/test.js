@@ -13,8 +13,9 @@ DATA.Test = {
             'B': 'Testing B',
         },
         info: {
+            'Test': 'This is a generic description of the <u>program</u>.',
             'A': 'This is a test called <i>A</i> in our test set up.',
-            'Test': 'This is a generic description of the program if there is no <u>better</u> description found from codes.',
+            'B': 'This is a test called <i>B</i> in our test set up.',
         },
         sounds: {
             '.*' : {0: 'start', 1: '1', '-2': '2', '-1': 'done'}

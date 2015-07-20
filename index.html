@@ -29,7 +29,7 @@
         <button class="small" ng-click="timing.jumpToNext()">&gt;&gt;</button>
     </div>
 
-    <div ng-show="page=='admin'">
+    <div ng-if="page=='admin'">
 
             <h2>Settings</h2>
 
@@ -59,12 +59,12 @@
             <table ng-if="timing.training.schedule.name">
                 <tr><th class="schedule" colspan=4>{{timing.training.schedule.name}}</th></tr>
                 <tr><th class="program" colspan=4>{{timing.training.schedule.program.name}}</th></tr>
-                <tr><td class="description" colspan=4 ng-bind-html="getProgramDescription()"></td></tr>
+                <tr><td class="description" colspan=4 ng-bind-html="timing.training.schedule.program.description"></td></tr>
                 <tr ng-repeat="event in timing.training.schedule.program.timetable.events track by $index">
                     <td>{{event.time.toString()}}</td>
                     <td>{{event.title}}</td>
                     <td>{{dur(event.duration)}}</td>
-                    <td class="description" ng-bind-html="getEventDescription(event)"></td>
+                    <td class="description" ng-bind-html="event.description"></td>
                 </tr>
                 <tr><td>{{timing.training.schedule.program.timetable.events[timing.training.schedule.program.timetable.events.length-1].endTime().toString()}}</td>
                     <td></td>
@@ -74,16 +74,16 @@
             </table>
     </div>
 
-    <div ng-show="page=='clock'" ng-click="toggleMenu($event)">
+    <div ng-if="page=='clock'">
         <div class="title" ng-bind="timing.getCurrentTitle()"></div>
-        <div class="remaining" ng-class="{almost_finished: timing.getRemainingSeconds() < 60}" ng-bind="timing.getRemaining()"></div>
+        <div class="remaining" ng-class="{almost_finished: timing.getRemainingSeconds() < 60}" ng-click="toggleMenu()" ng-bind="timing.getRemaining()"></div>
         <div class="bottom previous" ng-bind="timing.getPrevious()"></div>
         <div class="bottom clock" ng-bind="timing.getClock()"></div>
         <div class="bottom next" ng-bind="timing.getNext()"></div>
-        <div class="description" ng-bind-html="getEventDescription()"></div>
+        <div class="description" ng-bind-html="timing.training.schedule.program.timetable.current.description"></div>
     </div>
 
-    <div ng-show="page=='soundtest'">
+    <div ng-if="page=='soundtest'">
         <h1>Time2Xercise v{{VERSION}}</h1>
             <h2>Sound Test</h2>
             <div ng-repeat="sound in PlaySound('list')">
@@ -91,12 +91,13 @@
             </div>
     </div>
 
-    <div ng-show="page=='changelog'">
+    <div ng-if="page=='changelog'">
         <h1>Time2Xercise v{{VERSION}}</h1>
             <h2>Changelog</h2>
             <h3>v1.8</h3>
             <ul>
                 <li>New 50:10, 55:05 and 60:00 schedules for fitness.
+                <li>Use less CPU.
             </ul>
             <h3>v1.7</h3>
             <ul>
