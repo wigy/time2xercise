@@ -22,16 +22,17 @@
   <body ng-controller="TimerController">
 
     <div class="menu" ng-class="{fixed: show_menu}">
-        <div class="btn-group" role="group" aria-label="...">
-          <button class="btn btn-danger" ng-click="page='admin'; show_menu = true">Admin</button>
-          <button class="btn btn-default" ng-click="page='clock'; show_menu = false">Clock</button>
-          <button class="btn btn-default" ng-click="page='changelog'; show_menu = true">Changelog</button>
-          <button class="btn btn-info" ng-click="page='soundtest'; show_menu = true">Sound Test</button>
-        </div>
+      <div class="btn-group" role="group" aria-label="...">
+          <button class="btn btn-default" ng-click="goPage('admin')">Admin</button>
+          <button class="btn btn-default" ng-click="goPage('clock')">Clock</button>
+          <button class="btn btn-default" ng-click="goPage('changelog')">Changelog</button>
+          <button class="btn btn-default" ng-click="goPage('soundtest')">Sound Test</button>
+      </div>
+
         &nbsp;
-        <button class="small" ng-click="timing.jumpToPrevious()">&lt;&lt;</button>
-        <button class="small" ng-click="timing.togglePause()">{{timing.pause ? '>' : '||'}}</button>
-        <button class="small" ng-click="timing.jumpToNext()">&gt;&gt;</button>
+        <button class="small" ng-click="jumpToPrevious()">&lt;&lt;</button>
+        <button class="small" ng-click="togglePause()">{{timing.pause ? '>' : '||'}}</button>
+        <button class="small" ng-click="jumpToNext()">&gt;&gt;</button>
     </div>
 
     <div ng-if="page=='admin'">
@@ -82,11 +83,13 @@
 
     <div ng-if="page=='changelog'">
         <h1>Time2Xercise v{{VERSION}}</h1>
+            <!-- TODO: Move to settings.js. -->
             <h2>Changelog</h2>
             <h3>v1.8</h3>
             <ul>
                 <li>New 50:10, 55:05 and 60:00 schedules for fitness.
                 <li>Use less CPU.
+                <li>Code clean up in various places.
             </ul>
             <h3>v1.7</h3>
             <ul>

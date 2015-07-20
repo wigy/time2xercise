@@ -201,5 +201,37 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
          $scope.timing.selectProgram(name);
          $timeout(function() {$scope.updateHandlers()});
      };
+
+     /**
+      * Switch to the another page.
+      */
+     $scope.goPage = function(name) {
+         $scope.page = name;
+         $scope.show_menu = (name != 'clock');
+         $timeout(function() {$scope.updateHandlers()});
+     };
+
+     /**
+      * Turn pause on and off.
+      */
+     $scope.togglePause = function() {
+         $scope.timing.togglePause();
+     };
+
+     /**
+      * Go back to the previous event.
+      */
+     $scope.jumpToPrevious = function() {
+         $scope.timing.jumpToPrevious();
+         $timeout(function() {$scope.updateHandlers()});
+     };
+
+     /**
+      * Skip to the next event.
+      */
+     $scope.jumpToNext = function() {
+         $scope.timing.jumpToNext();
+         $timeout(function() {$scope.updateHandlers()});
+     };
 }]);
 })(angular);
