@@ -16,7 +16,12 @@ DATA.Fitness = {
         '50:10': [[50, 0], [10, "Break"], [50, 1], [10, "Break"], [50, 2], [10, "Break"], [50, 3], [10, "Break"], [50, 4], [60, "Break"],
                   [50, 0], [10, "Break"], [50, 1], [10, "Break"], [50, 2], [10, "Break"], [50, 3], [10, "Break"], [50, 4], [60, "Break"],
                   [50, 0], [10, "Break"], [50, 1], [10, "Break"], [50, 2], [10, "Break"], [50, 3], [10, "Break"], [50, 4]],
-        // TODO:  55:05 and 60:00
+        '55:05': [[55, 0], [5, "Break"], [55, 1], [5, "Break"], [55, 2], [5, "Break"], [55, 3], [5, "Break"], [55, 4], [60, "Break"],
+                  [55, 0], [5, "Break"], [55, 1], [5, "Break"], [55, 2], [5, "Break"], [55, 3], [5, "Break"], [55, 4], [60, "Break"],
+                  [55, 0], [5, "Break"], [55, 1], [5, "Break"], [55, 2], [5, "Break"], [55, 3], [5, "Break"], [55, 4]],
+        '60:00': [[60, 0], [60, 1], [60, 2], [60, 3], [50, 4], [60, "Break"],
+                  [60, 0], [60, 1], [60, 2], [60, 3], [50, 4], [60, "Break"],
+                  [60, 0], [60, 1], [60, 2], [60, 3], [50, 4]]
     },
     programs: {
         '1 Monday': ['P', 'L', 'PU', 'SJ'],
@@ -31,6 +36,8 @@ DATA.Fitness = {
         '40:20': ['1 Monday', '2 Tuesday', '3 Wednesday', '4 Thursday', '5 Friday'],
         '45:15': ['1 Monday', '2 Tuesday', '3 Wednesday', '4 Thursday', '5 Friday'],
         '50:10': ['1 Monday', '2 Tuesday', '3 Wednesday', '4 Thursday', '5 Friday'],
+        '55:05': ['1 Monday', '2 Tuesday', '3 Wednesday', '4 Thursday', '5 Friday'],
+        '60:00': ['1 Monday', '2 Tuesday', '3 Wednesday', '4 Thursday', '5 Friday'],
     },
     codes: {
         'P': 'Plank',
