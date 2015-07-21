@@ -18,7 +18,7 @@
     <script src="data/rugby.js"></script>
     <script src="src/models.js"></script>
     <script src="src/timer.js"></script>
-    <title>Time2Xercise</title>
+    <title>Time2Xercise v{{VERSION}}</title>
   <head>
 
   <body ng-controller="TimerController">
@@ -76,9 +76,7 @@
             </div>
             </div>
 
-            <div class="row">
-              <timer-schedule timing="timing" />
-            </div>
+            <timer-schedule timing="timing" />
     </div>
 
     <div ng-if="page=='clock'" class="container clock-page">

@@ -49,23 +49,23 @@ TimerApp.directive('timerSchedule', [function() {
             var model = $scope.$eval($attrs.timing);
             $scope.timing = model;
         },
-        template :
-            '<table class="table table-bordered" ng-if="timing.training.schedule.name">' +
-            '<tr><th class="schedule" colspan=4>{{timing.training.schedule.name}}</th></tr>' +
-            '<tr><th class="program" colspan=4>{{timing.training.schedule.program.name}}</th></tr>' +
-            '<tr><td class="description" colspan=4 ng-bind-html="timing.training.schedule.program.description"></td></tr>' +
-            '<tr ng-repeat="event in timing.training.schedule.program.timetable.events track by $index">' +
-            '    <td>{{event.time.toString()}}</td>' +
-            '    <td>{{event.title}}</td>' +
-            '    <td>{{dur(event.duration)}}</td>' +
-            '    <td class="description" ng-bind-html="event.description"></td>' +
-            '</tr>' +
-            '<tr><td>{{timing.training.schedule.program.timetable.events[timing.training.schedule.program.timetable.events.length-1].endTime().toString()}}</td>' +
-            '    <td></td>' +
-            '    <td></td>' +
-            '    <td></td>' +
-            '</tr>' +
-            '</table>'
+        template : '' +
+            '<div class="row schedule" ng-if="timing.training.schedule.name">' +
+            '  <div class="col-md-12 h1">{{timing.training.schedule.name}}</div>' +
+            '  <div class="col-md-12 h2">{{timing.training.schedule.program.name}}</div>' +
+            '  <div class="col-md-12 description" ng-bind-html="timing.training.schedule.program.description"></div>' +
+            '  <div class="row" ng-repeat="event in timing.training.schedule.program.timetable.events track by $index">' +
+            '    <div class="col-md-1 time">{{event.time.toString()}}</div>' +
+            '    <div class="col-md-1 duration">{{dur(event.duration)}}</div>' +
+            '    <div class="col-md-4 title">{{event.title}}</div>' +
+            '    <div class="col-md-6 description" ng-bind-html="event.description"></div>' +
+            '  </div>' +
+            '  <div class="row">' +
+            '    <div class="col-md-1 time">{{timing.training.schedule.program.timetable.events[timing.training.schedule.program.timetable.events.length-1].endTime().toString()}}</div>' +
+            '    <div class="col-md-1 duration"></div>' +
+            '    <div class="col-md-4 title">Finished</div>' +
+            '  </div>' +
+            '</div>'
     };
 }]);
 
