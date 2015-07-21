@@ -51,19 +51,19 @@ TimerApp.directive('timerSchedule', [function() {
         },
         template : '' +
             '<div class="row schedule" ng-if="timing.training.schedule.name">' +
-            '  <div class="col-md-12 h1">{{timing.training.schedule.name}}</div>' +
-            '  <div class="col-md-12 h2">{{timing.training.schedule.program.name}}</div>' +
+            '  <div class="col-md-12"><h1>{{timing.training.schedule.name}}</h1></div>' +
+            '  <div class="col-md-12"><h2>{{timing.training.schedule.program.name}}</h2></div>' +
             '  <div class="col-md-12 description" ng-bind-html="timing.training.schedule.program.description"></div>' +
             '  <div class="row" ng-repeat="event in timing.training.schedule.program.timetable.events track by $index">' +
-            '    <div class="col-md-1 time">{{event.time.toString()}}</div>' +
-            '    <div class="col-md-1 duration">{{dur(event.duration)}}</div>' +
-            '    <div class="col-md-4 title">{{event.title}}</div>' +
-            '    <div class="col-md-6 description" ng-bind-html="event.description"></div>' +
+            '    <div class="col-md-1 col-xs-3 time text-success"><strong>{{event.time.toString()}}</strong></div>' +
+            '    <div class="col-md-1 col-xs-3 duration text-success"><strong>{{dur(event.duration)}}</strong></div>' +
+            '    <div class="col-md-4 col-xs-6 title"><strong>{{event.title}}</strong></div>' +
+            '    <div class="col-md-6 col-xs-12 description" ng-bind-html="event.description"></div>' +
             '  </div>' +
             '  <div class="row">' +
-            '    <div class="col-md-1 time">{{timing.training.schedule.program.timetable.events[timing.training.schedule.program.timetable.events.length-1].endTime().toString()}}</div>' +
-            '    <div class="col-md-1 duration"></div>' +
-            '    <div class="col-md-4 title">Finished</div>' +
+            '    <div class="col-md-1 col-xs-3 time">{{timing.training.schedule.program.timetable.events[timing.training.schedule.program.timetable.events.length-1].endTime().toString()}}</div>' +
+            '    <div class="col-md-1 col-xs-3 duration"></div>' +
+            '    <div class="col-md-4 col-xs-6 title">Finished</div>' +
             '  </div>' +
             '</div>'
     };
@@ -244,6 +244,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
      if (DEBUG) {
          $scope.timing.load('Test');
          $scope.timing.selectTraining('Rugby');
+         $scope.goPage('clock');
      }
 }]);
 })(angular);

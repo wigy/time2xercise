@@ -3,6 +3,11 @@ body {
     background-color: black;
 }
 
+h1, h2, h3, h4 {
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+}
+
 .menucontainer button {
     display: none;
 }
@@ -16,9 +21,7 @@ body {
 }
 
 .clock-page .clock {
-    font-size: 40ex;
     font-weight: bold;
-    max-width: 100%;
 }
 
 .clock-page .clock .almost_finished {
@@ -33,6 +36,27 @@ body {
     border: 1px solid rgba(255,255,255,0.5);
     border-radius: 1em;
     min-height: 25%;
+}
+
+@media (max-width: 768px) {
+    .clock-page .clock {
+        font-size: 19ex;
+    }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+    .clock-page .clock {
+        font-size: 24ex;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .clock-page .clock {
+        font-size: 30ex;
+    }
+}
+@media (min-width: 1200px) {
+    .clock-page .clock {
+        font-size: 38ex;
+    }
 }
 
 .admin-page .schedule {

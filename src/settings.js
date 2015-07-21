@@ -11,6 +11,7 @@ CHANGELOG = [{
             'New 50:10, 55:05 and 60:00 schedules for fitness.',
             'Use less CPU.',
             'Code clean up in various places.',
+            'Improve CSS to support mobile devices better.',
         ]
     },{
         version: 'v1.7',
