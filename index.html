@@ -48,56 +48,55 @@
     </div>
 
     <div ng-if="page=='admin'" class="container admin-page">
-
-            <div class="row">
-            <form class="form-inline">
-                <div class="form-group">
-                    <label for="starting-time">Starting Time</label>
-                    <div class="input-group">
-                      <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-                      <input id="starting-time" type="text" class="form-control" ng-model="timing.starting_time"
-                              ng-pattern="/\d\d:\d\d:\d\d/" ng-change="timing.recalc()"></input>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="training">Training</label>
-                    <div class="input-group">
-                      <span class="input-group-addon"><span class="glyphicon glyphicon-book"></span></span>
-                      <select id="training" class="form-control" ng-model="timing.training_name"
-                              ng-change="selectTraining(timing.training_name)"
-                              ng-options="training as training for (training, _) in timing.trainings"></select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="schedule">Schedule</label>
-                    <div class="input-group">
-                      <span class="input-group-addon"><span class="glyphicon glyphicon-list"></span></span>
-                      <select id="schedule" class="form-control" ng-model="timing.schedule_name"
-                              ng-change="selectSchedule(timing.schedule_name)"
-                              ng-options="schedule as schedule for (schedule, _) in timing.training.schedules"></select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="program">Program</label>
-                    <div class="input-group">
-                      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                      <select id="program" class="form-control" ng-model="timing.program_name"
-                              ng-change="selectProgram(timing.program_name)"
-                              ng-options="program as program for (program, _) in timing.training.schedule.programs"></select>
-                    </div>
-                </div>
-            </form>
+      <div class="row">
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="starting-time">Starting Time</label>
+            <div class="input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+              <input id="starting-time" type="text" class="form-control" ng-model="timing.starting_time"
+                     ng-pattern="/\d\d:\d\d:\d\d/" ng-change="timing.recalc()"></input>
             </div>
-
-            <div class="row">
-            <div class="btn-group" role="group" aria-label="...">
-            <button class="btn btn-default" ng-click="startNow(1)" ng-disabled="!timing.training.schedule.program.name">Start Now</button>
-            <button class="btn btn-default" ng-click="startNow(10)" ng-disabled="!timing.training.schedule.program.name">Start In 10s</button>
-            <button class="btn btn-info" ng-click="testIt()" ng-if="DEBUG">Test</button>
+          </div>
+          <div class="form-group">
+            <label for="training">Training</label>
+            <div class="input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-book"></span></span>
+              <select id="training" class="form-control" ng-model="timing.training_name"
+                      ng-change="selectTraining(timing.training_name)"
+                      ng-options="training as training for (training, _) in timing.trainings"></select>
             </div>
+          </div>
+          <div class="form-group">
+            <label for="schedule">Schedule</label>
+            <div class="input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-list"></span></span>
+              <select id="schedule" class="form-control" ng-model="timing.schedule_name"
+                      ng-change="selectSchedule(timing.schedule_name)"
+                      ng-options="schedule as schedule for (schedule, _) in timing.training.schedules"></select>
             </div>
+          </div>
+          <div class="form-group">
+            <label for="program">Program</label>
+            <div class="input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+              <select id="program" class="form-control" ng-model="timing.program_name"
+                      ng-change="selectProgram(timing.program_name)"
+                      ng-options="program as program for (program, _) in timing.training.schedule.programs"></select>
+            </div>
+          </div>
+        </form>
+      </div>
 
-            <timer-schedule timing="timing" />
+      <div class="row">
+        <div class="btn-group" role="group" aria-label="...">
+          <button class="btn btn-default" ng-click="startNow(1)" ng-disabled="!timing.training.schedule.program.name">Start Now</button>
+          <button class="btn btn-default" ng-click="startNow(10)" ng-disabled="!timing.training.schedule.program.name">Start In 10s</button>
+          <button class="btn btn-info" ng-click="testIt()" ng-if="DEBUG">Test</button>
+        </div>
+      </div>
+
+      <timer-schedule timing="timing" />
     </div>
 
     <div ng-if="page=='clock'" class="container clock-page">
@@ -117,22 +116,22 @@
     </div>
 
     <div ng-if="page=='soundtest'" class="container soundtest-page">
-        <h1>Time2Xercise v{{VERSION}}</h1>
-            <h2>Sound Test</h2>
-            <div ng-repeat="sound in PlaySound('list')">
-                <a ng-click="PlaySound(sound)">{{sound}}</a>
-            </div>
+      <h1>Time2Xercise v{{VERSION}}</h1>
+      <h2>Sound Test</h2>
+      <span ng-repeat="sound in PlaySound('list')">
+        <a class="btn btn-default" ng-click="PlaySound(sound)">{{sound}}</a>
+      </span>
     </div>
 
     <div ng-if="page=='changelog'" class="container changelog-page">
-        <h1>Time2Xercise v{{VERSION}}</h1>
-          <h2>Changelog</h2>
-            <div class="row">
-                <div ng-repeat="entry in CHANGELOG track by $index">
-                    <h3>{{entry.version}}</h3>
-                    <ul><li ng-repeat="text in entry.changes track by $index">{{text}}</ul>
-                </div>
-            <div>
+      <h1>Time2Xercise v{{VERSION}}</h1>
+      <h2>Changelog</h2>
+      <div class="row">
+        <div ng-repeat="entry in CHANGELOG track by $index">
+          <h3>{{entry.version}}</h3>
+          <ul><li ng-repeat="text in entry.changes track by $index">{{text}}</ul>
+        </div>
+      </div>
     </div>
 
   </body>

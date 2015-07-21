@@ -8,6 +8,11 @@ h1, h2, h3, h4 {
     margin-bottom: 0.1em;
 }
 
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .menucontainer button {
     display: none;
 }

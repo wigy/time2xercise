@@ -57,7 +57,7 @@ TimerApp.directive('timerSchedule', [function() {
             '  <div class="row" ng-repeat="event in timing.training.schedule.program.timetable.events track by $index">' +
             '    <div class="col-md-1 col-xs-3 time text-success"><strong>{{event.time.toString()}}</strong></div>' +
             '    <div class="col-md-1 col-xs-3 duration text-success"><strong>{{dur(event.duration)}}</strong></div>' +
-            '    <div class="col-md-4 col-xs-6 title"><strong>{{event.title}}</strong></div>' +
+            '    <div class="col-md-4 col-xs-6 title text-success"><strong>{{event.title}}</strong></div>' +
             '    <div class="col-md-6 col-xs-12 description" ng-bind-html="event.description"></div>' +
             '  </div>' +
             '  <div class="row">' +
