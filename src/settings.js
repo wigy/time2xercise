@@ -3,7 +3,7 @@ VERSION = '1.8-beta';
 // Copyright year.
 YEAR = 2015;
 // If set, be silent and be more debugging friendly.
-DEBUG = true;
+DEBUG = false;
 // Translation table to be used.
 LANGUAGE = 'en';
 // Changes in the version history.
