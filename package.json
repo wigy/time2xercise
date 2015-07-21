@@ -19,5 +19,11 @@
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13"
+  },
+  "dependencies": {
+    "angular": "^1.4.3",
+    "bootstrap": "^3.3.5",
+    "jquery": "^2.1.4",
+    "ng-audio": "0.0.2"
   }
 }
