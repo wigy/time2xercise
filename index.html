@@ -54,28 +54,37 @@
                 <div class="form-group">
                     <label for="starting-time">Starting Time</label>
                     <div class="input-group">
-                      <span class="glyphicon glyphicon-time input-group-addon"></span>
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
                       <input id="starting-time" type="text" class="form-control" ng-model="timing.starting_time"
                               ng-pattern="/\d\d:\d\d:\d\d/" ng-change="timing.recalc()"></input>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="training">Training</label>
-                    <select id="training" class="form-control" ng-model="timing.training_name"
-                            ng-change="selectTraining(timing.training_name)"
-                            ng-options="training as training for (training, _) in timing.trainings"></select>
+                    <div class="input-group">
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-book"></span></span>
+                      <select id="training" class="form-control" ng-model="timing.training_name"
+                              ng-change="selectTraining(timing.training_name)"
+                              ng-options="training as training for (training, _) in timing.trainings"></select>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="schedule">Schedule</label>
-                    <select id="schedule" class="form-control" ng-model="timing.schedule_name"
-                            ng-change="selectSchedule(timing.schedule_name)"
-                            ng-options="schedule as schedule for (schedule, _) in timing.training.schedules"></select>
+                    <div class="input-group">
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-list"></span></span>
+                      <select id="schedule" class="form-control" ng-model="timing.schedule_name"
+                              ng-change="selectSchedule(timing.schedule_name)"
+                              ng-options="schedule as schedule for (schedule, _) in timing.training.schedules"></select>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="program">Program</label>
-                    <select id="program" class="form-control" ng-model="timing.program_name"
-                            ng-change="selectProgram(timing.program_name)"
-                            ng-options="program as program for (program, _) in timing.training.schedule.programs"></select>
+                    <div class="input-group">
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                      <select id="program" class="form-control" ng-model="timing.program_name"
+                              ng-change="selectProgram(timing.program_name)"
+                              ng-options="program as program for (program, _) in timing.training.schedule.programs"></select>
+                    </div>
                 </div>
             </form>
             </div>
