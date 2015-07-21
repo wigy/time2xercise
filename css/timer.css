@@ -3,34 +3,35 @@ body {
     background-color: black;
 }
 
-.title {
-    height: 15%;
-    font-size: 15ex;
-    text-align: center;
-}
-
-.remaining {
-    height: 45%;
-    font-size: 40ex;
-    font-weight: bold;
-    text-align: center;
-}
-
-.bottom {
-    height: 10%;
-    font-size: 5ex;
-}
-
-.almost_finished {
-    color: red;
-}
-
 .menucontainer button {
     display: none;
 }
 
 .menucontainer:hover button, .menucontainer.fixedmenu button {
     display: inline-block;
+}
+
+.clock-page .top {
+    font-size: 15ex;
+}
+
+.clock-page .clock {
+    font-size: 40ex;
+    font-weight: bold;
+}
+
+.clock-page .clock .almost_finished {
+    color: red;
+}
+
+.clock-page .bottom {
+    font-size: 5ex;
+}
+
+.clock-page .description {
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 1em;
+    min-height: 25%;
 }
 
 td.description img {

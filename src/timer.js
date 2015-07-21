@@ -74,6 +74,7 @@ TimerApp.directive('timerSchedule', [function() {
  */
 TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout', 'PlaySound', function($scope, $interval, $sce, $timeout, PlaySound) {
 
+    // Intialize application scope.
     $scope.DEBUG = DEBUG;
     $scope.VERSION = VERSION;
     $scope.CHANGELOG = CHANGELOG;
@@ -88,6 +89,9 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
     $scope.show_menu = true;
     $scope.PlaySound = PlaySound;
 
+    /**
+     * Refresh function to update data.
+     */
     var old_title = $scope.timing.getCurrentTitle();
     function refresh(clock) {
         if(DEBUG && old_title != $scope.timing.getCurrentTitle()) {
@@ -100,6 +104,9 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
     }
     refresh();
 
+    /**
+     * Timer to update data every second.
+     */
     $interval(function() {
         if (!$scope.testing)
             refresh();

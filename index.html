@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <div ng-if="page=='admin'" class="container">
+    <div ng-if="page=='admin'" class="container admin-page">
 
             <div class="row">
             <form class="form-inline">
@@ -77,20 +77,27 @@
             </div>
 
             <div class="row">
-            <timer-schedule timing="timing" />
+              <timer-schedule timing="timing" />
             </div>
     </div>
 
-    <div ng-if="page=='clock'" class="container">
-        <div class="title" ng-bind="timing.getCurrentTitle()"></div>
-        <div class="remaining" ng-class="{almost_finished: timing.getRemainingSeconds() < 60}" ng-click="toggleMenu()" ng-bind="timing.getRemaining()"></div>
-        <div class="bottom pull-left" ng-bind="timing.getPrevious()"></div>
-        <div class="bottom pull-right" ng-bind="timing.getNext()"></div>
-        <div class="clearfix"></div>
-        <div class="description" ng-bind-html="timing.training.schedule.program.timetable.current.description"></div>
+    <div ng-if="page=='clock'" class="container clock-page">
+      <div class="row">
+        <div class="top text-center col-md-12" ng-bind="timing.getCurrentTitle()"></div>
+      </div>
+      <div class="row">
+        <div class="clock text-center col-md-12" ng-class="{almost_finished: timing.getRemainingSeconds() < 60}" ng-click="toggleMenu()" ng-bind="timing.getRemaining()"></div>
+      </div>
+      <div class="row">
+        <div class="bottom text-left col-md-6" ng-bind="timing.getPrevious()"></div>
+        <div class="bottom text-right col-md-6" ng-bind="timing.getNext()"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 description" ng-bind-html="timing.training.schedule.program.timetable.current.description"></div>
+      </div>
     </div>
 
-    <div ng-if="page=='soundtest'" class="container">
+    <div ng-if="page=='soundtest'" class="container soundtest-page">
         <h1>Time2Xercise v{{VERSION}}</h1>
             <h2>Sound Test</h2>
             <div ng-repeat="sound in PlaySound('list')">
@@ -98,7 +105,7 @@
             </div>
     </div>
 
-    <div ng-if="page=='changelog'" class="container">
+    <div ng-if="page=='changelog'" class="container changelog-page">
         <h1>Time2Xercise v{{VERSION}}</h1>
           <h2>Changelog</h2>
             <div class="row">
