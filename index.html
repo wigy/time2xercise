@@ -99,8 +99,8 @@
         <div class="clock text-center col-md-12" ng-class="{almost_finished: timing.getRemainingSeconds() < 60}" ng-click="toggleMenu()" ng-bind="timing.getRemaining()"></div>
       </div>
       <div class="row">
-        <div class="bottom text-left col-md-6" ng-bind="timing.getPrevious()"></div>
-        <div class="bottom text-right col-md-6" ng-bind="timing.getNext()"></div>
+        <div class="bottom text-left col-md-6 col-xs-6" ng-bind="timing.getPrevious()"></div>
+        <div class="bottom text-right col-md-6 col-xs-6" ng-bind="timing.getNext()"></div>
       </div>
       <div class="row">
         <div class="col-md-12 description" ng-bind-html="timing.training.schedule.program.timetable.current.description"></div>
