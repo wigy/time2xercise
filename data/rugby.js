@@ -73,7 +73,7 @@ DATA.Rugby = {
         "Day 1": "Introduction and getting into basics of the game.",
         // TODO: More descriptions
 
-        R1 : '<h3>Introduction and Basics of the Game</h3>' +
+        R1 : '<h4>Introduction and Basics of the Game</h4>' +
         '<ul>' +
         '<li>Introduction: trainer, mission, daily program' +
         '<li>Rugby: history, active areas, current local development, spirit of rugby' +
@@ -84,7 +84,7 @@ DATA.Rugby = {
         '<li>Ball on the ground: player can play only when on their feet, when on the ground: get up, pass or release.' +
         '<li>Advantage.' +
         '</ul>',
-        R2 : '<h3>Kicking and Touch</h3>' +
+        R2 : '<h4>Kicking and Touch</h4>' +
         '<ul>' +
         '<li>Playing field: playing area, goal line, in-goal area, 22-line, 10-line, 5 meter marks.' +
         '<li>Kick-off: kick-off and player positioning, kick into touch, kick into in-goal, drop-out and player positioning.' +
@@ -94,20 +94,20 @@ DATA.Rugby = {
         '<li>Lineout: thrower decides number of participants, participating players betwen 5m and 15m with 1m gap, optional receiver 2m behind own line, non-throwing hooker 2m behind and 2m from 5m line toward touch line, others 10m behind line of touch,' +
         ' not allowed: levering or holding or shoving or charging or blocking, lifting allowed after ball is thrown.' +
         '</ul>',
-        R3 : '<h3>Offside and Scrum</h3>' +
+        R3 : '<h4>Offside and Scrum</h4>' +
         '<ul>' +
         '<li>Offside: offside in general play, being put onside by team-mate, being put onside by opponents, sanctions.' +
         '<li>Scrum: 5m from in-goal and touchline, 3 or 8 players, "crouch": lean forward, "bind": loose-head prop on the left puts left hand inside to grip jersey,' +
         ' "set": may start pushing (no charging), stationary until ball thrown in to the tunnel by the mark of referee, must touch ground before entering the tunnel and must not come out from either end of tunnel, restart or penalty kick on collapse or lifting in the air' +
         ' wheeling 90 degrees, ends when ball comes out (not from tunnel) or hindmost player picks the ball, offside line for scrum-halves is the ball and 5m behind the hindmost foot for others.' +
         '</ul>',
-        R4 : '<h3>Tackle and In-Goal</h3>' +
+        R4 : '<h4>Tackle and In-Goal</h4>' +
         '<ul>' +
         '<li>Tackle: dangerous tackle, cannot tackle if team member bound to, brought to ground means a knee on the ground or sitting on the ground or on the player on the ground, tackled player must pass or release, tackler must release and not play the ball until getting up, can reach try on momentum.' +
         '<li>In-Goal: both defender and attacker can ground the ball, picking up is not grounding, penalty try always considered between goal posts,' +
         ' holding the ball up prevents try and awards scrum for attacker, dead ball or grounding by defender awards drop-out restart on 22m.' +
         '</ul>',
-        R5 : '<h3>Maul and Ruck</h3>' +
+        R5 : '<h4>Maul and Ruck</h4>' +
         '<ul>' +
         '<li>Maul: when a team mate and opponent binds into ball carrier all on their feet, no intentional collapsing, offside line hindmost foot, join only behind, scrum ordered in 5 seconds if not moving.' +
         '<li>Ruck: one or more players in contact clost to the ball on the ground, join by binding properly opponent or team member, players in ruck can use only feet to gain ball, can use hands after tackle before ruck has formed if on feet,' +
@@ -115,50 +115,50 @@ DATA.Rugby = {
         '<li>Mark: in-goal or behind 22-line or foot at 22-line, must make clean catch and yell "mark", free kick rules apply.' +
         '</ul>',
 
-        H1 : '<h3>Passing Essentials</h3><ol>' +
+        H1 : '<h4>Passing Essentials</h4><ol>' +
         'In groups of 3-4 players each:' +
         '<li>Form a line and pass sideways with two hands. Rotate positions.' +
         '<li>Lines can walk from one end to another in playing field. Rotate on the turning point.' +
         '<li>Increase the speed.' +
         '</ol>',
-        H2 : '<h3>Passing around the Corner</h3>' +
+        H2 : '<h4>Passing around the Corner</h4>' +
         '<img src="pics/rugby/H2.png">' +
         'In square formation equal number of players in each corner. Two balls in two of the opposite corners.<ol>' +
         '<li>Apporoach from opposite diagonals to the center passing to the left after getting around the opposing player.' +
         '<li>Change side by passing to the right side instead.' +
         '</ol>Increase the speed while progressing closer to the end.',
-        H3 : '<h3>Passing in Lines</h3>' +
+        H3 : '<h4>Passing in Lines</h4>' +
         '<img src="pics/rugby/H3.png">' +
         'A square formation with six starting positions.<ol>' +
         '<li>One line at time from each side is passing from one player to the next. Short pass in the end switching to next line.' +
         '<li>Players in lines 1 and 2 do looping, i.e. switch positions and passing goes 1 to 2 to 1 to 3.' +
         '</ol>',
-        H4 : '<h3>Tunnel Run</h3>' +
+        H4 : '<h4>Tunnel Run</h4>' +
         '<img src="pics/rugby/H4.png">' +
         'Form a queue for runners and a tunnel of 3 gates formed by players each side so that all players on one side are each holding a ball.<ol>' +
         '<li>A runner runs through the tunnel receiving a ball at each gate and passing it back to the other end of the gate. Turn in the end and repeat the same in reverse direction.' +
         '<li>After all runners have done one round, rotate 2 runners from the front of the queue to the first gate, all gates moving to the next and the last gate moving to the tail of queue.' +
         '</ol>',
-        H5 : '<h3>Passing in Line and Behind</h3>' +
+        H5 : '<h4>Passing in Line and Behind</h4>' +
         '<img src="pics/rugby/H5.png"><ol>' +
         '<li>Four lines runs passing from one side to another to the end of square.' +
         '<li>Runners continue running back with one side of square popping the ball back until the last player gets it.' +
         '<li>Last player pops it to the next runner.' +
         '</ol>',
-        H6 : '<h3>Two Men Tunnel Run</h3>' +
+        H6 : '<h4>Two Men Tunnel Run</h4>' +
         '<img src="pics/rugby/H6.png">' +
         'Form a two queues for runners and a tunnel of 3 gates formed by players each side so that all players on one side are each holding a ball.<ol>' +
         '<li>Runners runs through the tunnel receiving a ball at each gate and passing it to the fellow runner, which in turn passes it back to the other end of the gate. Turn in the end and repeat the same in reverse direction.' +
         '<li>After all runners have done one round, rotate 2 runners from the front of the queue to the first gate, all gates moving to the next and the last gate moving to the tail of queue.' +
         '</ol>',
 
-        T1 : '<h3>Defending against attackers</h3><ol>' +
+        T1 : '<h4>Defending against attackers</h4><ol>' +
         '<img src="pics/rugby/T1-3.png"><img src="pics/rugby/T1-2.png"><img src="pics/rugby/T1-1.png">' +
         '<li>1 defender vs. 2 attackers.' +
         '<li>2 defenders vs. 3 attackers.' +
         '<li>3 defenders vs. 4 attackers.' +
         '</ol>',
-        T2 : '<h3>Game Formation</h3><ol>' +
+        T2 : '<h4>Game Formation</h4><ol>' +
         '<li>Distribute all players to teams.' +
         '<li>Explain player positions and numbers in 15-rugby:<ul>' +
         '  <li>Choose one for each team (leave unused numbers if not enough players).' +
@@ -167,17 +167,17 @@ DATA.Rugby = {
         '<li>Essentials of <a target="new" href="http://www.crfu.co.nz/crfuclubs/index.cfm/1,306,0,0,html">Touch rugby</a>: touch, rollball with 5m offside, dummy half, the tap with 10m offside.' +
         '<li>Study tactical attack and defence positioning by walking through the game.' +
         '</ol>',
-        T3 : '<h3>Walking into Contact</h3>' +
+        T3 : '<h4>Walking into Contact</h4>' +
         'Normal rugby 7-a-side rules except that running anywhere in the field is subject to the penalty kick. Especially attention is paid:<ul>' +
         '<li>Proper positioning of players during a ruck.' +
         '</ul>',
 
-        K1 : '<h3>Kicking and Catching</h3>' +
+        K1 : '<h4>Kicking and Catching</h4>' +
         'Divide players to loose groups on the opposite sides of the playing fields. Take turnns in kicking and do the single pass to kicker if someone else catches the ball.<ol>' +
         '<li>Kick the ball from hand to other group direction and they catch the ball from the air.' +
         '<li>Switch to Grubber kick.' +
         '</ol>',
-        K2 : '<h3>Kicking Zig-Zag</h3>' +
+        K2 : '<h4>Kicking Zig-Zag</h4>' +
         '<img src="pics/rugby/K2.png">' +
         '<i>This needs an assistant or two.</i> Divide all players to the zig-zag line and all balls in one end.<ol>' +
         '<li>Players will kick directly the dropped ball from air aiming to give an easy to catch high ball the next player. In the end assistants deliver ball back to the beginning.' +
@@ -186,26 +186,26 @@ DATA.Rugby = {
         '<li>Feed balls faster pace to the first kicker.' +
         '</ol>',
 
-        P1 : '<h3>Lineouts and Maul</h3>' +
+        P1 : '<h4>Lineouts and Maul</h4>' +
         '<img src="pics/rugby/P1.png">' +
         'Form groups with two dedicated throwers, 3-5 men in line and 2 receivers.<ol>' +
         '<li>Make a normal thrown in and lines are trying to grap a ball to the receiver, which tosses it to the thrower on the thrower in the other end.' +
         '<li>Optionally: try also lifting.' +
         '</ol>',
-        P2 : '<h3>Scrum</h3><ol>' +
+        P2 : '<h4>Scrum</h4><ol>' +
         '<li>One-on-one scrum.' +
         '<li>Two-on-two scrum.' +
         '<li>Three-on-three scrum with correct binding.' +
         '<li>Three-on-three scrum with ball tossed in by scrum-half.' +
         '</ol>',
-        P3 : '<h3>Tackle</h3>' +
+        P3 : '<h4>Tackle</h4>' +
         '<img src="pics/rugby/P3-2.png">' +
         '<img src="pics/rugby/P3-1.png"><ol>' +
         '<li>Tackle on walking opponent from kneeling position.' +
         '<li>Walk into tackler stopping the progress (not necessarily bringing to the ground), then offload the ball to the next.' +
         '<li>Tackle slowly approaching carrier, which offers ball to scrum-half passing it to next carrier.' +
         '</ol>',
-        P4 : '<h3>Ruck Clearing</h3>' +
+        P4 : '<h4>Ruck Clearing</h4>' +
         '<img src="pics/rugby/P4-2.png">' +
         '<img src="pics/rugby/P4-1.png">' +
         'A line of tacklers with assistant "jackal". Groups of 2-3 players with one ball carrier taken down by the tackler and supported by the rest.' +
@@ -215,13 +215,13 @@ DATA.Rugby = {
         '<li>Move more players to "jackal" side and only one support, which parks on the defence position. Opponent tries to move the defense.' +
         '</ol>',
 
-        G1 : '<h3>Touch Rugby</h3>' +
+        G1 : '<h4>Touch Rugby</h4>' +
         '<a target="new" href="http://www.crfu.co.nz/crfuclubs/index.cfm/1,306,0,0,html">Basic rules</a> with some variations:<ol>' +
         '<li>Two-hand touch could be required.' +
         '<li>Optionally no limit on number of touches.' +
         '<li>Optionally no change on dropped ball.' +
         '</ol>',
-        G2 : '<h3>Touch Rugby with Kicking and Lineouts</h3>' +
+        G2 : '<h4>Touch Rugby with Kicking and Lineouts</h4>' +
         'Same rules than <i>Game 1</i> with the following additions:<ul>' +
         '<li>Game is started with a kick-off (not necessarily dropped kick).' +
         '<li>Line-outs are handled normally (optionally no lifting).' +
@@ -230,11 +230,11 @@ DATA.Rugby = {
         '<li>Free kick from knock-on and throw forward and penalty kicks from other violations.' +
         '<li>Kicking a penalty or a free-kick into touch awards the team throw-in.' +
         '</ol>',
-        G3 : '<h3>Touch Rugby with Kicking, Lineouts and Scrums</h3>' +
+        G3 : '<h4>Touch Rugby with Kicking, Lineouts and Scrums</h4>' +
         'Same rules than <i>Game 2</i> with the following additions:<ul>' +
         '<li>Scrums are handled as in 7-a-side rules.' +
         '</ol>',
-        G4 : '<h3>Full Contact 7-a-side Rugby</h3>' +
+        G4 : '<h4>Full Contact 7-a-side Rugby</h4>' +
         'Normal rugby 7-a-side rules.',
     },
     sounds: {

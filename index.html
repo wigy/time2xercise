@@ -37,7 +37,7 @@
           <button class="btn btn-default navbar-btn" ng-click="togglePause()"><span ng-if="!timing.pause" class="glyphicon glyphicon-pause"></span><span ng-if="timing.pause" class="glyphicon glyphicon-play"></span></button>
           <button class="btn btn-default navbar-btn" ng-click="jumpToNext()"><span class="glyphicon glyphicon-forward"></span></button>
         </div>
-        <p class="navbar-text"><span class="glyphicon glyphicon-time"></span>&nbsp;{{timing.getClock()}}</p>
+        <span class="navbar-text"><span class="glyphicon glyphicon-time"></span>&nbsp;{{timing.getClock()}}</span>
       </div>
     </nav>
 
