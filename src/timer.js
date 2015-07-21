@@ -164,13 +164,16 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
          // Simple image viewer.
          $('.description img').unbind('click');
          $('.description img').on('click', function(event) {
-             $('.image-viewer').remove();
+             $('#image-viewer').remove();
              var src = $(event.currentTarget).attr('src');
-             $('<div class="image-viewer" style="display: none"><img src="' + src + '" /></div>').appendTo('body');
-             $('.image-viewer').fadeIn();
-             $('.image-viewer').on('click', function() {
-                 $('.image-viewer').fadeOut();
-             });
+             var viewer = '<div id="image-viewer" class="modal fade" role="dialog">' +
+                '<div class="modal-dialog">' +
+                '<div class="modal-content">' +
+                '<div class="modal-body">' +
+                '<img class="img-rounded" src="' + src + '" />' +
+                '</div></div></div></div>'
+             $(viewer).appendTo('body');
+             $('#image-viewer').modal();
          });
      };
 

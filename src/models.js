@@ -132,6 +132,9 @@ function Event(number, duration, title, description) {
     // A sound mapping from offsets fromt the start to sound names.
     this.sounds = {};
 
+    // Make some manipulation for the description.
+    this.description = this.description.replace(/<img /g, '<img class="img-thumbnail"');
+
     /**
      * Calculate starting time of this event based on overall starting time and offset in seconds.
      */
