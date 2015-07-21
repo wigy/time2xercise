@@ -16,6 +16,17 @@ h1, h2, h3, h4 {
     display: inline-block;
 }
 
+.loading-page {
+    color: #ffe73a;
+}
+
+.loading-page .logo {
+    border: 1px solid #ffe73a;
+    border-radius: 1em;
+    margin-top: 25%;
+    max-width: 90%;
+}
+
 .clock-page .top {
     font-size: 15ex;
 }

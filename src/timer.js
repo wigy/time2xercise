@@ -78,7 +78,8 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
     $scope.DEBUG = DEBUG;
     $scope.VERSION = VERSION;
     $scope.CHANGELOG = CHANGELOG;
-    $scope.page = 'admin';
+    $scope.YEAR = YEAR;
+    $scope.page = DEBUG ? 'admin' : 'loading';
     $scope.timing = new TimingSystem();
     $scope.timing.load('Generic');
     $scope.timing.load('Rugby');
@@ -105,12 +106,20 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
     refresh();
 
     /**
-     * Timer to update data every second.
+     * Regular interval timer to update data every second.
      */
     $interval(function() {
         if (!$scope.testing)
             refresh();
     }, 1000);
+
+    /**
+     * Timer switch off the loading screen.
+     */
+    if (!DEBUG)
+        $timeout(function() {
+            $scope.page = 'admin';
+        }, 2000);
 
     /**
      * Set up clickable elements.
@@ -244,7 +253,6 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
      if (DEBUG) {
          $scope.timing.load('Test');
          $scope.timing.selectTraining('Rugby');
-         $scope.goPage('clock');
      }
 }]);
 })(angular);

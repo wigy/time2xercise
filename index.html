@@ -23,7 +23,7 @@
 
   <body>
 
-    <div class="container menucontainer" ng-class="{fixedmenu: show_menu}">
+    <div ng-if="page!='loading'" class="container menucontainer" ng-class="{fixedmenu: show_menu}">
       <span class="glyphicon glyphicon-time"></span>&nbsp;{{timing.getClock()}}
       <div class="btn-group" role="group" aria-label="...">
         <button class="btn btn-default" ng-click="goPage('admin')"><span class="glyphicon glyphicon-cog"></span> Admin</button>
@@ -35,6 +35,15 @@
         <button class="btn btn-default" ng-click="jumpToPrevious()"><span class="glyphicon glyphicon-backward"></span></button>
         <button class="btn btn-default" ng-click="togglePause()"><span ng-if="!timing.pause" class="glyphicon glyphicon-pause"></span><span ng-if="timing.pause" class="glyphicon glyphicon-play"></span></button>
         <button class="btn btn-default" ng-click="jumpToNext()"><span class="glyphicon glyphicon-forward"></span></button>
+      </div>
+    </div>
+
+    <div ng-if="page=='loading'" class="container loading-page">
+      <div class="row text-center">
+        <img class="logo" src="pics/logo.png">
+        <br>
+        <br>
+        &copy; {{YEAR}} Tommi Ronkainen
       </div>
     </div>
 
