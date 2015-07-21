@@ -23,20 +23,23 @@
 
   <body>
 
-    <div ng-if="page!='loading'" class="container menucontainer" ng-class="{fixedmenu: show_menu}">
-      <span class="glyphicon glyphicon-time"></span>&nbsp;{{timing.getClock()}}
-      <div class="btn-group" role="group" aria-label="...">
-        <button class="btn btn-default" ng-click="goPage('admin')"><span class="glyphicon glyphicon-cog"></span> Admin</button>
-        <button class="btn btn-default" ng-click="goPage('clock')"><span class="glyphicon glyphicon-time"></span> Clock</button>
-        <button class="btn btn-default" ng-click="goPage('changelog')"><span class="glyphicon glyphicon-list"></span> Changelog</button>
-        <button class="btn btn-info" ng-click="goPage('soundtest')"><span class="glyphicon glyphicon-sound-dolby"></span> Sound Test</button>
+    <nav ng-if="page!='loading' && show_menu" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header"><a class="navbar-brand"><img src="pics/icon.png"></a></div>
+        <div class="btn-group" role="navigation">
+          <button class="btn btn-default navbar-btn" ng-click="goPage('admin')"><span class="glyphicon glyphicon-cog"></span> Admin</button>
+          <button class="btn btn-default navbar-btn" ng-click="goPage('clock')"><span class="glyphicon glyphicon-time"></span> Clock</button>
+          <button class="btn btn-default navbar-btn" ng-click="goPage('changelog')"><span class="glyphicon glyphicon-list"></span> Changelog</button>
+          <button class="btn btn-info navbar-btn" ng-click="goPage('soundtest')"><span class="glyphicon glyphicon-sound-dolby"></span> Sound Test</button>
+        </div>
+        <div class="btn-group" role="navigation">
+          <button class="btn btn-default navbar-btn" ng-click="jumpToPrevious()"><span class="glyphicon glyphicon-backward"></span></button>
+          <button class="btn btn-default navbar-btn" ng-click="togglePause()"><span ng-if="!timing.pause" class="glyphicon glyphicon-pause"></span><span ng-if="timing.pause" class="glyphicon glyphicon-play"></span></button>
+          <button class="btn btn-default navbar-btn" ng-click="jumpToNext()"><span class="glyphicon glyphicon-forward"></span></button>
+        </div>
+        <p class="navbar-text"><span class="glyphicon glyphicon-time"></span>&nbsp;{{timing.getClock()}}</p>
       </div>
-      <div class="btn-group" role="group" aria-label="...">
-        <button class="btn btn-default" ng-click="jumpToPrevious()"><span class="glyphicon glyphicon-backward"></span></button>
-        <button class="btn btn-default" ng-click="togglePause()"><span ng-if="!timing.pause" class="glyphicon glyphicon-pause"></span><span ng-if="timing.pause" class="glyphicon glyphicon-play"></span></button>
-        <button class="btn btn-default" ng-click="jumpToNext()"><span class="glyphicon glyphicon-forward"></span></button>
-      </div>
-    </div>
+    </nav>
 
     <div ng-if="page=='loading'" class="container loading-page">
       <div class="row text-center">
@@ -49,7 +52,7 @@
 
     <div ng-if="page=='admin'" class="container admin-page">
       <div class="row">
-        <form class="form-inline">
+        <form class="form">
           <div class="form-group">
             <label for="starting-time">Starting Time</label>
             <div class="input-group">
@@ -89,7 +92,7 @@
       </div>
 
       <div class="row">
-        <div class="btn-group" role="group" aria-label="...">
+        <div class="btn-group" role="group">
           <button class="btn btn-default" ng-click="startNow(1)" ng-disabled="!timing.training.schedule.program.name">Start Now</button>
           <button class="btn btn-default" ng-click="startNow(10)" ng-disabled="!timing.training.schedule.program.name">Start In 10s</button>
           <button class="btn btn-info" ng-click="testIt()" ng-if="DEBUG">Test</button>

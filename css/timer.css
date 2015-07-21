@@ -13,12 +13,8 @@ h1, h2, h3, h4 {
     margin-right: 0;
 }
 
-.menucontainer button {
-    display: none;
-}
-
-.menucontainer:hover button, .menucontainer.fixedmenu button {
-    display: inline-block;
+.navbar-brand img {
+    max-height: 120%;
 }
 
 .loading-page {
