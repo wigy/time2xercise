@@ -37,8 +37,9 @@ function Time(hhmmss) {
      * Add or subtract seconds.
      */
     this.addSeconds = function(num) {
-        if (num > 0)
+        if (num > 0) {
             this.add(0, 0, num);
+        }
         else {
             var zero = new Time('00:00:00');
             zero.addSeconds(this.seconds() + num);
@@ -52,10 +53,12 @@ function Time(hhmmss) {
     this.setNow = function() {
         this.time = (new Date()).toJSON().substr(11, 8);
         var hours = (-(new Date()).getTimezoneOffset() / 60);
-        if (hours > 0)
+        if (hours > 0) {
             this.add(hours, 0, 0);
-        if (hours < 0)
+        }
+        if (hours < 0) {
             this.add(24 + hours, 0, 0);
+        }
     };
 
     /**
@@ -101,8 +104,9 @@ function Time(hhmmss) {
         if (a < b) {
             ret.add(0, 0, b-a);
             ret.negative = true;
-        } else
+        } else {
             ret.add(0, 0, a-b);
+        }
 
         return ret;
     };
@@ -141,13 +145,12 @@ function Event(number, duration, title, description) {
     this.schedule = function(hhmmss, offset) {
         this.time = new Time(hhmmss);
         this.time.add(0, 0, offset);
-    }
+    };
 
     /**
      * Get the short time string for the event.
      */
     this.shortTime = function() {
-        return this.time ? this.time.toString() : '     ';
         return this.time ? this.time.toString().substr(0, 5) : '     ';
     };
 
@@ -156,8 +159,9 @@ function Event(number, duration, title, description) {
      */
     this.endTime = function() {
 
-        if (!this.time)
+        if (!this.time) {
             return new Time();
+        }
 
         var ret = new Time(this.time);
         ret.add(0, 0, duration);
@@ -168,7 +172,7 @@ function Event(number, duration, title, description) {
      * Check if this event is just a break.
      */
     this.isBreak = function() {
-        return title == 'Break';
+        return title === 'Break';
     };
 }
 
@@ -203,16 +207,17 @@ function TimeTable(program) {
             var duration = schedule.timing[i][0];
             var index = schedule.timing[i][1];
 
-            if(typeof(index) == 'string')
+            if(typeof(index) === 'string') {
                 event = new Event(i+1, duration, index);
-            else {
+            } else {
                 // Find the code.
                 var code = program.list[index];
 
                 // Check if finished and remove end break.
-                if (index >= program.list.length || code == '-') {
-                    if (this.events.length && this.events[this.events.length - 1].isBreak())
+                if (index >= program.list.length || code === '-') {
+                    if (this.events.length && this.events[this.events.length - 1].isBreak()) {
                         this.events.pop();
+                    }
                     continue;
                 }
 
@@ -285,8 +290,9 @@ function TimeTable(program) {
      */
     this.refresh = function(clock, old_clock_seconds) {
 
-        if (this.events.length == 0)
+        if (this.events.length === 0) {
             return;
+        }
 
         var last = this.events.length - 1;
         var old = this.current;
@@ -308,26 +314,31 @@ function TimeTable(program) {
             this.next = new Event();
             var current = 0;
             for(var i = 0; i < this.events.length; i++) {
-                if (clock.isAlready(this.events[i].time))
+                if (clock.isAlready(this.events[i].time)) {
                     current = i;
+                }
             }
             this.current = this.events[current];
-            if (current > 0)
+            if (current > 0) {
                 this.previous = this.events[current - 1];
-            if (current < last)
+            }
+            if (current < last) {
                 this.next = this.events[current + 1];
+            }
         }
 
         var ret;
         var t0 = old_clock_seconds;
         var t1 = clock.seconds();
-        if (t1 < t0 || t1 - t0 > 10)
+        if (t1 < t0 || t1 - t0 > 10) {
             return;
+        }
 
         for (var t = t0 + 1; t <= t1; t++) {
             if (this.sounds[t - this.starting_seconds]) {
-                if (ret)
+                if (ret) {
                     d("Too slow to play all sounds...");
+                }
                 ret = this.sounds[t - this.starting_seconds];
             }
         }
@@ -348,11 +359,13 @@ function TimeTable(program) {
      */
     this.getRemaining = function(clock) {
 
-        if (this.current && this.current.time)
+        if (this.current && this.current.time) {
             return this.current.endTime().diff(clock);
+        }
 
-        if (this.next && this.next.time && !this.current.time)
+        if (this.next && this.next.time && !this.current.time) {
             return this.next.time.diff(clock);
+        }
 
         return new Time();
     };
@@ -398,13 +411,13 @@ function Program(schedule) {
         this.timetable = new TimeTable(this);
         this.timetable.load(this, schedule);
         this.timetable.schedule(starting_time);
-    }
+    };
 
     /**
      * Recalculate everything.
      */
     this.recalc = function() {
-        this.timetable.schedule(this.schedule.training.timing.starting_time)
+        this.timetable.schedule(this.schedule.training.timing.starting_time);
     };
 
     /**
@@ -418,10 +431,12 @@ function Program(schedule) {
      * Get the (possibly translated) text explanation for a code.
      */
     this.getText = function(code) {
-        if (this.translations[LANGUAGE] && this.translations[LANGUAGE][code])
+        if (this.translations[LANGUAGE] && this.translations[LANGUAGE][code]) {
             return this.translations[LANGUAGE][code];
-        if (this.codes[code])
+        }
+        if (this.codes[code]) {
             return this.codes[code];
+        }
         return code;
     };
 }
@@ -484,10 +499,11 @@ function Schedule(training) {
      * Change the program.
      */
     this.selectProgram = function(name) {
-        if (!name)
+        if (!name) {
             this.program = new Program(this);
-        else
+        } else {
             this.program = this.programs[name];
+        }
 
         this.program.apply(this);
     };
@@ -518,7 +534,7 @@ function Training(timing) {
             this.schedules[names[i]] = new Schedule(this);
             this.schedules[names[i]].load(names[i], data);
         }
-    }
+    };
 
     /**
      * Recalculate everything.
@@ -538,10 +554,12 @@ function Training(timing) {
      * Change the schedule.
      */
     this.selectSchedule = function(name) {
-        if (!name)
+        if (!name) {
             this.schedule = new Schedule(this);
-        else
+        }
+        else {
             this.schedule = this.schedules[name];
+        }
     };
 
     /**
@@ -579,8 +597,9 @@ function TimingSystem() {
      * Load data for the named training system.
      */
     this.load = function(name) {
-        if (!DATA[name])
+        if (!DATA[name]) {
             d("Cannot load training data for '" + name + "'.");
+        }
         else {
             var training = new Training(this);
             training.load(name, DATA[name]);
@@ -639,14 +658,16 @@ function TimingSystem() {
      */
     this.refresh = function(clock) {
 
+        var old;
+
         if (clock) {
             // Test mode.
             this.clock = clock;
-            var old = clock.seconds() - 1;
+            old = clock.seconds() - 1;
         }
         else {
             // Real mode.
-            var old = this.clock.seconds();
+            old = this.clock.seconds();
             this.clock.setNow();
         }
 
@@ -666,8 +687,9 @@ function TimingSystem() {
      */
     this.reset = function(old) {
         this.training.reset();
-        if (old)
+        if (old) {
             this.setStarting(new Time(old));
+        }
     };
 
     /**
@@ -686,8 +708,9 @@ function TimingSystem() {
     this.togglePause = function() {
         this.pause = !this.pause;
         // Set clock to one second before current time to ensure we get signals played.
-        if (!this.pause)
+        if (!this.pause) {
             this.clock.addSeconds(-1);
+        }
     };
 
     /**
@@ -696,8 +719,9 @@ function TimingSystem() {
     this.jumpToPrevious = function() {
         if (this.training.schedule.program.timetable.previous && this.training.schedule.program.timetable.previous.time) {
             this.addSeconds(this.clock.seconds() - this.training.schedule.program.timetable.previous.time.seconds());
-            if (!this.pause)
+            if (!this.pause) {
                 this.togglePause();
+            }
             this.training.schedule.program.timetable.refresh(this.clock);
         }
     };
@@ -708,8 +732,9 @@ function TimingSystem() {
     this.jumpToNext = function() {
         if (this.training.schedule.program.timetable.next && this.training.schedule.program.timetable.next.time) {
             this.addSeconds(this.clock.seconds() - this.training.schedule.program.timetable.next.time.seconds());
-            if (!this.pause)
+            if (!this.pause) {
                 this.togglePause();
+            }
             this.training.schedule.program.timetable.refresh(this.clock);
         }
     };

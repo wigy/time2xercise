@@ -24,16 +24,18 @@ TimerApp.service('PlaySound', ['ngAudio', function(ngAudio) {
     audio['3'] = ngAudio.load('sounds/3.mp3');
 
     return function(name, timestamp) {
-        if (name == 'list')
+        if (name === 'list') {
             return Object.keys(audio);
+        }
         if (!(name in audio)) {
             d("Invalid audio name:", name);
             return;
         }
-        if (DEBUG)
+        if (DEBUG) {
             d((timestamp ? timestamp : '') + "   >>> " + name + " <<<");
-        else
+        } else {
             audio[name].play();
+        }
     };
 }]);
 
@@ -95,13 +97,14 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
      */
     var old_title = $scope.timing.getCurrentTitle();
     function refresh(clock) {
-        if(DEBUG && old_title != $scope.timing.getCurrentTitle()) {
+        if(DEBUG && old_title !== $scope.timing.getCurrentTitle()) {
             old_title = $scope.timing.getCurrentTitle();
-            d($scope.timing.clock.toString() + ' ' + $scope.timing.getCurrentTitle())
+            d($scope.timing.clock.toString() + ' ' + $scope.timing.getCurrentTitle());
         }
         var sound = $scope.timing.refresh(clock);
-        if(sound)
-            PlaySound(sound, $scope.timing.clock.toString());
+        if(sound) {
+            $scpope.PlaySound(sound, $scope.timing.clock.toString());
+        }
     }
     refresh();
 
@@ -109,17 +112,19 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
      * Regular interval timer to update data every second.
      */
     $interval(function() {
-        if (!$scope.testing)
+        if (!$scope.testing) {
             refresh();
+        }
     }, 1000);
 
     /**
      * Timer switch off the loading screen.
      */
-    if (!DEBUG)
+    if (!DEBUG) {
         $timeout(function() {
             $scope.page = 'admin';
         }, 2000);
+    }
 
     /**
      * Set up clickable elements.
@@ -132,9 +137,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
      * Convert seconds to human readable duration.
      */
     $scope.dur = function(n) {
-        if(n < 60)
-            return n + ' sec';
-        return (n / 60) + ' min';
+        return n < 60 ? n + ' sec' : (n / 60) + ' min';
     };
 
     /**
@@ -159,7 +162,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
         refresh(clock);
         while (!$scope.timing.isOver()) {
             refresh(clock);
-            clock.add(0,0,1)
+            clock.add(0,0,1);
         }
         $scope.timing.reset(old);
         refresh();
@@ -187,7 +190,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
                 '<div class="modal-content">' +
                 '<div class="modal-body">' +
                 '<img class="img-rounded" src="' + src + '" />' +
-                '</div></div></div></div>'
+                '</div></div></div></div>';
              $(viewer).appendTo('body');
              $('#image-viewer').modal();
          });
@@ -198,7 +201,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
       */
      $scope.selectTraining = function(name) {
          $scope.timing.selectTraining(name);
-         $timeout(function() {$scope.updateHandlers()});
+         $timeout(function() {$scope.updateHandlers();});
      };
 
      /**
@@ -206,7 +209,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
       */
      $scope.selectSchedule = function(name) {
          $scope.timing.selectSchedule(name);
-         $timeout(function() {$scope.updateHandlers()});
+         $timeout(function() {$scope.updateHandlers();});
      };
 
      /**
@@ -214,7 +217,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
       */
      $scope.selectProgram = function(name) {
          $scope.timing.selectProgram(name);
-         $timeout(function() {$scope.updateHandlers()});
+         $timeout(function() {$scope.updateHandlers();});
      };
 
      /**
@@ -222,8 +225,8 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
       */
      $scope.goPage = function(name) {
          $scope.page = name;
-         $scope.show_menu = (name != 'clock');
-         $timeout(function() {$scope.updateHandlers()});
+         $scope.show_menu = (name !== 'clock');
+         $timeout(function() {$scope.updateHandlers();});
      };
 
      /**
@@ -238,7 +241,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
       */
      $scope.jumpToPrevious = function() {
          $scope.timing.jumpToPrevious();
-         $timeout(function() {$scope.updateHandlers()});
+         $timeout(function() {$scope.updateHandlers();});
      };
 
      /**
@@ -246,7 +249,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
       */
      $scope.jumpToNext = function() {
          $scope.timing.jumpToNext();
-         $timeout(function() {$scope.updateHandlers()});
+         $timeout(function() {$scope.updateHandlers();});
      };
 
      // Debug activities.
