@@ -1,3 +1,6 @@
 [ ] Quit button to reset clock and go admin.
+[ ] Back to beginning or to the end buttons.
 [ ] Language selector.
 [ ] Random shuffle option.
+[ ] Use require() mechanism.
+[ ] Clean up index.html to the smaller directives so that there is eventually only one left.

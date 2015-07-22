@@ -1,4 +1,7 @@
 #!/bin/sh
+#
+# Grunt runner for running it directly from the installed node_module.
+#
 
 if [ ! -x node_modules/.bin/grunt ]; then
   echo "You must run 'npm install' first."

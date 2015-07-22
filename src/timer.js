@@ -5,9 +5,9 @@ var TimerApp = angular.module('TimerApp', ['ngAudio']);
 /**
  * Configure the application.
  */
-TimerApp.config(function($sceProvider) {
+TimerApp.config(['$sceProvider', function($sceProvider) {
   $sceProvider.enabled(false);
-});
+}]);
 
 /**
  * Service to load and play sounds.

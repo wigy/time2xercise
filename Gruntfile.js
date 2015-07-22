@@ -17,7 +17,7 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['lib/<%= pkg.name %>.js'],
+        src: ['lib/jquery*.js', 'lib/*.js', 'src/settings.js', 'src/utils.js', 'data/data.js', 'data/**/*.js', 'src/**/*.js'],
         dest: 'dist/<%= pkg.name %>.js'
       }
     },
@@ -31,8 +31,7 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      gruntfile: ['Gruntfile.js'],
-      all: ['src/**/*.js'],
+      all: ['Gruntfile.js', 'src/**/*.js'],
       options: {
         curly: true,
         eqeqeq: true,
@@ -53,12 +52,8 @@ module.exports = function(grunt) {
     },
     watch: {
       gruntfile: {
-        files: '<%= jshint.gruntfile.src %>',
-        tasks: ['jshint:gruntfile']
-      },
-      lib_test: {
-        files: '<%= jshint.lib_test.src %>',
-        tasks: ['jshint:lib_test', 'qunit']
+        files: '<%= jshint.all %>',
+        tasks: ['jshint:all']
       }
     }
   });
