@@ -3,6 +3,7 @@ module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
+
         // Metadata.
         pkg: grunt.file.readJSON('package.json'),
         banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
@@ -77,12 +78,34 @@ module.exports = function(grunt) {
         },
     });
 
-    // These plugins provide necessary tasks.
+    // List of plugins required.
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
+
+    // Custom tasks.
+    grunt.registerTask('release', 'Make a development or official release.', function(version) {
+        var pkg = grunt.file.readJSON('package.json');
+        if (arguments.length === 0) {
+            grunt.log.ok("");
+            grunt.log.ok("Current version is", pkg.version);
+            grunt.log.ok("");
+            grunt.log.ok("You can make official release by giving new version number like 'x.y.z' or");
+            grunt.log.ok("you can start next release candidate by add postix like 'x.y.z-beta'.");
+        } else {
+            // TODO: Verify correct format.
+            pkg.version = version;
+            grunt.file.write('package.json', JSON.stringify(pkg, null, 2));
+            grunt.log.ok("Updated version", pkg.version, "to package.json.");
+            var settings = grunt.file.read('src/settings.js');
+            settings = settings.replace(/^VERSION\s*=\s*'.*'/gm, "VERSION = '" + pkg.version + "'");
+            // TODO: Turn off or on DEBUG flag based on the -beta postfix.
+            grunt.file.write('src/settings.js', settings);
+            grunt.log.ok("Updated version", pkg.version, "to src/settings.js.");
+        }
+    });
 
     // Default task.
     grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
