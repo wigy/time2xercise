@@ -6,3 +6,5 @@
 [ ] Use require() mechanism.
 [ ] Clean up index.html to the smaller directives so that there is eventually only one left.
 [ ] Deploy in Heroku.
+[ ] Relase script turning debug off and updating version. (See grunt-copy and process option).
+[ ] Template builder, which collects html files and converts them to javascript strings.
