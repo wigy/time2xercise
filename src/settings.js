@@ -1,5 +1,5 @@
 // Version number.
-VERSION = '1.8';
+VERSION = '1.8.0';
 // Copyright year.
 YEAR = 2015;
 // If set, be silent and be more debugging friendly.
@@ -8,7 +8,7 @@ DEBUG = false;
 LANGUAGE = 'en';
 // Changes in the version history.
 CHANGELOG = [{
-        version: 'v1.8',
+        version: 'v1.8.0',
         changes: [
             'New 50:10, 55:05 and 60:00 schedules for fitness.',
             'Use less CPU.',
@@ -17,14 +17,14 @@ CHANGELOG = [{
             'Loading screen with nice logo.',
         ]
     },{
-        version: 'v1.7',
+        version: 'v1.7.0',
         changes: [
             'New comprehensive summary table.',
             'Pictures added into descriptions.',
             'Complete Rugby Beginner\'s Course.',
         ]
     },{
-        version: 'v1.6',
+        version: 'v1.6.0',
         changes: [
             'First functional release with basic functionality.',
         ]
