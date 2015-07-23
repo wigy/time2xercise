@@ -10,3 +10,4 @@
 [ ] Way to sync package.json and VERSION in settings.js. (Require package.json itself in html?)
 [ ] Template builder, which collects html files and converts them to javascript strings.
 [ ] Study how to implement (most of) CSS as Bootstrap theme add-on.
+[ ] Extract Grunt custom tasks to separate files.

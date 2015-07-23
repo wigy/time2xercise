@@ -87,23 +87,27 @@ module.exports = function(grunt) {
 
     // Custom tasks.
     grunt.registerTask('release', 'Make a development or official release.', function(version) {
-        var pkg = grunt.file.readJSON('package.json');
         if (arguments.length === 0) {
             grunt.log.ok("");
-            grunt.log.ok("Current version is", pkg.version);
+            grunt.log.ok("Current version is", grunt.package.version);
             grunt.log.ok("");
             grunt.log.ok("You can make official release by giving new version number like 'x.y.z' or");
             grunt.log.ok("you can start next release candidate by add postix like 'x.y.z-beta'.");
         } else {
-            // TODO: Verify correct format.
+            if (!version.match(/^\d+\.\d+\.\d+(-beta)?$/)) {
+                grunt.fail.fatal("Invalid version '" + version + "'.");
+            }
+            var pkg = grunt.file.readJSON('package.json');
+            var debugMode = (version.substr(version.length-4) == 'beta');
             pkg.version = version;
             grunt.file.write('package.json', JSON.stringify(pkg, null, 2));
             grunt.log.ok("Updated version", pkg.version, "to package.json.");
             var settings = grunt.file.read('src/settings.js');
             settings = settings.replace(/^VERSION\s*=\s*'.*'/gm, "VERSION = '" + pkg.version + "'");
-            // TODO: Turn off or on DEBUG flag based on the -beta postfix.
+            settings = settings.replace(/^DEBUG\s*=\s[^;]*/gm, "DEBUG = " + debugMode.toString());
             grunt.file.write('src/settings.js', settings);
             grunt.log.ok("Updated version", pkg.version, "to src/settings.js.");
+            grunt.log.ok("Set the debug mode to", debugMode, "in src/settings.js.");
         }
     });
 
