@@ -103,7 +103,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
         }
         var sound = $scope.timing.refresh(clock);
         if(sound) {
-            $scpope.PlaySound(sound, $scope.timing.clock.toString());
+            $scope.PlaySound(sound, $scope.timing.clock.toString());
         }
     }
     refresh();
