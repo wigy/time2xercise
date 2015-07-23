@@ -11,7 +11,8 @@ CHANGELOG = [
     {
         version: 'v1.9.0',
         changes: [
-            'Put more tools like npm and grunt into use.',
+            'Put more tools like Node and Grunt into use.',
+            'Build system to pack all essential files into compressed distribution.',
         ]
     },{
         version: 'v1.8.0',

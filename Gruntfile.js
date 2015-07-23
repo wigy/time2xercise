@@ -25,7 +25,7 @@ module.exports = function(grunt) {
                 stripBanners: true
             },
             dist: {
-                src: ['lib/jquery*.js', 'lib/*.js', 'src/settings.js', 'src/utils.js', 'data/data.js', 'data/**/*.js', 'src/**/*.js'],
+                src: ['lib/jquery.min.js', 'lib/angular.min.js', 'lib/angular.audio.js', 'lib/bootstrap.min.js', 'src/settings.js', 'src/utils.js', 'data/data.js', 'data/**/*.js', 'src/**/*.js'],
                 dest: 'dist/<%= pkg.name %>.js'
             }
         },
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
         cssmin: {
             target: {
                 files: {
-                    'dist/time2xercise.min.css': ['bootstrap.min.css', 'css/timer.css']
+                    'dist/time2xercise.min.css': ['css/bootstrap.min.css', 'css/timer.css']
                 }
             }
         },
@@ -82,6 +82,19 @@ module.exports = function(grunt) {
                     {expand: true, dest: 'fonts/', flatten: true, src: ['node_modules/bootstrap/dist/fonts/*']},
                 ],
             },
+            build: {
+                files: [
+                    {expand: true, src: 'fonts/**', dest: 'dist/'},
+                    {expand: true, src: 'pics/**', dest: 'dist/'},
+                    {expand: true, src: 'sounds/**', dest: 'dist/'},
+                ],
+            },
+        },
+
+        clean: {
+            build: {
+                src: ["dist/time2xercise.js"]
+            }
         },
 
         watch: {
@@ -110,6 +123,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-available-tasks');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.loadTasks('./grunt/');
 
@@ -117,6 +131,8 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['availabletasks']);
 
     // Custom tasks.
-    grunt.registerTask('build', 'Compile compressed version of the code into dist-directory.', ['jshint', 'concat', 'uglify']);
-    grunt.registerTask('copylibs', 'Update libraries from the installed node modules.', ['copy:libs']);
+    grunt.registerTask('build', 'Compile compressed version of the code into dist-directory.',
+        ['jshint', 'concat', 'uglify', 'cssmin', 'copy:build', 'clean:build']);
+    grunt.registerTask('copylibs', 'Update libraries from the installed node modules.',
+        ['copy:libs']);
 };
