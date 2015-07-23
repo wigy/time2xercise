@@ -1,6 +1,6 @@
 (function(angular){
 
-var TimerApp = angular.module('TimerApp', ['ngAudio']);
+var TimerApp = angular.module('TimerApp', []);
 
 /**
  * Configure the application.
@@ -12,16 +12,16 @@ TimerApp.config(['$sceProvider', function($sceProvider) {
 /**
  * Service to load and play sounds.
  */
-TimerApp.service('PlaySound', ['ngAudio', function(ngAudio) {
+TimerApp.service('PlaySound', [function() {
 
     var audio = {};
-    audio['buzzer'] = ngAudio.load('sounds/buzzer.mp3');
-    audio['whistle'] = ngAudio.load('sounds/whistle.mp3');
-    audio['start'] = ngAudio.load('sounds/start.mp3');
-    audio['done'] = ngAudio.load('sounds/done.mp3');
-    audio['1'] = ngAudio.load('sounds/1.mp3');
-    audio['2'] = ngAudio.load('sounds/2.mp3');
-    audio['3'] = ngAudio.load('sounds/3.mp3');
+    audio['buzzer'] = new Audio('sounds/buzzer.mp3');
+    audio['whistle'] = new Audio('sounds/whistle.mp3');
+    audio['start'] = new Audio('sounds/start.mp3');
+    audio['done'] = new Audio('sounds/done.mp3');
+    audio['1'] = new Audio('sounds/1.mp3');
+    audio['2'] = new Audio('sounds/2.mp3');
+    audio['3'] = new Audio('sounds/3.mp3');
 
     return function(name, timestamp) {
         if (name === 'list') {

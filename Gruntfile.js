@@ -25,7 +25,7 @@ module.exports = function(grunt) {
                 stripBanners: true
             },
             dist: {
-                src: ['lib/jquery.min.js', 'lib/angular.min.js', 'lib/angular.audio.js', 'lib/bootstrap.min.js', 'src/settings.js', 'src/utils.js', 'data/data.js', 'data/**/*.js', 'src/**/*.js'],
+                src: ['lib/jquery.min.js', 'lib/angular.min.js', 'lib/bootstrap.min.js', 'src/settings.js', 'src/utils.js', 'data/data.js', 'data/**/*.js', 'src/**/*.js'],
                 dest: 'dist/<%= pkg.name %>.js'
             }
         },
@@ -73,7 +73,6 @@ module.exports = function(grunt) {
             libs: {
                 files: [
                     {expand: true, dest: 'lib/', flatten: true, src: ['node_modules/jquery/dist/jquery.min.*',
-                                                                      'node_modules/ng-audio/dist/ng-audio.min.js',
                                                                       'node_modules/bootstrap/dist/js/bootstrap.min.js',
                                                                       'node_modules/angular/angular.min.js',
                                                                       'node_modules/angular/angular.min.map',
