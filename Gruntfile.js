@@ -89,6 +89,27 @@ module.exports = function(grunt) {
                     {expand: true, src: 'sounds/**', dest: 'dist/'},
                 ],
             },
+            index: {
+                options: {
+                    process: function(content, srcpath) {
+
+                        var insert = "";
+                        var js = grunt.config.get('uglify.dist.dest').replace('dist/', '');
+                        insert += '<script src="' + js + '"></script>\n';
+                        var css = Object.keys(grunt.config.get('cssmin.target.files'));
+                        for (var i = 0; i < css.length; i++) {
+                            insert += '    <link rel="stylesheet" href="' + css[i].replace('dist/', '') + '">\n    ';
+                        }
+                        content = content.replace(/\s*<link .*?rel="stylesheet".*?>/gm, "");
+                        content = content.replace(/\s*<script .*?<\/script>/gm, "");
+                        content = content.replace(/<title>/gm, insert + "<title>");
+                        return content;
+                    }
+                },
+                files: [
+                    {src: 'index.html', dest: 'dist/'},
+                ],
+            }
         },
 
         clean: {
@@ -132,7 +153,7 @@ module.exports = function(grunt) {
 
     // Custom tasks.
     grunt.registerTask('build', 'Compile compressed version of the code into dist-directory.',
-        ['jshint', 'concat', 'uglify', 'cssmin', 'copy:build', 'clean:build']);
+        ['jshint', 'concat', 'uglify', 'cssmin', 'copy:build', 'copy:index', 'clean:build']);
     grunt.registerTask('copylibs', 'Update libraries from the installed node modules.',
         ['copy:libs']);
 };

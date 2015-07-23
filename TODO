@@ -4,7 +4,7 @@
 [ ] Language selector.
 [ ] Random shuffle option.
 [ ] Clean up index.html to the smaller directives so that there is eventually only one left.
-[ ] Building full application in dist.
 [ ] Deploy in Heroku.
 [ ] Template builder, which collects html files and converts them to javascript strings.
 [ ] Study how to implement (most of) CSS as Bootstrap theme add-on.
+[ ] Collect Grunt tasks into new separate plugin handling all steps with few lines of configuration.
