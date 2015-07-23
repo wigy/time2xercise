@@ -40,6 +40,14 @@ module.exports = function(grunt) {
             }
         },
 
+        cssmin: {
+            target: {
+                files: {
+                    'dist/time2xercise.min.css': ['bootstrap.min.css', 'css/timer.css']
+                }
+            }
+        },
+
         jshint: {
             all: ['Gruntfile.js', 'src/**/*.js'],
             options: {
