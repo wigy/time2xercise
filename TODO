@@ -3,8 +3,8 @@
 [ ] Back to beginning or to the end buttons.
 [ ] Language selector.
 [ ] Random shuffle option.
-[ ] Use require() mechanism.
 [ ] Clean up index.html to the smaller directives so that there is eventually only one left.
+[ ] CSS compression.
 [ ] Deploy in Heroku.
 [ ] Template builder, which collects html files and converts them to javascript strings.
 [ ] Study how to implement (most of) CSS as Bootstrap theme add-on.

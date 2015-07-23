@@ -82,6 +82,16 @@ module.exports = function(grunt) {
                 tasks: ['jshint:all']
             }
         },
+
+        availabletasks: {
+            tasks: {
+                options: {
+                    filter: 'include',
+                    tasks: ['copylibs', 'jshint', 'build', 'versioning']
+                }
+            }
+        },
+
     });
 
     // List of plugins required.
@@ -90,8 +100,15 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-available-tasks');
+
     grunt.loadTasks('./grunt/');
 
     // Default task.
-    grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+    grunt.registerTask('default', ['availabletasks']);
+
+    // Custom tasks.
+    grunt.registerTask('build', 'Compile compressed version of the code into dist-directory.', ['jshint', 'concat', 'uglify']);
+    grunt.registerTask('copylibs', 'Update libraries from the installed node modules.', ['copy:libs']);
 };
