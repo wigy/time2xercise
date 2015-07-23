@@ -3,6 +3,12 @@
 # Grunt runner for running it directly from the installed node_module.
 #
 
+SCRIPT=$(readlink -f "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+PROJECTPATH=$(dirname "$SCRIPTPATH")
+
+cd $PROJECTPATH
+
 if [ ! -x node_modules/.bin/grunt ]; then
   echo "You must run 'npm install' first."
   exit 1
