@@ -13,6 +13,12 @@ module.exports = function(grunt) {
                 ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
 
         // Task configuration.
+        versioning: {
+            options: {
+                file: 'src/settings.js'
+            }
+        },
+
         concat: {
             options: {
                 banner: '<%= banner %>',
@@ -84,32 +90,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
-
-    // Custom tasks.
-    grunt.registerTask('release', 'Make a development or official release.', function(version) {
-        if (arguments.length === 0) {
-            grunt.log.ok("");
-            grunt.log.ok("Current version is", grunt.package.version);
-            grunt.log.ok("");
-            grunt.log.ok("You can make official release by giving new version number like 'x.y.z' or");
-            grunt.log.ok("you can start next release candidate by add postix like 'x.y.z-beta'.");
-        } else {
-            if (!version.match(/^\d+\.\d+\.\d+(-beta)?$/)) {
-                grunt.fail.fatal("Invalid version '" + version + "'.");
-            }
-            var pkg = grunt.file.readJSON('package.json');
-            var debugMode = (version.substr(version.length-4) == 'beta');
-            pkg.version = version;
-            grunt.file.write('package.json', JSON.stringify(pkg, null, 2));
-            grunt.log.ok("Updated version", pkg.version, "to package.json.");
-            var settings = grunt.file.read('src/settings.js');
-            settings = settings.replace(/^VERSION\s*=\s*'.*'/gm, "VERSION = '" + pkg.version + "'");
-            settings = settings.replace(/^DEBUG\s*=\s[^;]*/gm, "DEBUG = " + debugMode.toString());
-            grunt.file.write('src/settings.js', settings);
-            grunt.log.ok("Updated version", pkg.version, "to src/settings.js.");
-            grunt.log.ok("Set the debug mode to", debugMode, "in src/settings.js.");
-        }
-    });
+    grunt.loadTasks('./grunt/');
 
     // Default task.
     grunt.registerTask('default', ['jshint', 'concat', 'uglify']);

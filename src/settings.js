@@ -7,7 +7,13 @@ DEBUG = true;
 // Translation table to be used.
 LANGUAGE = 'en';
 // Changes in the version history.
-CHANGELOG = [{
+CHANGELOG = [
+    {
+        version: 'v1.9.0',
+        changes: [
+            'Put more tools like npm and grunt into use.',
+        ]
+    },{
         version: 'v1.8.0',
         changes: [
             'New 50:10, 55:05 and 60:00 schedules for fitness.',
