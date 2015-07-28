@@ -72,6 +72,7 @@ DATA.Rugby = {
     info: {
         "Day 1": "Introduction and getting into basics of the game.",
         // TODO: More descriptions
+        // TODO: Add section 5. Time to rules.
 
         R1 : '<h4>Introduction and Basics of the Game</h4>' +
         '<ul>' +
@@ -117,7 +118,8 @@ DATA.Rugby = {
 
         H1 : '<h4>Passing Essentials</h4><ol>' +
         'In groups of 3-4 players each:' +
-        '<li>Form a line and pass sideways with two hands. Rotate positions.' +
+        '<li>Form a line and pass sideways with two hands. Rotate positions and/or turn around.' +
+        '<li>Increase distance.' +
         '<li>Lines can walk from one end to another in playing field. Rotate on the turning point.' +
         '<li>Increase the speed.' +
         '</ol>',

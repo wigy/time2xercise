@@ -1,5 +1,5 @@
 // Version number.
-VERSION = '1.9.0-beta';
+VERSION = '1.9.0';
 // Copyright year.
 YEAR = 2015;
 // If set, be silent and be more debugging friendly.
@@ -13,6 +13,7 @@ CHANGELOG = [
         changes: [
             'Put more tools like Node and Grunt into use.',
             'Build system to pack all essential files into compressed distribution.',
+            'Show breaks in different color.',
         ]
     },{
         version: 'v1.8.0',

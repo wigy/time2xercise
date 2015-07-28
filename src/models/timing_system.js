@@ -202,6 +202,10 @@ function TimingSystem() {
         return this.training.schedule.program.timetable.getRemaining(this.clock).seconds();
     };
 
+    this.onBreak = function() {
+        return this.training.schedule.program.timetable.current && this.training.schedule.program.timetable.current.isBreak();
+    };
+
     /**
      * Get the current time.
      */
