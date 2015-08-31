@@ -28,9 +28,10 @@ function TimeTable(program) {
 
             var duration = schedule.timing[i][0];
             var index = schedule.timing[i][1];
+            var options = schedule.timing[i][2];
 
             if(typeof(index) === 'string') {
-                event = new Event(i+1, duration, index);
+                event = new Event(i+1, duration, index, null, options);
             } else {
                 // Find the code.
                 var code = program.list[index];
@@ -44,7 +45,7 @@ function TimeTable(program) {
                 }
 
                 // Create event
-                event = new Event(i+1, duration, program.getText(code), this.program.info[code]);
+                event = new Event(i+1, duration, program.getText(code), this.program.info[code], options);
 
                 // Find out the sound.
                 for (var regex in program.sounds) {

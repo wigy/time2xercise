@@ -9,6 +9,8 @@ function Program(schedule) {
     this.name = null;
     // A list of codes or event names.
     this.list = [];
+    // Options for this program.
+    this.options = {};
     // Mapping from codes to their full names.
     this.codes = {};
     // Translation table from language abbreviatios to codes to their full names.
@@ -23,6 +25,13 @@ function Program(schedule) {
     this.load = function(name, data) {
         this.name = name;
         this.list = data.programs[name];
+        this.list = [];
+        for (var i = 0; i < data.programs[name].length; i++) {
+            if (typeof(data.programs[name][i]) == 'object')
+                angular.extend(this.options,data.programs[name][i]);
+            else
+                this.list.push(data.programs[name][i]);
+        }
         this.codes = data.codes || {};
         this.sounds = data.sounds || {};
         this.translations = data.translations || {};

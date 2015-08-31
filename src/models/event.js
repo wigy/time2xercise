@@ -1,12 +1,14 @@
 /**
  * A description of an entry in the schedule.
  */
-function Event(number, duration, title, description) {
+function Event(number, duration, title, description, options) {
 
     // Name of the event.
     this.title = title || '';
     // Description of the event.
     this.description = description || '';
+    // Options for the event.
+    this.options = options || {};
     // Order number of the event.
     this.number = number;
     // A Time object having starting time of the event.

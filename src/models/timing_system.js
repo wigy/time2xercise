@@ -210,6 +210,9 @@ function TimingSystem() {
         return this.training.schedule.program.timetable.getRemaining(this.clock).seconds();
     };
 
+    /**
+     * Check if we are on the break.
+     */
     this.onBreak = function() {
         return this.training.schedule.program.timetable.current && this.training.schedule.program.timetable.current.isBreak();
     };
@@ -232,7 +235,6 @@ function TimingSystem() {
      * Check if the timing system is actual game.
      */
     this.isMatch = function() {
-        // TODO: Implement as an option.
-        return true;
+        return !!this.training.schedule.program.options.match;
     };
 }
