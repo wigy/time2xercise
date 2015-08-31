@@ -267,6 +267,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
       * Keyboard handler.
       */
      $scope.keyPress = function(event) {
+         // TODO: Make this directive that parses readable names for each key.
         var key = String.fromCharCode(event.charCode).toUpperCase();
         if (key == 'M')
             $scope.toggleMenu();

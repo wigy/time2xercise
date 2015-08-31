@@ -22,6 +22,8 @@
     <script src="src/models/time_table.js"></script>
     <script src="src/models/timing_system.js"></script>
     <script src="src/models/training.js"></script>
+    <script src="src/models/team.js"></script>
+    <script src="src/models/match.js"></script>
     <script src="src/timer.js"></script>
     <title>Time2Xercise v{{VERSION}}</title>
   <head>
@@ -132,11 +134,11 @@
         <div class="top text-right col-md-6" ng-class="{almost_finished: timing.getRemainingSeconds() < 60, on_break: timing.onBreak()}" ng-bind="timing.getRemaining() | shortTime"></div>
       </div>
       <div class="row">
-        <div class="bottom text-left col-md-6 col-xs-6">Home Team</div>
-        <div class="bottom text-right col-md-6 col-xs-6">Visitor Team</div>
+        <div class="bottom text-left col-md-6 col-xs-6" ng-bind="timing.match.home_team"></div>
+        <div class="bottom text-right col-md-6 col-xs-6" ng-bind="timing.match.visitor_team"></div>
       </div>
       <div class="row">
-          <div class="clock text-center col-md-12" ng-bind="timing.getScore()"></div>
+          <div class="clock text-center col-md-12" ng-bind="timing.match.getScore()"></div>
       </div>
     </div>
 
