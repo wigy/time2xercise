@@ -219,4 +219,16 @@ function TimingSystem() {
     this.getCurrentTitle = function() {
         return this.training.schedule.program.timetable.current.title;
     };
+
+    /**
+     * Check if the timing system is actual game.
+     */
+    this.isMatch = function() {
+        // TODO: Implement as an option.
+        return true;
+    };
+
+    this.getScore = function() {
+        return '150 - 32';
+    }
 }

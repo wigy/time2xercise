@@ -67,7 +67,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="training">Training</label>
+            <label for="training">Subject</label>
             <div class="input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-book"></span></span>
               <select id="training" class="form-control" ng-model="timing.training_name"
@@ -107,7 +107,7 @@
       <timer-schedule timing="timing" />
     </div>
 
-    <div ng-if="page=='clock'" class="container clock-page">
+    <div ng-if="page=='clock' && !timing.isMatch()" class="container clock-page">
       <div class="row">
         <div class="top text-center col-md-12" ng-bind="timing.getCurrentTitle()"></div>
       </div>
@@ -120,6 +120,23 @@
       </div>
       <div class="row">
         <div class="col-md-12 description" ng-bind-html="timing.training.schedule.program.timetable.current.description"></div>
+      </div>
+    </div>
+
+    <div ng-if="page=='clock' && timing.isMatch()" class="container clock-page">
+        <div class="row">
+            <div class="top text-center col-md-12">&nbsp;</div>
+        </div>
+      <div class="row">
+        <div class="top text-left col-md-6" ng-bind="timing.getCurrentTitle()"></div>
+        <div class="top text-right col-md-6" ng-class="{almost_finished: timing.getRemainingSeconds() < 60, on_break: timing.onBreak()}" ng-bind="timing.getRemaining() | shortTime"></div>
+      </div>
+      <div class="row">
+        <div class="bottom text-left col-md-6 col-xs-6">Home Team</div>
+        <div class="bottom text-right col-md-6 col-xs-6">Visitor Team</div>
+      </div>
+      <div class="row">
+          <div class="clock text-center col-md-12" ng-bind="timing.getScore()"></div>
       </div>
     </div>
 

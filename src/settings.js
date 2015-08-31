@@ -9,6 +9,11 @@ LANGUAGE = 'en';
 // Changes in the version history.
 CHANGELOG = [
     {
+        version: 'v1.10.0',
+        changes: [
+            '',
+        ]
+    },{
         version: 'v1.9.0',
         changes: [
             'Put more tools like Node and Grunt into use.',

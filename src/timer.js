@@ -40,6 +40,17 @@ TimerApp.service('PlaySound', [function() {
 }]);
 
 /**
+ * Filter to cut hours away from a time string.
+ */
+TimerApp.filter("shortTime", [function() {
+    return function(str) {
+        if (str.substr(0,3) == '00:')
+            return str.substr(3);
+        return str;
+    };
+}]);
+
+/**
  * Directive to display a time table for an event.
  *
  * <timing-schedule timing="TimingModel" />
@@ -256,6 +267,8 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
      if (DEBUG) {
          $scope.timing.load('Test');
          $scope.timing.selectTraining('Rugby');
+         $scope.timing.selectSchedule('XV Match');
+         $scope.startNow(0);
      }
 }]);
 })(angular);

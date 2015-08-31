@@ -35,6 +35,7 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
 
 .clock-page .clock {
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .clock-page .clock .almost_finished {
