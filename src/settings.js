@@ -11,7 +11,7 @@ CHANGELOG = [
     {
         version: 'v1.10.0',
         changes: [
-            '',
+            'Keyboard support.',
         ]
     },{
         version: 'v1.9.0',

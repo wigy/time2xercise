@@ -263,6 +263,17 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
          $timeout(function() {$scope.updateHandlers();});
      };
 
+     /**
+      * Keyboard handler.
+      */
+     $scope.keyPress = function(event) {
+        var key = String.fromCharCode(event.charCode).toUpperCase();
+        if (key == 'M')
+            $scope.toggleMenu();
+        else if (key == 'P')
+            $scope.togglePause();
+     };
+
      // Debug activities.
      if (DEBUG) {
          $scope.timing.load('Test');

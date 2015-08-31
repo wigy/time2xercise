@@ -136,7 +136,7 @@ function TimingSystem() {
     this.togglePause = function() {
         this.pause = !this.pause;
         // Set clock to one second before current time to ensure we get signals played.
-        if (!this.pause) {
+        if (!this.pause && !this.isMatch()) {
             this.clock.addSeconds(-1);
         }
     };
@@ -229,6 +229,7 @@ function TimingSystem() {
     };
 
     this.getScore = function() {
+        // TODO: Get from model.
         return '150 - 32';
     }
 }
