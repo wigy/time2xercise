@@ -77,6 +77,7 @@ module.exports = function(grunt) {
                                                                       'node_modules/angular/angular.min.js',
                                                                       'node_modules/angular/angular.min.map',
                                                                      ]},
+                    {expand: true, dest: 'lib/chronicles_of_angular', flatten: false, cwd: 'node_modules/chronicles_of_angular/lib', src: ['**']},
                     {expand: true, dest: 'css/', flatten: true, src: ['node_modules/bootstrap/dist/css/bootstrap.min.css']},
                     {expand: true, dest: 'fonts/', flatten: true, src: ['node_modules/bootstrap/dist/fonts/*']},
                 ],
@@ -92,6 +93,7 @@ module.exports = function(grunt) {
                 options: {
                     process: function(content, srcpath) {
 
+                        // TODO: Make this separate grunt-plugin that inserts configured css and js file lists. (Use globbing!)
                         var insert = "";
                         var js = grunt.config.get('uglify.dist.dest').replace('dist/', '');
                         insert += '<script src="' + js + '"></script>\n';

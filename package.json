@@ -30,6 +30,7 @@
   "dependencies": {
     "angular": "^1.4.3",
     "bootstrap": "^3.3.5",
+    "chronicles_of_angular": "git+ssh://git@github.com:wigy/chronicles_of_angular",
     "jquery": "^2.1.4"
   }
 }
