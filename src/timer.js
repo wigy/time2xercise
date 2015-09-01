@@ -104,6 +104,17 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
     $scope.show_menu = true;
     $scope.PlaySound = PlaySound;
 
+    // TODO: Connect to player.
+    mapping = {
+        'buzzer' : 'sounds/buzzer.mp3',
+        'whistle' : 'sounds/whistle.mp3',
+        'start' : 'sounds/start.mp3',
+        'done' : 'sounds/done.mp3',
+        '1' : 'sounds/1.mp3',
+        '2' : 'sounds/2.mp3',
+        '3' : 'sounds/3.mp3',
+    };
+
     /**
      * Refresh function to update data.
      */
