@@ -9,6 +9,7 @@ TimerApp.config(['$sceProvider', function($sceProvider) {
   $sceProvider.enabled(false);
 }]);
 
+// TODO: Move to separate module.
 /**
  * Service to load and play sounds.
  */
@@ -47,6 +48,38 @@ TimerApp.filter("shortTime", [function() {
         if (str.substr(0,3) == '00:')
             return str.substr(3);
         return str;
+    };
+}]);
+
+// TODO: Move to separate module.
+/**
+ * Attach key handler function from the scope.
+ *
+ * The given function name is called for each key-press event with the
+ * simple string argument describing the key pressed.
+ */
+TimerApp.directive('keyHandler', [function() {
+    return {
+        restrict: 'A',
+        link: function($scope, $elem, $attrs) {
+            $elem.bind('keypress', function(event) {
+                var key = event.key;
+                if (key.length == 1)
+                    key = key.toUpperCase();
+                else if (event.shiftKey)
+                    key = "Shift+" + key;
+                if (event.altKey)
+                    key = "Alt+" + key;
+                if (event.ctrlKey)
+                    key = "Control+" + key;
+
+                var handler = $scope.$eval($attrs.keyHandler);
+                if (handler)
+                    handler(key);
+                else
+                    d("Cannot find key-press handler", $attrs.keyHandler);
+            });
+        }
     };
 }]);
 
@@ -266,9 +299,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
      /**
       * Keyboard handler.
       */
-     $scope.keyPress = function(event) {
-         // TODO: Make this directive that parses readable names for each key.
-        var key = String.fromCharCode(event.charCode).toUpperCase();
+     $scope.keyPress = function(key) {
         if (key == 'M')
             $scope.toggleMenu();
         else if (key == 'P')

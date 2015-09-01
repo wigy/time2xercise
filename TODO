@@ -6,6 +6,7 @@
 [ ] Marking the paused clock.
 [ ] Add break option and rename break to 'Half-time'.
 
+[ ] Ability to rebuild include lists for index.html (or test.html) using Grunt.
 [ ] Quit button to reset clock and go admin.
 [ ] Back to beginning or to the end buttons.
 [ ] Language selector.
@@ -15,3 +16,4 @@
 [ ] Template builder, which collects html files and converts them to javascript strings.
 [ ] Study how to implement (most of) CSS as Bootstrap theme add-on.
 [ ] Collect Grunt tasks into new separate plugin handling all steps with few lines of configuration.
+[ ] Proper documentation format using Angular documentation notation.

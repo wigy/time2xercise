@@ -20,7 +20,7 @@ module.exports = function(grunt) {
             grunt.log.ok("Current version is", pkg.version);
             grunt.log.ok("");
             grunt.log.ok("You can make official release by giving new version number like 'x.y.z' or");
-            grunt.log.ok("you can start next release candidate by add postix like 'x.y.z-beta'.");
+            grunt.log.ok("you can start next release candidate by add postfix 'x.y.z-beta'.");
         } else {
             if (!version.match(/^\d+\.\d+\.\d+(-beta)?$/)) {
                 grunt.fail.fatal("Invalid version '" + version + "'.");
