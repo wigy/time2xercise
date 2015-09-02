@@ -2,7 +2,7 @@ DATA.Rugby = {
 
     schedules: {
         "Beginner's Course": [[5*60, 0], [13*60, 1], [2*60, "Break"], [13*60, 2], [2*60, "Break"], [13*60, 3], [2*60, "Break"], [20*60, 4], [3*60, "Break"], [20*60, 5]],
-        "XV Match": [[40*60, 0, {start_on_pause: true, reverse_count: true}], [10*60, "Break"], [40*60, 1, {start_on_pause: true, reverse_count: true}]],
+        "XV Match": [[40*60, 0, {start_on_pause: true, reverse_count: true}], [10*60, "Half-time", {is_break: true}], [40*60, 1, {start_on_pause: true, reverse_count: true}]],
     },
     programs: {
         // TODO: Here we could actually have notation ['R1', 10*60] to override longer time for session R1.

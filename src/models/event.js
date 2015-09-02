@@ -66,6 +66,6 @@ function Event(number, duration, title, description, options) {
      * Check if this event is just a break.
      */
     this.isBreak = function() {
-        return title === 'Break';
+        return this.options.is_break || title === 'Break';
     };
 }

@@ -1,6 +1,5 @@
 [ ] Bigger fonts.
 [ ] Ability to change the team name.
-[ ] Add break option and rename break to 'Half-time'.
 [ ] Implement start_on_pause option.
 
 [ ] Ability to rebuild include lists for index.html (or test.html) using Grunt.
