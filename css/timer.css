@@ -84,6 +84,15 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
     .bottom {
         font-size: 3ex;
     }
+    .match-page .clock {
+        font-size: 22ex;
+    }
+    .match-page .top {
+        font-size: 12ex;
+    }
+    .match-page .bottom {
+        font-size: 7ex;
+    }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
     .clock {
@@ -95,6 +104,15 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
     .bottom {
         font-size: 4ex;
     }
+    .match-page .clock {
+        font-size: 27ex;
+    }
+    .match-page .top {
+        font-size: 15ex;
+    }
+    .match-page .bottom {
+        font-size: 12ex;
+    }
 }
 @media (min-width: 1200px) {
     .clock {
@@ -105,6 +123,15 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
     }
     .bottom {
         font-size: 5ex;
+    }
+    .match-page .clock {
+        font-size: 50ex;
+    }
+    .match-page .top {
+        font-size: 20ex;
+    }
+    .match-page .bottom {
+        font-size: 13ex;
     }
 }
 

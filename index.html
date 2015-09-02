@@ -126,10 +126,7 @@
       </div>
     </div>
 
-    <div ng-if="page=='clock' && timing.isMatch()" class="container match-page">
-        <div class="row">
-            <div class="top text-center col-md-12">&nbsp;</div>
-        </div>
+    <div ng-if="page=='clock' && timing.isMatch()" class="container-fluid match-page">
       <div class="row">
         <div class="top text-left col-md-6" ng-bind="timing.getCurrentTitle()"></div>
         <div class="top text-right col-md-6" ng-class="{almost_finished: timing.getRemainingSeconds() < 60, on_break: timing.onBreak() || timing.pause}" ng-bind="timing.getRemaining() | shortTime"></div>

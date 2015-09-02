@@ -1,6 +1,5 @@
-[ ] Bigger fonts.
-[ ] Ability to change the team name.
 [ ] Implement start_on_pause option.
+[ ] Ability to change the team name.
 
 [ ] Ability to rebuild include lists for index.html (or test.html) using Grunt.
 [ ] Quit button to reset clock and go admin.

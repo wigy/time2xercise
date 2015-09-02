@@ -12,6 +12,8 @@ CHANGELOG = [
         version: 'v1.10.0',
         changes: [
             'Keyboard support.',
+            'New match-mode allowing to display score as well',
+            'Counting up instead of down as an option'
         ]
     },{
         version: 'v1.9.0',
