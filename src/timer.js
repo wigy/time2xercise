@@ -316,7 +316,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
          $scope.timing.load('Test');
          $scope.timing.selectTraining('Rugby');
          $scope.timing.selectSchedule('XV Match');
-         $scope.startNow(0);
+         $scope.startNow(1);
      }
 }]);
 })(angular);

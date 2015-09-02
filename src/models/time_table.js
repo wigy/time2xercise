@@ -195,4 +195,10 @@ function TimeTable(program) {
 
         return new Time();
     };
+
+    this.isAtStart = function(clock) {
+        if (this.current && this.current) {
+            return clock.toString() === this.current.startTime().toString();
+        }
+    };
 }

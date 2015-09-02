@@ -113,7 +113,17 @@ function TimingSystem() {
             return null;
         }
 
-        return this.training.schedule.program.timetable.refresh(this.clock, old);
+        var ret = this.training.schedule.program.timetable.refresh(this.clock, old);
+
+        // Check if we are about to start new event.
+        if (this.training.schedule.program.timetable.isAtStart(this.clock)) {
+            if (this.training.schedule.program.timetable.current.options.start_on_pause) {
+                this.pause = true;
+                ret = null;
+            }
+        }
+
+        return ret;
     };
 
     /**
