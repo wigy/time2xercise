@@ -16,6 +16,5 @@ function Match(home, visitor) {
      */
     this.getScore = function() {
         return this.home_score + ' - ' + this.visitor_score;
-    }
-
+    };
 }

@@ -45,8 +45,9 @@ TimerApp.service('PlaySound', [function() {
  */
 TimerApp.filter("shortTime", [function() {
     return function(str) {
-        if (str.substr(0,3) == '00:')
+        if (str.substr(0,3) === '00:') {
             return str.substr(3);
+        }
         return str;
     };
 }]);
@@ -279,10 +280,12 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
       * Keyboard handler.
       */
      $scope.keyPress = function(key) {
-        if (key == 'M')
+        if (key === 'M') {
             $scope.toggleMenu();
-        else if (key == 'P')
+        }
+        else if (key === 'P') {
             $scope.togglePause();
+        }
      };
 
      // Debug activities.

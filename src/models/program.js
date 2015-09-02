@@ -27,10 +27,12 @@ function Program(schedule) {
         this.list = data.programs[name];
         this.list = [];
         for (var i = 0; i < data.programs[name].length; i++) {
-            if (typeof(data.programs[name][i]) == 'object')
+            if (typeof(data.programs[name][i]) === 'object') {
                 angular.extend(this.options,data.programs[name][i]);
-            else
+            }
+            else {
                 this.list.push(data.programs[name][i]);
+            }
         }
         this.codes = data.codes || {};
         this.sounds = data.sounds || {};

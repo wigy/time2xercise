@@ -4,5 +4,5 @@ function Team(name) {
 
     this.toString = function() {
         return this.name;
-    }
+    };
 }
