@@ -144,7 +144,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-available-tasks');
     grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.loadTasks('node_modules/chronicles_of_grunt/tasks/');
@@ -156,5 +155,5 @@ module.exports = function(grunt) {
         ['copy:libs']);
 
     // Default task.
-    grunt.registerTask('default', ['availabletasks']);
+    grunt.registerTask('default', ['usage']);
 };
