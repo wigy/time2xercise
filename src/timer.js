@@ -104,6 +104,8 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
     $scope.testing = false;
     $scope.show_menu = true;
     $scope.PlaySound = PlaySound;
+    $scope.add_home_score = 0;
+    $scope.add_visitor_score = 0;
 
     // TODO: Connect to player.
     mapping = {
@@ -285,6 +287,21 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
         }
         else if (key === 'P') {
             $scope.togglePause();
+        }
+        else if (key === 'H') {
+            $scope.add_home_score = 1;
+            $scope.add_visitor_score = 0;
+            d($scope.add_home_score, $scope.add_visitor_score)
+        }
+        else if (key === 'V') {
+            $scope.add_visitor_score = 1;
+            $scope.add_home_score = 0;
+            d($scope.add_home_score, $scope.add_visitor_score)
+        }
+        else if (key === '-') {
+            $scope.add_home_score *= -1;
+            $scope.add_visitor_score *= -1;
+            d($scope.add_home_score, $scope.add_visitor_score)
         }
      };
 
