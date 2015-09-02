@@ -33,16 +33,16 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
     max-width: 90%;
 }
 
-.clock-page .clock {
+.clock {
     font-weight: bold;
     white-space: nowrap;
 }
 
-.clock-page .clock .almost_finished {
+.clock .almost_finished {
     color: red;
 }
 
-.clock-page .on_break {
+.on_break {
     color: green;
 }
 
@@ -53,57 +53,57 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
 }
 
 @media (max-width: 599px) {
-    .clock-page .clock {
+    .clock {
         font-size: 12ex;
     }
-    .clock-page .top {
+    .top {
         font-size: 5ex;
     }
-    .clock-page .bottom {
+    .bottom {
         font-size: 2.5ex;
     }
 }
 @media (min-width: 600px) and (max-width: 768px) {
-    .clock-page .clock {
+    .clock {
         font-size: 19ex;
     }
-    .clock-page .top {
+    .top {
         font-size: 6ex;
     }
-    .clock-page .bottom {
+    .bottom {
         font-size: 2ex;
     }
 }
 @media (min-width: 769px) and (max-width: 992px) {
-    .clock-page .clock {
+    .clock {
         font-size: 24ex;
     }
-    .clock-page .top {
+    .top {
         font-size: 10ex;
     }
-    .clock-page .bottom {
+    .bottom {
         font-size: 3ex;
     }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-    .clock-page .clock {
+    .clock {
         font-size: 30ex;
     }
-    .clock-page .top {
+    .top {
         font-size: 12ex;
     }
-    .clock-page .bottom {
+    .bottom {
         font-size: 4ex;
     }
 }
 @media (min-width: 1200px) {
-    .clock-page .clock {
+    .clock {
         font-size: 38ex;
     }
-    .clock-page .top {
+    .top {
         font-size: 15ex;
     }
-    .clock-page .bottom {
+    .bottom {
         font-size: 5ex;
     }
 }
@@ -142,4 +142,12 @@ td.description img {
     border-radius: 1em;
     max-height: 100%;
     max-width: 100%;
+}
+
+.team_active {
+    text-decoration: underline;
+}
+
+.team_negative {
+    color: red;
 }

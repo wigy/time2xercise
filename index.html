@@ -126,7 +126,7 @@
       </div>
     </div>
 
-    <div ng-if="page=='clock' && timing.isMatch()" class="container clock-page">
+    <div ng-if="page=='clock' && timing.isMatch()" class="container match-page">
         <div class="row">
             <div class="top text-center col-md-12">&nbsp;</div>
         </div>
@@ -135,8 +135,8 @@
         <div class="top text-right col-md-6" ng-class="{almost_finished: timing.getRemainingSeconds() < 60, on_break: timing.onBreak()}" ng-bind="timing.getRemaining() | shortTime"></div>
       </div>
       <div class="row">
-        <div class="bottom text-left col-md-6 col-xs-6" ng-bind="timing.match.home_team"></div>
-        <div class="bottom text-right col-md-6 col-xs-6" ng-bind="timing.match.visitor_team"></div>
+        <div class="bottom text-left col-md-6 col-xs-6" ng-class="{team_active: add_home_score, team_negative: add_home_score < 0}" ng-bind="timing.match.home_team"></div>
+        <div class="bottom text-right col-md-6 col-xs-6" ng-class="{team_active: add_visitor_score, team_negative: add_visitor_score < 0}" ng-bind="timing.match.visitor_team"></div>
       </div>
       <div class="row">
           <div class="clock text-center col-md-12" ng-bind="timing.match.getScore()"></div>

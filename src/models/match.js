@@ -12,9 +12,21 @@ function Match(home, visitor) {
     this.visitor_score = 0;
 
     /**
-     * Forma the score to the string.
+     * Format the score to the string.
      */
     this.getScore = function() {
         return this.home_score + ' - ' + this.visitor_score;
+    };
+
+    /**
+     * Add to the score of the both teams.
+     */
+    this.addScore = function(home, visitor) {
+        if (home) {
+            this.home_score += home;
+        }
+        if (visitor) {
+            this.visitor_score += visitor;
+        }
     };
 }
