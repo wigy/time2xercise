@@ -183,6 +183,9 @@ function TimeTable(program) {
     this.getRemaining = function(clock) {
 
         if (this.current && this.current.time) {
+            if (this.current.options.reverse_count) {
+                return clock.diff(this.current.startTime());
+            }
             return this.current.endTime().diff(clock);
         }
 

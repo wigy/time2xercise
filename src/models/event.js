@@ -51,6 +51,18 @@ function Event(number, duration, title, description, options) {
     };
 
     /**
+     * Return starting time of the event.
+     */
+    this.startTime = function() {
+
+        if (!this.time) {
+            return new Time();
+        }
+
+        return new Time(this.time);
+    };
+
+    /**
      * Check if this event is just a break.
      */
     this.isBreak = function() {
