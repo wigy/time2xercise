@@ -147,14 +147,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-available-tasks');
     grunt.loadNpmTasks('grunt-contrib-clean');
 
-    grunt.loadTasks('./grunt/');
-
-    // Default task.
-    grunt.registerTask('default', ['availabletasks']);
+    grunt.loadTasks('node_modules/chronicles_of_grunt/tasks/');
 
     // Custom tasks.
     grunt.registerTask('build', 'Compile compressed version of the code into dist-directory.',
         ['jshint', 'concat', 'uglify', 'cssmin', 'copy:build', 'copy:index', 'clean:build']);
     grunt.registerTask('copylibs', 'Update libraries from the installed node modules.',
         ['copy:libs']);
+
+    // Default task.
+    grunt.registerTask('default', ['availabletasks']);
 };
