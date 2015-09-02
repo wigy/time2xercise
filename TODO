@@ -1,7 +1,6 @@
 [ ] Bigger fonts.
 [ ] Option to count up instead of down.
 [ ] Ability to change the team name.
-[ ] Marking the paused clock.
 [ ] Add break option and rename break to 'Half-time'.
 
 [ ] Ability to rebuild include lists for index.html (or test.html) using Grunt.
