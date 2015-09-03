@@ -19,6 +19,19 @@ module.exports = function(grunt) {
             }
         },
 
+        build: {
+            options: {
+                external: {
+                    libs: ['coa', 'jquery', 'bootstrap', 'angular'],
+                    css: ['bootstrap'],
+                    fonts: [],
+                },
+                settings: [],
+                models: [],
+                src: [],
+            }
+        },
+
         concat: {
             options: {
                 banner: '<%= banner %>',
@@ -149,7 +162,7 @@ module.exports = function(grunt) {
     grunt.loadTasks('node_modules/chronicles_of_grunt/tasks/');
 
     // Custom tasks.
-    grunt.registerTask('build', 'Compile compressed version of the code into dist-directory.',
+    grunt.registerTask('oldbuild', 'Compile compressed version of the code into dist-directory.',
         ['jshint', 'concat', 'uglify', 'cssmin', 'copy:build', 'copy:index', 'clean:build']);
     grunt.registerTask('copylibs', 'Update libraries from the installed node modules.',
         ['copy:libs']);
