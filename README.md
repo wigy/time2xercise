@@ -10,10 +10,11 @@ Just load the `index.html` and go!
 3. Select *Subject* as *Rugby* and *Schedule* as *XV Match*.
 4. Click *Start Now* and you are switched to the Match Timer screen.
 
-### Controls
+### Controls for Match Timer
 
 - `P` Start and stop timer.
 - `H` Add next numeric key press to home team score.
 - `V` Add next numeric key press to visitor team score.
 - `0`..`9` Add numeric score (`0` adds 10) to the selected team score.
 - `-` Negate next addition, i.e. substract next numeric key press from score.
+- `M` Display menu.
