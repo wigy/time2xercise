@@ -36,6 +36,7 @@
         <div class="navbar-header"><a class="navbar-brand"><img src="pics/icon.png"></a></div>
         <div class="btn-group" role="navigation">
           <button class="btn btn-default navbar-btn" ng-click="goPage('admin')"><span class="glyphicon glyphicon-cog"></span> Admin</button>
+          <button class="btn btn-default navbar-btn" ng-click="goPage('options')"><span class="glyphicon glyphicon-wrench"></span> Options</button>
           <button class="btn btn-default navbar-btn" ng-click="goPage('clock')"><span class="glyphicon glyphicon-time"></span> Clock</button>
           <button class="btn btn-default navbar-btn" ng-click="goPage('changelog')"><span class="glyphicon glyphicon-list"></span> Changelog</button>
           <button class="btn btn-info navbar-btn" ng-click="goPage('soundtest')"><span class="glyphicon glyphicon-sound-dolby"></span> Sound Test</button>
@@ -110,6 +111,28 @@
       <timer-schedule timing="timing" />
     </div>
 
+    <div ng-if="page=='options'" class="container options-page">
+      <h1>Options</h1>
+      <div class="row">
+        <form class="form">
+            <div class="form-group">
+              <label for="starting-time">Home Team Name</label>
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-king"></span></span>
+                <input type="text" class="form-control" ng-model="match.home_team.name"></input>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="starting-time">Vistor Team Name</label>
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-queen"></span></span>
+                <input type="text" class="form-control" ng-model="match.visitor_team.name"></input>
+              </div>
+            </div>
+        </form>
+      </div>
+    </div>
+
     <div ng-if="page=='clock' && !timing.isMatch()" class="container clock-page">
       <div class="row">
         <div class="top text-center col-md-12" ng-bind="timing.getCurrentTitle()"></div>
@@ -132,11 +155,11 @@
         <div class="top text-right col-md-6" ng-class="{almost_finished: timing.getRemainingSeconds() < 60, on_break: timing.onBreak() || timing.pause}" ng-bind="timing.getRemaining() | shortTime"></div>
       </div>
       <div class="row">
-        <div class="bottom text-left col-md-6 col-xs-6" ng-class="{team_active: add_home_score, team_negative: add_home_score < 0}" ng-bind="timing.match.home_team"></div>
-        <div class="bottom text-right col-md-6 col-xs-6" ng-class="{team_active: add_visitor_score, team_negative: add_visitor_score < 0}" ng-bind="timing.match.visitor_team"></div>
+        <div class="bottom text-left col-md-6 col-xs-6" ng-class="{team_active: add_home_score, team_negative: add_home_score < 0}" ng-bind="match.home_team"></div>
+        <div class="bottom text-right col-md-6 col-xs-6" ng-class="{team_active: add_visitor_score, team_negative: add_visitor_score < 0}" ng-bind="match.visitor_team"></div>
       </div>
       <div class="row">
-          <div class="clock text-center col-md-12" ng-bind="timing.match.getScore()"></div>
+          <div class="clock text-center col-md-12" ng-bind="match.getScore()"></div>
       </div>
     </div>
 

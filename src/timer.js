@@ -101,6 +101,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
     $scope.timing.load('Fitness');
     $scope.timing.starting_time = '00:00:00';
     $scope.timing.selectTraining('Generic');
+    $scope.match = new Match('Home', 'Visitor');
     $scope.testing = false;
     $scope.show_menu = true;
     $scope.PlaySound = PlaySound;
@@ -282,33 +283,38 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
       * Keyboard handler.
       */
      $scope.keyPress = function(key) {
-        if (key === 'M') {
-            $scope.toggleMenu();
-        } else if (key === 'P') {
-            $scope.togglePause();
-        } else if (key === 'H') {
-            if ($scope.add_home_score) {
-                $scope.add_home_score = 0;
-                return;
-            }
-            $scope.add_home_score = 1;
-            $scope.add_visitor_score = 0;
-        } else if (key === 'V') {
-            if ($scope.add_visitor_score) {
-                $scope.add_visitor_score = 0;
-                return;
-            }
-            $scope.add_visitor_score = 1;
-            $scope.add_home_score = 0;
-        } else if (key === '-') {
-            $scope.add_home_score *= -1;
-            $scope.add_visitor_score *= -1;
-        } else if (key >= '0' && key <= '9') {
-            var score = key === '0' ? 10 : parseInt(key);
-            $scope.timing.match.addScore($scope.add_home_score * score, $scope.add_visitor_score * score);
-            $scope.add_visitor_score = 0;
-            $scope.add_home_score = 0;
-        }
+
+         if ($scope.page != 'clock') {
+             return;
+         }
+
+         if (key === 'M') {
+             $scope.toggleMenu();
+         } else if (key === 'P') {
+             $scope.togglePause();
+         } else if (key === 'H') {
+             if ($scope.add_home_score) {
+                 $scope.add_home_score = 0;
+                 return;
+             }
+             $scope.add_home_score = 1;
+             $scope.add_visitor_score = 0;
+         } else if (key === 'V') {
+             if ($scope.add_visitor_score) {
+                 $scope.add_visitor_score = 0;
+                 return;
+             }
+             $scope.add_visitor_score = 1;
+             $scope.add_home_score = 0;
+         } else if (key === '-') {
+             $scope.add_home_score *= -1;
+             $scope.add_visitor_score *= -1;
+         } else if (key >= '0' && key <= '9') {
+             var score = key === '0' ? 10 : parseInt(key);
+             $scope.match.addScore($scope.add_home_score * score, $scope.add_visitor_score * score);
+             $scope.add_visitor_score = 0;
+             $scope.add_home_score = 0;
+         }
      };
 
      // Debug activities.
@@ -316,7 +322,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
          $scope.timing.load('Test');
          $scope.timing.selectTraining('Rugby');
          $scope.timing.selectSchedule('XV Match');
-         $scope.startNow(1);
+         $scope.goPage('options');
      }
 }]);
 })(angular);

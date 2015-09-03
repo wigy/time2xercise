@@ -12,8 +12,9 @@ CHANGELOG = [
         version: 'v1.10.0',
         changes: [
             'Keyboard support.',
-            'New match-mode allowing to display score as well',
-            'Counting up instead of down as an option'
+            'New match-mode allowing to display score as well.',
+            'Counting up instead of down as an option.',
+            'Options screen for changing home and visitor team names.',
         ]
     },{
         version: 'v1.9.0',

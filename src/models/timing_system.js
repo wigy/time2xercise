@@ -20,8 +20,6 @@ function TimingSystem() {
     this.schedule_name = null;
     // Name of the currently selected program.
     this.program_name = null;
-    // Current match if any.
-    this.match = null;
 
     /**
      * Load data for the named training system.
@@ -62,12 +60,6 @@ function TimingSystem() {
          this.schedule_name = name;
          var programs = this.training.schedule.getPrograms();
          this.selectProgram(programs.length ? programs[0] : null);
-         if (this.isMatch()) {
-             // TODO: Read team names from the UI.
-             this.match = new Match(new Team('Home'), new Team('Visitor'));
-         } else {
-             this.match = null;
-         }
      };
 
      /**

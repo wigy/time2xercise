@@ -3,9 +3,9 @@
  */
 function Match(home, visitor) {
     // A home team.
-    this.home_team = home;
+    this.home_team = home instanceof Team ? home : new Team(home);
     // A visitor team.
-    this.visitor_team = visitor;
+    this.visitor_team = visitor instanceof Team ? visitor : new Team(visitor);
     // Home team score.
     this.home_score = 0;
     // Visitor team score.
