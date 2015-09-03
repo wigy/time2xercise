@@ -22,9 +22,9 @@ module.exports = function(grunt) {
         build: {
             options: {
                 external: {
-                    libs: ['coa', 'jquery', 'bootstrap', 'angular'],
+                    lib: ['coa', 'jquery', 'bootstrap', 'angular'],
                     css: ['bootstrap'],
-                    fonts: [],
+                    font: ['bootstrap'],
                 },
                 settings: [],
                 models: [],
