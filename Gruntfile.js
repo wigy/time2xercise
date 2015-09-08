@@ -24,16 +24,20 @@ module.exports = function(grunt) {
                 external: {
                     lib: ['coa', 'jquery', 'bootstrap', 'angular'],
                     css: ['bootstrap'],
-                    font: ['bootstrap'],
+                    fonts: ['bootstrap'],
                 },
-                settings: [],
-                models: [],
-                src: [],
+                src: {
+                    config:['src/settings.js', 'src/utils.js'],
+                    models: ['src/models/**/*.js'],
+                    data: ['data/**/*.js'],
+                    code: ['src/**/*.js'],
+                },
             }
         },
 
         concat: {
             options: {
+
                 banner: '<%= banner %>',
                 stripBanners: true
             },
@@ -59,27 +63,6 @@ module.exports = function(grunt) {
                     'dist/time2xercise.min.css': ['css/bootstrap.min.css', 'css/timer.css']
                 }
             }
-        },
-
-        jshint: {
-            all: ['Gruntfile.js', 'src/**/*.js'],
-            options: {
-                curly: true,
-                eqeqeq: true,
-                immed: true,
-                latedef: true,
-                newcap: true,
-                noarg: true,
-                sub: true,
-                undef: false,
-                unused: false,
-                boss: true,
-                eqnull: true,
-                browser: true,
-                globals: {
-                    jQuery: true
-                }
-            },
         },
 
         copy: {
@@ -153,7 +136,6 @@ module.exports = function(grunt) {
     // List of plugins required.
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');

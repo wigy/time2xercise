@@ -284,7 +284,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
       */
      $scope.keyPress = function(key) {
 
-         if ($scope.page != 'clock') {
+         if ($scope.page !== 'clock') {
              return;
          }
 
