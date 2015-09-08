@@ -17,12 +17,13 @@ module.exports = function(grunt) {
             options: {
                 file: 'src/settings.js'
             }
+
         },
 
         build: {
             options: {
                 external: {
-                    lib: ['coa', 'jquery', 'bootstrap', 'angular'],
+                    lib: ['angular', 'jquery', 'bootstrap', 'coa'],
                     css: ['bootstrap'],
                     fonts: ['bootstrap'],
                 },
@@ -32,6 +33,7 @@ module.exports = function(grunt) {
                     data: ['data/**/*.js'],
                     code: ['src/**/*.js'],
                 },
+                index: ['index.html', 'test.html'],
             }
         },
 
