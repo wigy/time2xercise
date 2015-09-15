@@ -1,9 +1,9 @@
 // Version number.
-VERSION = '1.10.0';
+VERSION = '1.11.0-beta';
 // Copyright year.
 YEAR = 2015;
 // If set, be silent and be more debugging friendly.
-DEBUG = false;
+DEBUG = true;
 // Translation table to be used.
 LANGUAGE = 'en';
 // Changes in the version history.
