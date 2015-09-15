@@ -12,7 +12,7 @@ module.exports = function(grunt) {
                 '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>;' +
                 ' Licensed <%= pkg.license %> */\n',
 
-        // Task configuration.
+        // Build configuration.
         build: {
             options: {
                 external: {
@@ -27,7 +27,10 @@ module.exports = function(grunt) {
                     code: ['src/**/*.js'],
                     css: ['css/*.css'],
                 },
-                index: ['index.html', 'test.html'],
+                index: {
+                    app: 'index.html',
+                    test: 'test.html',
+                },
             }
         },
 
