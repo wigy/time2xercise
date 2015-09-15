@@ -13,13 +13,6 @@ module.exports = function(grunt) {
                 ' Licensed <%= pkg.license %> */\n',
 
         // Task configuration.
-        versioning: {
-            options: {
-                file: 'src/settings.js'
-            }
-
-        },
-
         build: {
             options: {
                 external: {

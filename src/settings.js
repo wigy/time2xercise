@@ -9,6 +9,10 @@ LANGUAGE = 'en';
 // Changes in the version history.
 CHANGELOG = [
     {
+        version: 'v1.11.0',
+        changes: [
+        ]
+    },{
         version: 'v1.10.0',
         changes: [
             'Keyboard support.',
