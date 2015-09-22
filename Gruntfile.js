@@ -14,7 +14,7 @@ module.exports = function(grunt) {
                     fonts: ['bootstrap'],
                 },
                 src: {
-                    config:['src/settings.js', 'src/utils.js'],
+                    config: ['src/settings.js', 'src/utils.js'],
                     models: ['src/models/**/*.js'],
                     data: ['data/**/*.js'],
                     code: ['src/**/*.js'],
