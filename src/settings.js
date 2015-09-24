@@ -1,9 +1,9 @@
 // Version number.
-VERSION = '1.11.0-beta';
+VERSION = '1.11.0';
 // Copyright year.
 YEAR = 2015;
 // If set, be silent and be more debugging friendly.
-DEBUG = true;
+DEBUG = false;
 // Translation table to be used.
 LANGUAGE = 'en';
 // Changes in the version history.
@@ -11,6 +11,7 @@ CHANGELOG = [
     {
         version: 'v1.11.0',
         changes: [
+            'Switch to the CoG build system instead of separate tasks.'
         ]
     },{
         version: 'v1.10.0',
