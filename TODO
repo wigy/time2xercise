@@ -1,3 +1,4 @@
+[ ] Ability to count from N minutes onwards in time display.
 [ ] Usage instructions.
 [ ] Ability to rebuild include lists for index.html (or test.html) using Grunt.
 [ ] Quit button to reset clock and go admin.
