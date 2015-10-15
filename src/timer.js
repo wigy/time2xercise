@@ -23,6 +23,20 @@ TimerApp.service('PlaySound', [function() {
     audio['1'] = new Audio('sounds/1.mp3');
     audio['2'] = new Audio('sounds/2.mp3');
     audio['3'] = new Audio('sounds/3.mp3');
+    audio['lift'] = new Audio('sounds/lift.mp3');
+    audio['relax'] = new Audio('sounds/relax.mp3');
+    audio['back'] = new Audio('sounds/back.mp3');
+    audio['get-ready'] = new Audio('sounds/get-ready.mp3');
+    audio['1st-round'] = new Audio('sounds/1st-round.mp3');
+    audio['2nd-round'] = new Audio('sounds/2nd-round.mp3');
+    audio['3rd-round'] = new Audio('sounds/3rd-round.mp3');
+    audio['4th-round'] = new Audio('sounds/4th-round.mp3');
+    audio['5th-round'] = new Audio('sounds/5th-round.mp3');
+    audio['6th-round'] = new Audio('sounds/6th-round.mp3');
+    audio['7th-round'] = new Audio('sounds/7th-round.mp3');
+    audio['8th-round'] = new Audio('sounds/8th-round.mp3');
+    audio['9th-round'] = new Audio('sounds/9th-round.mp3');
+    audio['last-round'] = new Audio('sounds/last-round.mp3');
 
     return function(name, timestamp) {
         if (name === 'list') {
@@ -320,9 +334,9 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
      // Debug activities.
      if (DEBUG) {
          $scope.timing.load('Test');
-         $scope.timing.selectTraining('Rugby');
-         $scope.timing.selectSchedule('XV Match');
-         $scope.goPage('options');
+         $scope.timing.selectTraining('Fitness');
+         $scope.timing.selectSchedule('Weight Lift 10 x 10');
+//         $scope.goPage('options');
      }
 }]);
 })(angular);
