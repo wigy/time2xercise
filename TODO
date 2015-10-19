@@ -1,6 +1,4 @@
-[ ] Weight Lift: Move data so that there are only rounds and sounds are distributed on each round.
-[ ] Weight Lift: Replace counting with single words lift, lift, lift, 4, 3, 2, 1, relax
-[ ] Weight Lift: Fix Last Round.
+[ ] Weight Lift: Programs with info.
 [ ] Ability to count from N minutes onwards in time display.
 [ ] Usage instructions.
 [ ] Ability to rebuild include lists for index.html (or test.html) using Grunt.
