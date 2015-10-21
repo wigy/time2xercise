@@ -9,6 +9,12 @@ LANGUAGE = 'en';
 // Changes in the version history.
 CHANGELOG = [
     {
+        version: 'v1.12.0',
+        changes: [
+            'Weight lifting program 10x10 for Fitness.',
+            'Allow proper sounds in DEBUG mode.'
+        ]
+    },{
         version: 'v1.11.0',
         changes: [
             'Switch to the CoG build system instead of separate tasks.'

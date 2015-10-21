@@ -46,7 +46,7 @@ TimerApp.service('PlaySound', [function() {
             d("Invalid audio name:", name);
             return;
         }
-        if (DEBUG) {
+        if (timestamp) {
             d((timestamp ? timestamp : '') + "   >>> " + name + " <<<");
         } else {
             audio[name].play();
@@ -144,7 +144,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
         }
         var sound = $scope.timing.refresh(clock);
         if(sound) {
-            $scope.PlaySound(sound, $scope.timing.clock.toString());
+            $scope.PlaySound(sound, $scope.testing ? $scope.timing.clock.toString() : null);
         }
     }
     refresh();
