@@ -1,7 +1,6 @@
 [ ] Weight Lift: Programs with info.
 [ ] Ability to count from N minutes onwards in time display.
 [ ] Usage instructions.
-[ ] Ability to rebuild include lists for index.html (or test.html) using Grunt.
 [ ] Quit button to reset clock and go admin.
 [ ] Back to beginning or to the end buttons.
 [ ] Language selector.
@@ -12,3 +11,12 @@
 [ ] Study how to implement (most of) CSS as Bootstrap theme add-on.
 [ ] Collect Grunt tasks into new separate plugin handling all steps with few lines of configuration.
 [ ] Proper documentation format using Angular documentation notation.
+[ ] Data modeling:
+[ ]   Defining classes with optional type definitions for each member.
+[ ]   Consider making classes Angular aware and some quick method
+      adding new class templates.
+[ ]   Ability to save data as JSON in data files.
+[ ]   Data loading interface that works REST-like manner
+      as load('module/class/id') and can be simulated with local data
+      automatically.
+[ ] Watch task to rebuild all compiled files (in Chronicles of Grunt).
