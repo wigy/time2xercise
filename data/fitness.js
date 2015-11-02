@@ -37,7 +37,7 @@ DATA.Fitness = {
     },
     programs: {
         '1 Monday': ['BW-P', 'BW-L', 'BW-PU', 'BW-SJ'],
-        '2 Tuesday': ['LSP', 'RSP', 'SQJ', 'B'],
+        '2 Tuesday': ['BW-LSP', 'BW-RSP', 'BW-SQJ', 'BW-B'],
         '3 Wednesday': ['BW-MC', 'BW-LSS', 'BW-RSS', 'BW-EPU', 'BW-OTSR'],
         '4 Thursday': ['BW-PR', 'BW-S', 'BW-B'],
         '5 Friday': ['BW-BR', 'BW-PPU', 'BW-LJ', 'BW-MR'],
