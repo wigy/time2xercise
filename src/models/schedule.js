@@ -9,6 +9,8 @@ function Schedule(training) {
     this.training = training;
     // Name of this schedule.
     this.name = null;
+    // Description of the schedule.
+    this.description = null;
     // A list of (duration, offset) pairs.
     this.timing = [];
     // A mapping from program names available to this schedule to the program instances.
@@ -23,6 +25,9 @@ function Schedule(training) {
         this.name = name;
         this.programs = {};
         this.timing = data.schedules[name];
+        if (data.info && data.info[name]) {
+            this.description = data.info[name];
+        }
         for (var i in data.suitable[name]) {
             var program = data.suitable[name][i];
             this.programs[program] = new Program(this);

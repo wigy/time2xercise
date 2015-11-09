@@ -81,6 +81,7 @@ TimerApp.directive('timerSchedule', [function() {
         template : '' +
             '<div class="row schedule" ng-if="timing.training.schedule.name">' +
             '  <div class="col-md-12"><h1>{{timing.training.schedule.name}}</h1></div>' +
+            '  <div class="col-md-12 description" ng-bind-html="timing.training.schedule.description"></div>' +
             '  <div class="col-md-12"><h2>{{timing.training.schedule.program.name}}</h2></div>' +
             '  <div class="col-md-12 description" ng-bind-html="timing.training.schedule.program.description"></div>' +
             '  <div class="row" ng-repeat="event in timing.training.schedule.program.timetable.events track by $index">' +

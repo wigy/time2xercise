@@ -12,7 +12,9 @@ CHANGELOG = [
         version: 'v1.12.0',
         changes: [
             'Weight lifting program 10x10 for Fitness.',
-            'Allow proper sounds in DEBUG mode.'
+            'Allow proper sounds in DEBUG mode.',
+            'Info texts for schedules.',
+            'Weight lifting 10 x 10.'
         ]
     },{
         version: 'v1.11.0',

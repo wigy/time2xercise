@@ -41,7 +41,7 @@ DATA.Fitness = {
         '3 Wednesday': ['BW-MC', 'BW-LSS', 'BW-RSS', 'BW-EPU', 'BW-OTSR'],
         '4 Thursday': ['BW-PR', 'BW-S', 'BW-B'],
         '5 Friday': ['BW-BR', 'BW-PPU', 'BW-LJ', 'BW-MR'],
-        'Session 1/Exercise 1': ['WL-10x10-DO', 'WL-10x10-R1', 'WL-10x10-R2', 'WL-10x10-R3', 'WL-10x10-R4', 'WL-10x10-R5', 'WL-10x10-R6', 'WL-10x10-R7', 'WL-10x10-R8', 'WL-10x10-R9', 'WL-10x10-RL'],
+        'Generic Session': ['WL-10x10-DO', 'WL-10x10-R1', 'WL-10x10-R2', 'WL-10x10-R3', 'WL-10x10-R4', 'WL-10x10-R5', 'WL-10x10-R6', 'WL-10x10-R7', 'WL-10x10-R8', 'WL-10x10-R9', 'WL-10x10-RL'],
     },
     suitable: {
         'Body Weight 30:30': ['1 Monday', '2 Tuesday', '3 Wednesday', '4 Thursday', '5 Friday'],
@@ -52,7 +52,7 @@ DATA.Fitness = {
         'Body Weight 55:05': ['1 Monday', '2 Tuesday', '3 Wednesday', '4 Thursday', '5 Friday'],
         'Body Weight 60:00': ['1 Monday', '2 Tuesday', '3 Wednesday', '4 Thursday', '5 Friday'],
 
-        'Weight Lift 10 x 10': ['Session 1/Exercise 1'],
+        'Weight Lift 10 x 10': ['Generic Session'],
     },
     codes: {
         'BW-P': 'Plank',
@@ -93,6 +93,7 @@ DATA.Fitness = {
         '3 Wednesday': 'This is Rugby Fitness Bodyweight Challenge Day 3. <br> See <a target="new" href="http://www.youtube.com/watch?v=9tdrDTjp6aY">http://www.youtube.com/watch?v=9tdrDTjp6aY</a>',
         '4 Thursday': 'This is Rugby Fitness Bodyweight Challenge Day 4. <br> See <a target="new" href="http://www.youtube.com/watch?v=b1S--lsQvPU">http://www.youtube.com/watch?v=b1S--lsQvPU</a>',
         '5 Friday': 'This is Rugby Fitness Bodyweight Challenge Day 5. <br> See <a target="new" href="http://www.youtube.com/watch?v=E6WEriUAw-A">http://www.youtube.com/watch?v=E6WEriUAw-A</a>',
+        'Weight Lift 10 x 10': 'In this exercise you do 10 series of 10 repeats. Each repeat takes 5 seconds.'
     },
     sounds: {
         'BW-.*' : {0: 'start', '-1': 'done'},
