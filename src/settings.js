@@ -11,7 +11,7 @@ CHANGELOG = [
     {
         version: 'v1.13.0',
         changes: [
-            'Weight lifting 4 x 5.'
+            'Weight lifting schedules 4 x 5 and 4 x 10.',
         ]
     },{
         version: 'v1.12.0',

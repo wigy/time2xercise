@@ -338,7 +338,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
      if (DEBUG) {
          $scope.timing.load('Test');
          $scope.timing.selectTraining('Fitness');
-         $scope.timing.selectSchedule('Weight Lift 4 x 5');
+         $scope.timing.selectSchedule('Weight Lifting 10 x 10');
 //         $scope.goPage('options');
      }
 }]);
