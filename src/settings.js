@@ -1,14 +1,19 @@
 // Version number.
-VERSION = '1.12.0';
+VERSION = '1.13.0-beta';
 // Copyright year.
 YEAR = 2015;
 // If set, be silent and be more debugging friendly.
-DEBUG = false;
+DEBUG = true;
 // Translation table to be used.
 LANGUAGE = 'en';
 // Changes in the version history.
 CHANGELOG = [
     {
+        version: 'v1.13.0',
+        changes: [
+            'Weight lifting 4 x 5.'
+        ]
+    },{
         version: 'v1.12.0',
         changes: [
             'Weight lifting program 10x10 for Fitness.',

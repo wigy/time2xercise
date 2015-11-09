@@ -23,6 +23,8 @@ TimerApp.service('PlaySound', [function() {
     audio['1'] = new Audio('sounds/1.mp3');
     audio['2'] = new Audio('sounds/2.mp3');
     audio['3'] = new Audio('sounds/3.mp3');
+    audio['4'] = new Audio('sounds/4.mp3');
+    audio['5'] = new Audio('sounds/5.mp3');
     audio['lift'] = new Audio('sounds/lift.mp3');
     audio['relax'] = new Audio('sounds/relax.mp3');
     audio['back'] = new Audio('sounds/back.mp3');
@@ -336,7 +338,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
      if (DEBUG) {
          $scope.timing.load('Test');
          $scope.timing.selectTraining('Fitness');
-         $scope.timing.selectSchedule('Weight Lift 10 x 10');
+         $scope.timing.selectSchedule('Weight Lift 4 x 5');
 //         $scope.goPage('options');
      }
 }]);
