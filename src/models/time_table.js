@@ -18,6 +18,8 @@ function TimeTable(program) {
     // Starting time of this table as seconds.
     this.starting_seconds = 0;
 
+    // TODO: All functions belongs to the prototype rather.
+
     /**
      * Fill in events based on the program and schedule.
      */

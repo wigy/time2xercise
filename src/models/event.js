@@ -21,6 +21,8 @@ function Event(number, duration, title, description, options) {
     // Make some manipulation for the description.
     this.description = this.description.replace(/<img /g, '<img class="img-thumbnail"');
 
+    // TODO: All functions belongs to the prototype rather.
+
     /**
      * Calculate starting time of this event based on overall starting time and offset in seconds.
      */

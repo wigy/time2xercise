@@ -149,6 +149,11 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
         if(sound) {
             $scope.PlaySound(sound, $scope.testing ? $scope.timing.clock.toString() : null);
         }
+        if ($scope.timing.isOver()) {
+            // TODO: Does not work correctly.
+            // $scope.timing.stop();
+            // TODO: Possibly go to admin page from here after few seconds.
+        }
     }
     refresh();
 
@@ -193,6 +198,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
         $scope.timing.setStarting(clock);
         $scope.show_menu = false;
         $scope.page = 'clock';
+        $scope.timing.start();
     };
 
     /**
@@ -339,6 +345,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
          $scope.timing.load('Test');
          $scope.timing.selectTraining('Fitness');
          $scope.timing.selectSchedule('Weight Lifting 10 x 10');
+         $scope.timing.selectTraining('Test');
 //         $scope.goPage('options');
      }
 }]);

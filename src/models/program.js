@@ -22,6 +22,8 @@ function Program(schedule) {
     // Info texts for each code.
     this.info = {};
 
+    // TODO: All functions belongs to the prototype rather.
+
     this.load = function(name, data) {
         this.name = name;
         this.list = data.programs[name];

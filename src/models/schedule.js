@@ -18,6 +18,8 @@ function Schedule(training) {
     // Currently selected program.
     this.program = new Program(this);
 
+    // TODO: All functions belongs to the prototype rather.
+
     /**
      * Initialize.
      */

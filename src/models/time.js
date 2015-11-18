@@ -8,6 +8,8 @@ function Time(hhmmss) {
     this.negative = false;
     this.time = hhmmss instanceof Time ? hhmmss.time : (hhmmss || '00:00:00');
 
+    // TODO: All functions belongs to the prototype rather.
+
     this.toString = function() {
         return this.time;
     };

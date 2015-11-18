@@ -6,6 +6,8 @@ function TimingSystem() {
     // Official time.
     this.clock = new Time();
     this.clock.setNow();
+    // Boolean to indicate if the system is running.
+    this.running = false;
     // Boolean to pause the whole system.
     this.pause = false;
     // The starting time of the scheduling.
@@ -20,6 +22,8 @@ function TimingSystem() {
     this.schedule_name = null;
     // Name of the currently selected program.
     this.program_name = null;
+
+    // TODO: All functions belongs to the prototype rather.
 
     /**
      * Load data for the named training system.
@@ -79,6 +83,20 @@ function TimingSystem() {
         this.recalc();
      };
 
+     /**
+      * Start the clock.
+      */
+     this.start = function() {
+         this.running = true;
+     };
+
+     /**
+      * Stop the clock.
+      */
+     this.stop = function() {
+         this.running = false;
+     };
+
     /**
      * Perform update of the time system according to its schedule.
      *
@@ -97,6 +115,10 @@ function TimingSystem() {
             // Real mode.
             old = this.clock.seconds();
             this.clock.setNow();
+        }
+
+        if (!this.running) {
+            return;
         }
 
         // On pause just move all events forward accordingly.

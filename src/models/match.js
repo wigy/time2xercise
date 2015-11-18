@@ -11,6 +11,8 @@ function Match(home, visitor) {
     // Visitor team score.
     this.visitor_score = 0;
 
+    // TODO: All functions belongs to the prototype rather.
+
     /**
      * Format the score to the string.
      */
