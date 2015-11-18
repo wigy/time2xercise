@@ -149,10 +149,10 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
         if(sound) {
             $scope.PlaySound(sound, $scope.testing ? $scope.timing.clock.toString() : null);
         }
-        if ($scope.timing.isOver()) {
-            // TODO: Does not work correctly.
-            // $scope.timing.stop();
-            // TODO: Possibly go to admin page from here after few seconds.
+        var over = $scope.timing.isOver();
+        if (over && over > 10) {
+            $scope.timing.stop();
+            $scope.goPage('admin');
         }
     }
     refresh();
@@ -345,8 +345,6 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
          $scope.timing.load('Test');
          $scope.timing.selectTraining('Fitness');
          $scope.timing.selectSchedule('Weight Lifting 10 x 10');
-         $scope.timing.selectTraining('Test');
-//         $scope.goPage('options');
      }
 }]);
 })(angular);

@@ -199,8 +199,22 @@ function TimeTable(program) {
     };
 
     this.isAtStart = function(clock) {
-        if (this.current && this.current) {
+        if (this.current) {
             return clock.toString() === this.current.startTime().toString();
         }
+    };
+
+    /**
+     * Check if the clock is past the finishing time of the table.
+     */
+    this.isOver = function(clock) {
+
+        if (!this.events.length) {
+            return false;
+        }
+
+        var a = clock.seconds();
+        var b = this.events[this.events.length - 1].endTime().seconds();
+        return a > b ? a - b : 0;
     };
 }

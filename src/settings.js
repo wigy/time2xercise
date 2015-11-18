@@ -12,6 +12,8 @@ CHANGELOG = [
         version: 'v1.13.0',
         changes: [
             'Weight lifting schedules 4 x 5 and 4 x 10.',
+            'Separated running mode from pause.',
+            'Go back to the admin screen after program has finished.'
         ]
     },{
         version: 'v1.12.0',

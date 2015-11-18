@@ -200,10 +200,12 @@ function TimingSystem() {
     };
 
     /**
-     * Check if the whole schedule is finished.
+     * Check if the whole schedule is finished and how many seconds ago if it is.
      */
     this.isOver = function() {
-        return !this.training.schedule.program.timetable.current || !this.training.schedule.program.timetable.current.time;
+        if (!this.running)
+            return false;
+        return this.training.schedule.program.timetable.isOver(this.clock);
     };
 
     /**

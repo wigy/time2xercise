@@ -44,9 +44,12 @@
           <button class="btn btn-info navbar-btn" ng-click="goPage('soundtest')"><span class="glyphicon glyphicon-sound-dolby"></span> Sound Test</button>
         </div>
         <div class="btn-group" role="navigation">
-          <button class="btn btn-default navbar-btn" ng-click="jumpToPrevious()"><span class="glyphicon glyphicon-backward"></span></button>
-          <button class="btn btn-default navbar-btn" ng-click="togglePause()"><span ng-if="!timing.pause" class="glyphicon glyphicon-pause"></span><span ng-if="timing.pause" class="glyphicon glyphicon-play"></span></button>
-          <button class="btn btn-default navbar-btn" ng-click="jumpToNext()"><span class="glyphicon glyphicon-forward"></span></button>
+          <button ng-if="timing.running" class="btn btn-default navbar-btn" ng-click="jumpToPrevious()">
+              <span class="glyphicon glyphicon-backward"></span></button>
+          <button ng-if="timing.running" class="btn btn-default navbar-btn" ng-click="togglePause()">
+              <span ng-if="!timing.pause" class="glyphicon glyphicon-pause"></span><span ng-if="timing.pause" class="glyphicon glyphicon-play"></span></button>
+          <button ng-if="timing.running" class="btn btn-default navbar-btn" ng-click="jumpToNext()">
+              <span class="glyphicon glyphicon-forward"></span></button>
         </div>
         <span class="navbar-text"><span class="glyphicon glyphicon-time"></span>&nbsp;{{timing.getClock()}} <span ng-if="timing.running">RUNNING</span></span>
       </div>
@@ -106,6 +109,7 @@
         <div class="btn-group" role="group">
           <button class="btn btn-default" ng-click="startNow(1)" ng-disabled="!timing.training.schedule.program.name">Start Now</button>
           <button class="btn btn-default" ng-click="startNow(10)" ng-disabled="!timing.training.schedule.program.name">Start In 10s</button>
+          <button class="btn btn-default" ng-click="timing.start(); goPage('clock')" ng-disabled="!timing.training.schedule.program.name">Start As Scheduled</button>
           <button class="btn btn-info" ng-click="testIt()" ng-if="DEBUG">Test</button>
         </div>
       </div>
