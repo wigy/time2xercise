@@ -1,6 +1,6 @@
 (function(angular){
 
-var TimerApp = angular.module('TimerApp', ['coa.input.keyboard']);
+var TimerApp = angular.module('TimerApp', ['coa.input']);
 
 /**
  * Configure the application.
