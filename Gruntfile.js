@@ -8,11 +8,7 @@ module.exports = function(grunt) {
         build: {
             options: {
                 name: "time2exercise",
-                external: {
-                    lib: ['angular', 'jquery', 'bootstrap', 'coa'],
-                    css: ['bootstrap'],
-                    fonts: ['bootstrap'],
-                },
+                external: ['coa', 'jquery', 'bootstrap'],
                 src: {
                     config: ['src/settings.js', 'src/utils.js'],
                     models: ['src/models/**/*.js'],
