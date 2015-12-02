@@ -17,6 +17,7 @@ module.exports = function(grunt) {
                     pics: ['pics/**/*png'],
                     sounds: ['sounds/**/*.mp3'],
                     css: ['css/*.css'],
+                    shell: ['tools/*'],
                 },
                 index: {
                     app: 'index.html',
