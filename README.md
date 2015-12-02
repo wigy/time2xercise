@@ -50,3 +50,15 @@ Just load the `index.html` and go!
 - Move instructions above to seprate Help-page in the application itself.
 
 ## Future Ideas
+
+- Ability to count from N minutes onwards in time display.
+- Quit button to reset clock and go admin.
+- Back to beginning or to the end buttons.
+- Language selector.
+- Random shuffle option.
+- Clean up index.html to the smaller directives so that there is eventually only one left.
+- Deploy in Heroku.
+- Template builder, which collects html files and converts them to javascript strings.
+- Study how to implement (most of) CSS as Bootstrap theme add-on.
+- Proper API-documentation using CoG.
+- Data modeling using CoA (types, fixed JSON loading, saving to storage).
