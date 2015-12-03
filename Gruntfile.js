@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         // Build configuration.
-        build: {
+        cog: {
             options: {
                 name: "time2exercise",
                 external: ['coa', 'jquery', 'bootstrap'],
@@ -14,10 +14,21 @@ module.exports = function(grunt) {
                     models: ['src/models/**/*.js'],
                     data: ['data/**/*.js'],
                     code: ['src/**/*.js'],
-                    pics: ['pics/**/*png'],
-                    sounds: ['sounds/**/*.mp3'],
                     css: ['css/*.css'],
                     shell: ['tools/*'],
+                },
+                media: {
+                    pics: ['pics/**/*png'],
+                    sounds: ['sounds/**/*.mp3'],
+                    src: {
+                        pics: {
+                            files: 'dia/**/*.dia',
+                            convert: [
+                                'mkdir -p "pics/{{SUBDIR}}/"',
+                                'dia -n -e "pics/{{SUBDIR}}/{{BASENAME}}.png" -t cairo-alpha-png "{{SRC}}"'
+                            ]
+                        }
+                    }
                 },
                 index: {
                     app: 'index.html',
