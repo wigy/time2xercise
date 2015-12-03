@@ -64,3 +64,4 @@ Just load the `index.html` and go!
 - Data modeling using CoA (types, fixed JSON loading, saving to storage).
 - Remove tools once CoG can do the conversion.
 - Source files for sounds as text.
+- Proper stopping mechanism and disable starting when running.
