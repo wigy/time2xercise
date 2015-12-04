@@ -23,9 +23,9 @@ module.exports = function(grunt) {
                     src: {
                         pics: {
                             files: 'dia/**/*.dia',
+                            dst: 'pics/{{SUBDIR}}/{{BASENAME}}.png',
                             convert: [
-                                'mkdir -p "pics/{{SUBDIR}}/"',
-                                'dia -n -e "pics/{{SUBDIR}}/{{BASENAME}}.png" -t cairo-alpha-png "{{SRC}}"'
+                                'dia -n -e "{{DST}}" -t cairo-alpha-png "{{SRC}}"'
                             ]
                         }
                     }
