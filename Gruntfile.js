@@ -27,6 +27,15 @@ module.exports = function(grunt) {
                             convert: [
                                 'dia -n -e "{{DST}}" -t cairo-alpha-png "{{SRC}}"'
                             ]
+                        },
+                        sounds: {
+                            files: 'sounds/*.txt',
+                            dst: 'sounds/{{BASENAME}}.mp3',
+                            convert: [
+                                'cat {{SRC}} | espeak -w out.wav',
+                                'sox out.wav {{DST}}',
+                                'rm out.wav'
+                            ]
                         }
                     }
                 },
