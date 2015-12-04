@@ -62,6 +62,4 @@ Just load the `index.html` and go!
 - Study how to implement (most of) CSS as Bootstrap theme add-on.
 - Proper API-documentation using CoG.
 - Data modeling using CoA (types, fixed JSON loading, saving to storage).
-- Remove tools once CoG can do the conversion.
-- Source files for sounds as text.
 - Proper stopping mechanism and disable starting when running.
