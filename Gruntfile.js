@@ -7,7 +7,8 @@ module.exports = function(grunt) {
         // Build configuration.
         cog: {
             options: {
-                name: "time2exercise",
+                name: "time2xercise",
+                title: "Time-2-Xercise",
                 external: ['coa', 'jquery', 'bootstrap'],
                 src: {
                     config: ['src/settings.js', 'src/utils.js'],
