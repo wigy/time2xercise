@@ -11,7 +11,7 @@ module.exports = function(grunt) {
                 title: "Time-2-Xercise",
                 external: ['coa', 'jquery', 'bootstrap'],
                 src: {
-                    config: ['src/settings.js', 'src/utils.js'],
+                    config: ['src/settings.js'],
                     models: ['src/models/**/*.js'],
                     data: ['data/**/*.js'],
                     code: ['src/**/*.js'],
