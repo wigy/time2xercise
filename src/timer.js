@@ -1,59 +1,12 @@
 (function(angular){
 
-var TimerApp = angular.module('TimerApp', ['coa.input', 'time2xercise']);
+var TimerApp = angular.module('TimerApp', ['coa.input', 'coa.audio', 'time2xercise']);
 
 /**
  * Configure the application.
  */
 TimerApp.config(['$sceProvider', function($sceProvider) {
   $sceProvider.enabled(false);
-}]);
-
-// TODO: Move to separate module.
-/**
- * Service to load and play sounds.
- */
-TimerApp.service('PlaySound', [function() {
-
-    var audio = {};
-    audio['buzzer'] = new Audio('sounds/buzzer.mp3');
-    audio['whistle'] = new Audio('sounds/whistle.mp3');
-    audio['start'] = new Audio('sounds/start.mp3');
-    audio['done'] = new Audio('sounds/done.mp3');
-    audio['1'] = new Audio('sounds/1.mp3');
-    audio['2'] = new Audio('sounds/2.mp3');
-    audio['3'] = new Audio('sounds/3.mp3');
-    audio['4'] = new Audio('sounds/4.mp3');
-    audio['5'] = new Audio('sounds/5.mp3');
-    audio['lift'] = new Audio('sounds/lift.mp3');
-    audio['relax'] = new Audio('sounds/relax.mp3');
-    audio['back'] = new Audio('sounds/back.mp3');
-    audio['get-ready'] = new Audio('sounds/get-ready.mp3');
-    audio['1st-round'] = new Audio('sounds/1st-round.mp3');
-    audio['2nd-round'] = new Audio('sounds/2nd-round.mp3');
-    audio['3rd-round'] = new Audio('sounds/3rd-round.mp3');
-    audio['4th-round'] = new Audio('sounds/4th-round.mp3');
-    audio['5th-round'] = new Audio('sounds/5th-round.mp3');
-    audio['6th-round'] = new Audio('sounds/6th-round.mp3');
-    audio['7th-round'] = new Audio('sounds/7th-round.mp3');
-    audio['8th-round'] = new Audio('sounds/8th-round.mp3');
-    audio['9th-round'] = new Audio('sounds/9th-round.mp3');
-    audio['last-round'] = new Audio('sounds/last-round.mp3');
-
-    return function(name, timestamp) {
-        if (name === 'list') {
-            return Object.keys(audio);
-        }
-        if (!(name in audio)) {
-            d("Invalid audio name:", name);
-            return;
-        }
-        if (timestamp) {
-            d((timestamp ? timestamp : '') + "   >>> " + name + " <<<");
-        } else {
-            audio[name].play();
-        }
-    };
 }]);
 
 /**
@@ -104,7 +57,7 @@ TimerApp.directive('timerSchedule', [function() {
 /**
  * Actual controller of the application.
  */
-TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'PlaySound', 'Match', function($scope, $interval, $timeout, PlaySound, Match) {
+TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'player', 'Match', function($scope, $interval, $timeout, player, Match) {
 
     // Intialize application scope.
     $scope.DEBUG = DEBUG;
@@ -121,12 +74,11 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'Play
     $scope.match = new Match({home_team: {name: 'Home'}, visitor_team: {name: 'Visitor'}});
     $scope.testing = false;
     $scope.show_menu = true;
-    $scope.PlaySound = PlaySound;
+    $scope.player = player;
     $scope.add_home_score = 0;
     $scope.add_visitor_score = 0;
 
-    // TODO: Connect to player.
-    mapping = {
+    player.load({
         'buzzer' : 'sounds/buzzer.mp3',
         'whistle' : 'sounds/whistle.mp3',
         'start' : 'sounds/start.mp3',
@@ -134,7 +86,23 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'Play
         '1' : 'sounds/1.mp3',
         '2' : 'sounds/2.mp3',
         '3' : 'sounds/3.mp3',
-    };
+        '4': 'sounds/4.mp3',
+        '5': 'sounds/5.mp3',
+        'lift': 'sounds/lift.mp3',
+        'relax': 'sounds/relax.mp3',
+        'back': 'sounds/back.mp3',
+        'get-ready': 'sounds/get-ready.mp3',
+        '1st-round': 'sounds/1st-round.mp3',
+        '2nd-round': 'sounds/2nd-round.mp3',
+        '3rd-round': 'sounds/3rd-round.mp3',
+        '4th-round': 'sounds/4th-round.mp3',
+        '5th-round': 'sounds/5th-round.mp3',
+        '6th-round': 'sounds/6th-round.mp3',
+        '7th-round': 'sounds/7th-round.mp3',
+        '8th-round': 'sounds/8th-round.mp3',
+        '9th-round': 'sounds/9th-round.mp3',
+        'last-round': 'sounds/last-round.mp3',
+    });
 
     /**
      * Refresh function to update data.
@@ -147,7 +115,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'Play
         }
         var sound = $scope.timing.refresh(clock);
         if(sound) {
-            $scope.PlaySound(sound, $scope.testing ? $scope.timing.clock.toString() : null);
+            $scope.player.play(sound, $scope.testing ? $scope.timing.clock.toString() : null);
         }
         var over = $scope.timing.isOver();
         if (over && over > 10) {

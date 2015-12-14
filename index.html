@@ -170,8 +170,8 @@
     <div ng-if="page=='soundtest'" class="container soundtest-page">
       <h1>Time2Xercise v{{VERSION}}</h1>
       <h2>Sound Test</h2>
-      <span ng-repeat="sound in PlaySound('list')">
-        <a class="btn btn-default" ng-click="PlaySound(sound)">{{sound}}</a>
+      <span ng-repeat="sound in player.list()">
+        <a class="btn btn-default" ng-click="player.play(sound)">{{sound}}</a>
       </span>
     </div>
 
