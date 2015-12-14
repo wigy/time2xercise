@@ -1,6 +1,6 @@
 (function(angular){
 
-var TimerApp = angular.module('TimerApp', ['coa.input']);
+var TimerApp = angular.module('TimerApp', ['coa.input', 'time2xercise']);
 
 /**
  * Configure the application.
@@ -104,7 +104,7 @@ TimerApp.directive('timerSchedule', [function() {
 /**
  * Actual controller of the application.
  */
-TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout', 'PlaySound', function($scope, $interval, $sce, $timeout, PlaySound) {
+TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'PlaySound', 'Match', function($scope, $interval, $timeout, PlaySound, Match) {
 
     // Intialize application scope.
     $scope.DEBUG = DEBUG;
@@ -118,7 +118,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$sce', '$timeout
     $scope.timing.load('Fitness');
     $scope.timing.starting_time = '00:00:00';
     $scope.timing.selectTraining('Generic');
-    $scope.match = new Match('Home', 'Visitor');
+    $scope.match = new Match({home_team: {name: 'Home'}, visitor_team: {name: 'Visitor'}});
     $scope.testing = false;
     $scope.show_menu = true;
     $scope.PlaySound = PlaySound;

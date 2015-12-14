@@ -1,34 +1,34 @@
-/**
- * A match book-keeping object.
- */
-function Match(home, visitor) {
-    // A home team.
-    this.home_team = home instanceof Team ? home : new Team(home);
-    // A visitor team.
-    this.visitor_team = visitor instanceof Team ? visitor : new Team(visitor);
-    // Home team score.
-    this.home_score = 0;
-    // Visitor team score.
-    this.visitor_score = 0;
+(function() {
 
-    // TODO: All functions belongs to the prototype rather.
+    var module = angular.module('time2xercise');
 
-    /**
-     * Format the score to the string.
-     */
-    this.getScore = function() {
-        return this.home_score + ' - ' + this.visitor_score;
-    };
+    module.factory('Match', ['Data', 'TypeObj', 'TypeInt', function(Data, TypeObj, TypeInt) {
 
-    /**
-     * Add to the score of the both teams.
-     */
-    this.addScore = function(home, visitor) {
-        if (home) {
-            this.home_score += home;
+        function Match(data) {
+            this.init(data);
         }
-        if (visitor) {
-            this.visitor_score += visitor;
-        }
-    };
-}
+
+        Match.prototype = new Data('time2xercise', 'Match', [
+            {home_team: {type: TypeObj, options: {class: 'time2xercise.Team'}}},
+            {home_score: {type: TypeInt, default: 0}},
+            {visitor_team: {type: TypeObj, options: {class: 'time2xercise.Team'}}},
+            {visitor_score: {type: TypeInt, default: 0}},
+        ])
+
+        Match.prototype.getScore = function() {
+            return this.home_score + ' - ' + this.visitor_score;
+        };
+
+        Match.prototype.addScore = function(home, visitor) {
+            if (home) {
+                this.home_score += home;
+            }
+            if (visitor) {
+                this.visitor_score += visitor;
+            }
+        };
+
+        return Match;
+    }]);
+
+})();
