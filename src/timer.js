@@ -62,7 +62,6 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'play
     // Intialize application scope.
     $scope.DEBUG = DEBUG;
     $scope.VERSION = VERSION;
-    $scope.CHANGELOG = CHANGELOG;
     $scope.YEAR = YEAR;
     $scope.page = DEBUG ? 'admin' : 'loading';
     $scope.timing = new TimingSystem();

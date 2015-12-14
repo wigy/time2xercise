@@ -22,7 +22,7 @@
     "grunt-contrib-watch": "^0.6.1"
   },
   "dependencies": {
-    "angular": "^1.4.3",
+    "angular": "^1.4.8",
     "bootstrap": "^3.3.6",
     "chronicles_of_angular": "git+ssh://git@github.com:wigy/chronicles_of_angular",
     "jquery": "^2.1.4"
