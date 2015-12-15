@@ -25,7 +25,7 @@
         this.program_name = null;
     }
 
-    angular.module('t2x').factory('TimingSystem', ['Training', function(Training) {
+    angular.module('t2x').factory('TimingSystem', ['Training', 'Time', function(Training, Time) {
 
         TimingSystem.prototype = {}; // TODO: Should be Data.
 

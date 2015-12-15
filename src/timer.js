@@ -57,7 +57,7 @@ TimerApp.directive('timerSchedule', [function() {
 /**
  * Actual controller of the application.
  */
-TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'player', 'Match', 'TimingSystem', function($scope, $interval, $timeout, player, Match, TimingSystem) {
+TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'player', 'Match', 'TimingSystem', 'Time', function($scope, $interval, $timeout, player, Match, TimingSystem, Time) {
 
     // Intialize application scope.
     $scope.DEBUG = DEBUG;

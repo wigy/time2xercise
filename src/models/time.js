@@ -1,121 +1,130 @@
-/**
- * A class storing local time as a string in <i>hh:mm:ss</i> format.
- *
- * @param hhmmss Initial time (defaults to '00:00:00').
- */
-function Time(hhmmss) {
-
-    this.negative = false;
-    this.time = hhmmss instanceof Time ? hhmmss.time : (hhmmss || '00:00:00');
-
-    // TODO: All functions belongs to the prototype rather.
-
-    this.toString = function() {
-        return this.time;
-    };
-
-    this.short = function() {
-        return this.toString().substr(0, 5);
-    };
+(function() {
 
     /**
-     * Add to this time.
+     * A class storing local time as a string in <i>hh:mm:ss</i> format.
+     *
+     * @param hhmmss Initial time (defaults to '00:00:00').
      */
-    this.add = function(h, m, s) {
-        var parts = this.time.split(':');
-        s = s + parseInt(parts[2]);
-        m += Math.floor(s/60);
-        s = s % 60;
-        m = m + parseInt(parts[1]);
-        h += Math.floor(m/60);
-        m = m % 60;
-        h = h + parseInt(parts[0]);
-        h = h % 24;
+    function Time(hhmmss) {
 
-        this.time = ('0' + h).substr(-2,2) + ':' + ('0' + m).substr(-2,2) + ':' + ('0' + s).substr(-2,2);
+        this.negative = false;
+        this.time = hhmmss instanceof Time ? hhmmss.time : (hhmmss || '00:00:00');
+
+        // TODO: All functions belongs to the prototype rather.
+
+        this.toString = function() {
+            return this.time;
+        };
+
+        this.short = function() {
+            return this.toString().substr(0, 5);
+        };
+    }
+
+    Time.now = function() {
+        var clock = new Time();
+        clock.setNow();
+        return clock;
     };
 
-    /**
-     * Add or subtract seconds.
-     */
-    this.addSeconds = function(num) {
-        if (num > 0) {
-            this.add(0, 0, num);
-        }
-        else {
-            var zero = new Time('00:00:00');
-            zero.addSeconds(this.seconds() + num);
-            this.time = zero.time;
-        }
-    };
+    angular.module('t2x').factory('Time', [function() {
 
-    /**
-     * Set the time to the current time.
-     */
-    this.setNow = function() {
-        this.time = (new Date()).toJSON().substr(11, 8);
-        var hours = (-(new Date()).getTimezoneOffset() / 60);
-        if (hours > 0) {
-            this.add(hours, 0, 0);
-        }
-        if (hours < 0) {
-            this.add(24 + hours, 0, 0);
-        }
-    };
+        Time.prototype = {}; // TODO: Should be Data.
 
-    /**
-     * Check if this time is not already as much as the given time.
-     */
-    this.notYet = function(time) {
-        return this.time.toString() < time.toString();
-    };
+        /**
+         * Add to this time.
+         */
+        Time.prototype.add = function(h, m, s) {
+            var parts = this.time.split(':');
+            s = s + parseInt(parts[2]);
+            m += Math.floor(s/60);
+            s = s % 60;
+            m = m + parseInt(parts[1]);
+            h += Math.floor(m/60);
+            m = m % 60;
+            h = h + parseInt(parts[0]);
+            h = h % 24;
 
-    /**
-     * Check if this time is already past the given time.
-     */
-    this.isPast = function(time) {
-        return this.time.toString() > time.toString();
-    };
+            this.time = ('0' + h).substr(-2,2) + ':' + ('0' + m).substr(-2,2) + ':' + ('0' + s).substr(-2,2);
+        };
 
-    /**
-     * Check if this time is at least the given time.
-     */
-    this.isAlready = function(time) {
-        return this.time.toString() >= time.toString();
-    };
+        /**
+         * Add or subtract seconds.
+         */
+        Time.prototype.addSeconds = function(num) {
+            if (num > 0) {
+                this.add(0, 0, num);
+            }
+            else {
+                var zero = new Time('00:00:00');
+                zero.addSeconds(this.seconds() + num);
+                this.time = zero.time;
+            }
+        };
 
-    /**
-     * Convert time to seconds.
-     */
-    this.seconds = function() {
-        var h, m, s;
-        var parts = this.time.split(':');
-        h = parseInt(parts[0]);
-        m = parseInt(parts[1]);
-        s = parseInt(parts[2]);
-        return h*60*60 + m*60 + s;
-    };
+        /**
+         * Set the time to the current time.
+         */
+        Time.prototype.setNow = function() {
+            this.time = (new Date()).toJSON().substr(11, 8);
+            var hours = (-(new Date()).getTimezoneOffset() / 60);
+            if (hours > 0) {
+                this.add(hours, 0, 0);
+            }
+            if (hours < 0) {
+                this.add(24 + hours, 0, 0);
+            }
+        };
 
-    /**
-     * Subtract another time from this time and return new time instance.
-     */
-    this.diff = function(time) {
-        var a = this.seconds(), b = time.seconds();
-        var ret = new Time();
+        /**
+         * Check if this time is not already as much as the given time.
+         */
+        Time.prototype.notYet = function(time) {
+            return this.time.toString() < time.toString();
+        };
 
-        if (a < b) {
-            ret.add(0, 0, b-a);
-            ret.negative = true;
-        } else {
-            ret.add(0, 0, a-b);
-        }
+        /**
+         * Check if this time is already past the given time.
+         */
+        Time.prototype.isPast = function(time) {
+            return this.time.toString() > time.toString();
+        };
 
-        return ret;
-    };
-}
+        /**
+         * Check if this time is at least the given time.
+         */
+        Time.prototype.isAlready = function(time) {
+            return this.time.toString() >= time.toString();
+        };
 
-Time.now = function() {
-    var clock = new Time();
-    clock.setNow();
-    return clock;
-};
+        /**
+         * Convert time to seconds.
+         */
+        Time.prototype.seconds = function() {
+            var h, m, s;
+            var parts = this.time.split(':');
+            h = parseInt(parts[0]);
+            m = parseInt(parts[1]);
+            s = parseInt(parts[2]);
+            return h*60*60 + m*60 + s;
+        };
+
+        /**
+         * Subtract another time from this time and return new time instance.
+         */
+        Time.prototype.diff = function(time) {
+            var a = this.seconds(), b = time.seconds();
+            var ret = new Time();
+
+            if (a < b) {
+                ret.add(0, 0, b-a);
+                ret.negative = true;
+            } else {
+                ret.add(0, 0, a-b);
+            }
+
+            return ret;
+        };
+        return Time;
+    }]);
+})();

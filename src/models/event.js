@@ -26,7 +26,7 @@
         this.description = this.description.replace(/<img /g, '<img class="img-thumbnail"');
     }
 
-    angular.module('t2x').factory('Event', [function() {
+    angular.module('t2x').factory('Event', ['Time', function(Time) {
 
         Event.prototype = {}; // TODO: Should be Data.
 

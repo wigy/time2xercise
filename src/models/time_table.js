@@ -21,7 +21,7 @@
         this.starting_seconds = 0;
     }
 
-    angular.module('t2x').factory('TimeTable', ['Event', function(Event) {
+    angular.module('t2x').factory('TimeTable', ['Event', 'Time', function(Event, Time) {
 
         TimeTable.prototype = {}; // TODO: Should be Data.
 
