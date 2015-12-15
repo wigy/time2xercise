@@ -15,7 +15,7 @@
         this.schedule = null;
     }
 
-    angular.module('t2x').factory('Training', [function() {
+    angular.module('t2x').factory('Training', ['Schedule', function(Schedule) {
 
         Training.prototype = {}; // TODO: Should be Data.
 
