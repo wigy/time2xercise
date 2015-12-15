@@ -1,12 +1,10 @@
 (function() {
 
-    var module = angular.module('t2x');
+    function Match(data) {
+        this.init(data);
+    }
 
-    module.factory('Match', ['Data', 'TypeObj', 'TypeInt', function(Data, TypeObj, TypeInt) {
-
-        function Match(data) {
-            this.init(data);
-        }
+    angular.module('t2x').factory('Match', ['Data', 'TypeObj', 'TypeInt', function(Data, TypeObj, TypeInt) {
 
         Match.prototype = new Data('t2x', 'Match', [
             {home_team: {type: TypeObj, options: {class: 't2x.Team'}}},
