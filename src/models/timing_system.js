@@ -16,7 +16,7 @@
         // A mapping of available training names to Training instances.
         this.trainings = {};
         // Currently selected training.
-        this.training = new Training(this);
+        this.training = null;
         // Name of the currently selected training.
         this.training_name = null;
         // Name of the currently selected schedule.
@@ -25,7 +25,7 @@
         this.program_name = null;
     }
 
-    angular.module('t2x').factory('TimingSystem', [function() {
+    angular.module('t2x').factory('TimingSystem', ['Training', function(Training) {
 
         TimingSystem.prototype = {}; // TODO: Should be Data.
 
@@ -36,6 +36,7 @@
 
             this.clock = new Time();
             this.clock.setNow();
+            this.training = new Training(this);
 
             if (!DATA[name]) {
                 d("Cannot load training data for '" + name + "'.");
