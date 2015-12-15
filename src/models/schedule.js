@@ -18,17 +18,18 @@
         // A mapping from program names available to this schedule to the program instances.
         this.programs = {};
         // Currently selected program.
-        this.program = new Program(this);
+        this.program = null;
     }
 
-    angular.module('t2x').factory('Schedule', [function() {
+    angular.module('t2x').factory('Schedule', ['Program', function(Program) {
 
-        Schedule.prototype = {};
+        Schedule.prototype = {}; // TODO: Should be Data.
 
         /**
         * Initialize.
         */
         Schedule.prototype.load = function(name, data) {
+            this.program = new Program(this);
             this.name = name;
             this.programs = {};
             this.timing = data.schedules[name];
