@@ -25,7 +25,7 @@
         this.info = {};
     }
 
-    angular.module('t2x').factory('Program', [function() {
+    angular.module('t2x').factory('Program', ['TimeTable', function(TimeTable) {
 
         Program.prototype = {}; // TODO: Should be Data.
 
