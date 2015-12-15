@@ -1,6 +1,6 @@
 (function() {
 
-    var module = angular.module('time2xercise');
+    var module = angular.module('t2x');
 
     module.factory('Match', ['Data', 'TypeObj', 'TypeInt', function(Data, TypeObj, TypeInt) {
 
@@ -8,10 +8,10 @@
             this.init(data);
         }
 
-        Match.prototype = new Data('time2xercise', 'Match', [
-            {home_team: {type: TypeObj, options: {class: 'time2xercise.Team'}}},
+        Match.prototype = new Data('t2x', 'Match', [
+            {home_team: {type: TypeObj, options: {class: 't2x.Team'}}},
             {home_score: {type: TypeInt, default: 0}},
-            {visitor_team: {type: TypeObj, options: {class: 'time2xercise.Team'}}},
+            {visitor_team: {type: TypeObj, options: {class: 't2x.Team'}}},
             {visitor_score: {type: TypeInt, default: 0}},
         ])
 

@@ -1,6 +1,6 @@
 (function() {
 
-    var module = angular.module('time2xercise');
+    var module = angular.module('t2x');
 
     module.factory('Team', ['Data', 'TypeStr', function(Data, TypeStr) {
 
@@ -8,7 +8,7 @@
             this.init(data);
         }
 
-        Team.prototype = new Data('time2xercise', 'Team', [
+        Team.prototype = new Data('t2x', 'Team', [
             {name: {type: TypeStr}}
         ]);
 

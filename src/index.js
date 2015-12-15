@@ -1,1 +1,1 @@
-var module = angular.module('time2xercise', ['coa.data']);
+var module = angular.module('t2x', ['coa.data']);

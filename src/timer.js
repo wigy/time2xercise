@@ -1,6 +1,6 @@
 (function(angular){
 
-var TimerApp = angular.module('TimerApp', ['coa.input', 'coa.audio', 'time2xercise']);
+var TimerApp = angular.module('TimerApp', ['coa.input', 'coa.audio', 't2x']);
 
 /**
  * Configure the application.

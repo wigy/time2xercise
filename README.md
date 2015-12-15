@@ -30,7 +30,6 @@ Just load the `index.html` and go!
     - Weight lifting program 10x10 for Fitness.
     - Allow proper sounds in DEBUG mode.
     - Info texts for schedules.
-
 * v1.11
     - Switch to new build system.
 * v1.10
