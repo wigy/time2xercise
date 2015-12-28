@@ -58,18 +58,18 @@ Just load the `index.html` and go!
 
 ### Done
 
-- Remove changelog from the application.
+- Remove changelog from the application pages.
+- Convert all data models to use dependency injection.
 
 ### Not Yet Done
 
 - Move instructions from README to seprate Help-page in the application itself.
-- Convert all data models to use dependency injection.
 
 ## Future Ideas
 
 - Data modeling using CoA (types, fixed JSON loading, saving to storage).
 - Ability to count from N minutes onwards in time display.
-- Quit button to reset clock and go admin.
+- Quit button to reset clock and go admin (disable when running).
 - Back to beginning or to the end buttons.
 - Language selector.
 - Random shuffle option.
@@ -78,4 +78,3 @@ Just load the `index.html` and go!
 - Template builder, which collects html files and converts them to javascript strings.
 - Study how to implement (most of) CSS as Bootstrap theme add-on.
 - Proper API-documentation using CoG.
-- Proper stopping mechanism and disable starting when running.
