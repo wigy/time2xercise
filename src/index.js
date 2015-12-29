@@ -1,1 +1,1 @@
-var module = angular.module('t2x', ['coa.data']);
+var module = angular.module('t2x', ['coa.data', 'templates']);

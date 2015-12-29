@@ -24,7 +24,7 @@ TimerApp.filter("shortTime", [function() {
 /**
  * Directive to display a time table for an event.
  *
- * <timing-schedule timing="TimingModel" />
+ * <timer-schedule timing="TimingModel" />
  */
 TimerApp.directive('timerSchedule', [function() {
     return {
@@ -33,24 +33,7 @@ TimerApp.directive('timerSchedule', [function() {
             var model = $scope.$eval($attrs.timing);
             $scope.timing = model;
         },
-        template : '' +
-            '<div class="row schedule" ng-if="timing.training.schedule.name">' +
-            '  <div class="col-md-12"><h1>{{timing.training.schedule.name}}</h1></div>' +
-            '  <div class="col-md-12 description" ng-bind-html="timing.training.schedule.description"></div>' +
-            '  <div class="col-md-12"><h2>{{timing.training.schedule.program.name}}</h2></div>' +
-            '  <div class="col-md-12 description" ng-bind-html="timing.training.schedule.program.description"></div>' +
-            '  <div class="row" ng-repeat="event in timing.training.schedule.program.timetable.events track by $index">' +
-            '    <div class="col-md-1 col-xs-3 time text-success h4"><strong>{{event.time.toString()}}</strong></div>' +
-            '    <div class="col-md-1 col-xs-3 duration text-success h4"><strong>{{dur(event.duration)}}</strong></div>' +
-            '    <div class="col-md-4 col-xs-6 title text-success h4"><strong>{{event.title}}</strong></div>' +
-            '    <div class="col-md-6 col-xs-12 description" ng-bind-html="event.description"></div>' +
-            '  </div>' +
-            '  <div class="row">' +
-            '    <div class="col-md-1 col-xs-3 time">{{timing.training.schedule.program.timetable.events[timing.training.schedule.program.timetable.events.length-1].endTime().toString()}}</div>' +
-            '    <div class="col-md-1 col-xs-3 duration"></div>' +
-            '    <div class="col-md-4 col-xs-6 title">Finished</div>' +
-            '  </div>' +
-            '</div>'
+        templateUrl : 'src/templates/timer_schedule.html'
     };
 }]);
 
