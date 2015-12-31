@@ -16,7 +16,6 @@
   },
   "homepage": "https://github.com/wigy/time2xercise",
   "devDependencies": {
-    "chronicles_of_grunt": "git+ssh://git@github.com:wigy/chronicles_of_grunt",
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-watch": "^0.6.1"
@@ -24,7 +23,8 @@
   "dependencies": {
     "angular": "^1.4.8",
     "bootstrap": "^3.3.6",
-    "chronicles_of_angular": "git+ssh://git@github.com:wigy/chronicles_of_angular",
+    "chronicles_of_angular": "^0.3.0",
+    "chronicles_of_grunt": "^1.9.0",
     "jquery": "^2.1.4"
   }
 }
