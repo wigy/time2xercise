@@ -10,7 +10,12 @@
     "url": "https://github.com/wigy/time2xercise.git"
   },
   "author": "Tommi Ronkainen",
-  "license": "GPL",
+  "licenses": [
+    {
+      "type": "GPL-2.0",
+      "url": "https://github.com/wigy/chronicles_of_angular/blob/master/LICENSE"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/wigy/time2xercise/issues"
   },
