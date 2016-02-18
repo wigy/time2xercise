@@ -1,12 +1,18 @@
 (function() {
 
-    function Match(data) {
-        this.init(data);
-    }
+    var Match;
 
     angular.module('t2x').factory('Match', ['Data', 'TypeObj', 'TypeInt', function(Data, TypeObj, TypeInt) {
 
-        Match.prototype = new Data('t2x', 'Match', [
+        if (Match) {
+            return Match;
+        }
+
+        Match = function (data) {
+            this.init(data);
+        };
+
+        Match.prototype = new Data('t2x.Match', [
             {home_team: {type: TypeObj, options: {class: 't2x.Team'}}},
             {home_score: {type: TypeInt, default: 0}},
             {visitor_team: {type: TypeObj, options: {class: 't2x.Team'}}},

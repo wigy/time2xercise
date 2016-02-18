@@ -1,12 +1,18 @@
 (function() {
 
-    function Team(data) {
-        this.init(data);
-    }
+    var Team;
 
     angular.module('t2x').factory('Team', ['Data', 'TypeStr', function(Data, TypeStr) {
 
-        Team.prototype = new Data('t2x', 'Team', [
+        if (Team) {
+            return Team;
+        }
+
+        Team = function(data) {
+            this.init(data);
+        };
+
+        Team.prototype = new Data('t2x.Team', [
             {name: {type: TypeStr}}
         ]);
 
