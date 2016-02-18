@@ -40,6 +40,12 @@ module.exports = function(grunt) {
                         }
                     }
                 },
+                test: {
+                    unit: {
+                        external: ['jasmine', 'angular-mock'],
+                        tests: 'test/**/*_spec.js',
+                    }
+                },
                 index: {
                     app: 'index.html',
                     test: 'test.html',

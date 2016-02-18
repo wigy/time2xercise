@@ -1,13 +1,17 @@
-<html ng-app="TimerApp" ng-controller="TimerController">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Test v{{VERSION}}</title>
+<!doctype html>
+<head>
+    <title>Unit Tests</title>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/png" href="node_modules/jasmine-core/images/jasmine_favicon.png">
+
     <script src="lib/angular.min.js"></script>
     <script src="lib/coa.min.js"></script>
     <script src="lib/jquery.min.js"></script>
     <script src="lib/bootstrap.min.js"></script>
+    <script src="node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+    <script src="node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+    <script src="node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>
+    <script src="node_modules/angular-mocks/angular-mocks.js"></script>
     <script src="src/settings.js"></script>
     <script src="src/index.js"></script>
     <script src="src/models/event.js"></script>
@@ -26,9 +30,9 @@
     <script src="data/test.js"></script>
     <script src="src/timer.js"></script>
     <script src="generated-templates.js"></script>
+    <script src="test/timing_system_spec.js"></script>
+    <link rel="stylesheet" href="node_modules/jasmine-core/lib/jasmine-core/jasmine.css">
   </head>
-
-  <body key-handler="keyPress">
-
-  </body>
+<body>
+</body>
 </html>
