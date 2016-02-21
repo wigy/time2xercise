@@ -21,7 +21,7 @@
         this.starting_seconds = 0;
     }
 
-    angular.module('t2x').factory('TimeTable', ['Event', 'TimeStr', function(Event, TimeStr) {
+    angular.module('t2x').factory('TimeTable', ['Activity', 'TimeStr', function(Activity, TimeStr) {
 
         TimeTable.prototype = {}; // TODO: Should be Data.
 
@@ -29,9 +29,9 @@
          * Fill in events based on the program and schedule.
          */
         TimeTable.prototype.load = function(program, schedule) {
-            this.previous = new Event();
-            this.current = new Event();
-            this.next = new Event();
+            this.previous = new Activity();
+            this.current = new Activity();
+            this.next = new Activity();
             this.events = [];
             var event;
             for (var i=0; i < schedule.timing.length; i++) {
@@ -41,7 +41,7 @@
                 var options = schedule.timing[i][2];
 
                 if(typeof(index) === 'string') {
-                    event = new Event(i+1, duration, index, null, options);
+                    event = new Activity(i+1, duration, index, null, options);
                 } else {
                     // Find the code.
                     var code = program.list[index];
@@ -55,7 +55,7 @@
                     }
 
                     // Create event
-                    event = new Event(i+1, duration, program.getText(code), this.program.info[code], options);
+                    event = new Activity(i+1, duration, program.getText(code), this.program.info[code], options);
 
                     // Find out the sound.
                     for (var regex in program.sounds) {
@@ -132,19 +132,19 @@
 
             if (clock.notYet(this.events[0].time)) {
 
-                this.previous = new Event();
-                this.current = new Event();
+                this.previous = new Activity();
+                this.current = new Activity();
                 this.next = this.events[0];
 
             } else if (clock.isAlready(this.events[last].endTime())) {
 
                 this.previous = this.events[last];
-                this.current = new Event();
-                this.next = new Event();
+                this.current = new Activity();
+                this.next = new Activity();
 
             } else {
-                this.previous = new Event();
-                this.next = new Event();
+                this.previous = new Activity();
+                this.next = new Activity();
                 var current = 0;
                 for(var i = 0; i < this.events.length; i++) {
                     if (clock.isAlready(this.events[i].time)) {
@@ -182,9 +182,9 @@
          * Clear up everything.
          */
         TimeTable.prototype.reset = function() {
-            this.previous = new Event();
-            this.current = new Event();
-            this.next = new Event();
+            this.previous = new Activity();
+            this.current = new Activity();
+            this.next = new Activity();
         };
 
         /**

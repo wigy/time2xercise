@@ -1,11 +1,9 @@
 (function() {
 
-    // TODO: Rename this class since it hides native Event.
-
     /**
      * A description of an entry in the schedule.
      */
-    function Event(number, duration, title, description, options) {
+    function Activity(number, duration, title, description, options) {
 
         // Name of the event.
         this.title = title || '';
@@ -15,25 +13,25 @@
         this.options = options || {};
         // Order number of the event.
         this.number = number;
-        // A Time object having starting time of the event.
+        // A TimeStr object having starting time of the event.
         this.time = null;
         // Length of the event in seconds.
         this.duration = duration || 0;
-        // A sound mapping from offsets fromt the start to sound names.
+        // A sound mapping from offsets from the start to sound names.
         this.sounds = {};
 
         // Make some manipulation for the description.
         this.description = this.description.replace(/<img /g, '<img class="img-thumbnail"');
     }
 
-    angular.module('t2x').factory('Event', ['TimeStr', function(TimeStr) {
+    angular.module('t2x').factory('Activity', ['TimeStr', function(TimeStr) {
 
-        Event.prototype = {}; // TODO: Should be Data.
+        Activity.prototype = {}; // TODO: Should be Data.
 
         /**
          * Calculate starting time of this event based on overall starting time and offset in seconds.
          */
-        Event.prototype.schedule = function(hhmmss, offset) {
+        Activity.prototype.schedule = function(hhmmss, offset) {
             this.time = new TimeStr(hhmmss);
             this.time.add(0, 0, offset);
         };
@@ -41,14 +39,14 @@
         /**
          * Get the short time string for the event.
          */
-        Event.prototype.shortTime = function() {
+        Activity.prototype.shortTime = function() {
             return this.time ? this.time.toString().substr(0, 5) : '     ';
         };
 
         /**
          * Return ending time of the event.
          */
-        Event.prototype.endTime = function() {
+        Activity.prototype.endTime = function() {
 
             if (!this.time) {
                 return new TimeStr();
@@ -62,7 +60,7 @@
         /**
          * Return starting time of the event.
          */
-        Event.prototype.startTime = function() {
+        Activity.prototype.startTime = function() {
 
             if (!this.time) {
                 return new TimeStr();
@@ -74,10 +72,10 @@
         /**
          * Check if this event is just a break.
          */
-        Event.prototype.isBreak = function() {
+        Activity.prototype.isBreak = function() {
             return this.options.is_break || this.title === 'Break';
         };
 
-        return Event;
+        return Activity;
     }]);
 })();

@@ -40,7 +40,7 @@ TimerApp.directive('timerSchedule', [function() {
 /**
  * Actual controller of the application.
  */
-TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'player', 'Match', 'TimingSystem', 'Time', function($scope, $interval, $timeout, player, Match, TimingSystem, Time) {
+TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'player', 'Match', 'TimingSystem', 'TimeStr', function($scope, $interval, $timeout, player, Match, TimingSystem, TimeStr) {
 
     // Intialize application scope.
     $scope.DEBUG = DEBUG;
@@ -143,7 +143,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'play
      * Launch the program immediately after <i>sec</i> delay.
      */
     $scope.startNow = function(secs) {
-        var clock = Time.now();
+        var clock = TimeStr.now();
         clock.add(0,0,secs);
         $scope.timing.setStarting(clock);
         $scope.show_menu = false;
@@ -156,7 +156,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'play
      */
     $scope.testIt = function() {
         var old = $scope.timing.starting_time;
-        var clock = Time.now();
+        var clock = TimeStr.now();
         $scope.testing = true;
         $scope.timing.setStarting(clock);
         refresh(clock);
