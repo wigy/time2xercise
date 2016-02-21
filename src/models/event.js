@@ -26,7 +26,7 @@
         this.description = this.description.replace(/<img /g, '<img class="img-thumbnail"');
     }
 
-    angular.module('t2x').factory('Event', ['Time', function(Time) {
+    angular.module('t2x').factory('Event', ['TimeStr', function(TimeStr) {
 
         Event.prototype = {}; // TODO: Should be Data.
 
@@ -34,7 +34,7 @@
          * Calculate starting time of this event based on overall starting time and offset in seconds.
          */
         Event.prototype.schedule = function(hhmmss, offset) {
-            this.time = new Time(hhmmss);
+            this.time = new TimeStr(hhmmss);
             this.time.add(0, 0, offset);
         };
 
@@ -51,10 +51,10 @@
         Event.prototype.endTime = function() {
 
             if (!this.time) {
-                return new Time();
+                return new TimeStr();
             }
 
-            var ret = new Time(this.time);
+            var ret = new TimeStr(this.time);
             ret.add(0, 0, this.duration);
             return ret;
         };
@@ -65,10 +65,10 @@
         Event.prototype.startTime = function() {
 
             if (!this.time) {
-                return new Time();
+                return new TimeStr();
             }
 
-            return new Time(this.time);
+            return new TimeStr(this.time);
         };
 
         /**

@@ -25,7 +25,7 @@
         this.program_name = null;
     }
 
-    angular.module('t2x').factory('TimingSystem', ['Training', 'Time', function(Training, Time) {
+    angular.module('t2x').factory('TimingSystem', ['Training', 'TimeStr', function(Training, TimeStr) {
 
         TimingSystem.prototype = {}; // TODO: Should be Data.
 
@@ -34,7 +34,7 @@
         */
         TimingSystem.prototype.load = function(name) {
 
-            this.clock = new Time();
+            this.clock = new TimeStr();
             this.clock.setNow();
             this.training = new Training(this);
 
@@ -157,7 +157,7 @@
         TimingSystem.prototype.reset = function(old) {
             this.training.reset();
             if (old) {
-                this.setStarting(new Time(old));
+                this.setStarting(new TimeStr(old));
             }
         };
 
@@ -166,7 +166,7 @@
         */
         TimingSystem.prototype.addSeconds = function(num) {
             this.training.schedule.program.timetable.addSeconds(num);
-            var clock = new Time(this.starting_time);
+            var clock = new TimeStr(this.starting_time);
             clock.addSeconds(num);
             this.starting_time = clock.toString();
         };

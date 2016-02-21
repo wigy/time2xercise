@@ -21,7 +21,7 @@
         this.starting_seconds = 0;
     }
 
-    angular.module('t2x').factory('TimeTable', ['Event', 'Time', function(Event, Time) {
+    angular.module('t2x').factory('TimeTable', ['Event', 'TimeStr', function(Event, TimeStr) {
 
         TimeTable.prototype = {}; // TODO: Should be Data.
 
@@ -97,7 +97,7 @@
          * Set the time stamps for each event in the program based on the starting time given.
          */
         TimeTable.prototype.schedule = function(hhmmss) {
-            var time = new Time(hhmmss);
+            var time = new TimeStr(hhmmss);
             this.starting_seconds = time.seconds();
             var offset = 0;
             for(var i = 0; i < this.events.length; i++) {
@@ -203,7 +203,7 @@
                 return this.next.time.diff(clock);
             }
 
-            return new Time();
+            return new TimeStr();
         };
 
         TimeTable.prototype.isAtStart = function(clock) {
