@@ -12,9 +12,10 @@
             this.init(data);
         };
 
-        Team.prototype = new Data('t2x.Team', [
+        Team.prototype = new Data([
             {name: {type: TypeStr}}
         ]);
+        Team.prototype.__class = 't2x.Team';
 
         Team.prototype.toString = function() {
             return this.name;

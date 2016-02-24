@@ -12,12 +12,13 @@
             this.init(data);
         };
 
-        Match.prototype = new Data('t2x.Match', [
+        Match.prototype = new Data([
             {home_team: {type: TypeObj, options: {class: 't2x.Team'}}},
             {home_score: {type: TypeInt, default: 0}},
             {visitor_team: {type: TypeObj, options: {class: 't2x.Team'}}},
             {visitor_score: {type: TypeInt, default: 0}},
         ])
+        Match.prototype.__class = 't2x.Match';
 
         Match.prototype.getScore = function() {
             return this.home_score + ' - ' + this.visitor_score;
