@@ -13,7 +13,7 @@
         };
 
         Team.prototype = new Data([
-            {name: {type: TypeStr}}
+            {name: new TypeStr()}
         ]);
         Team.prototype.__class = 't2x.Team';
 

@@ -13,10 +13,10 @@
         };
 
         Match.prototype = new Data([
-            {home_team: {type: TypeObj, options: {class: 't2x.Team'}}},
-            {home_score: {type: TypeInt, default: 0}},
-            {visitor_team: {type: TypeObj, options: {class: 't2x.Team'}}},
-            {visitor_score: {type: TypeInt, default: 0}},
+            {home_team: new TypeObj({class: 't2x.Team'})},
+            {home_score: new TypeInt({default: 0})},
+            {visitor_team: new TypeObj({class: 't2x.Team'})},
+            {visitor_score: new TypeInt({default: 0})},
         ])
         Match.prototype.__class = 't2x.Match';
 
