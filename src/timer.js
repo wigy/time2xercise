@@ -155,16 +155,19 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'play
      * Run the program fast forward in debug mode and just print event changes and sounds.
      */
     $scope.testIt = function() {
+        // TODO: Take off the button and move this to the unit-test collection.
         var old = $scope.timing.starting_time;
         var clock = TimeStr.now();
         $scope.testing = true;
         $scope.timing.setStarting(clock);
+        $scope.timing.start();
         refresh(clock);
         while (!$scope.timing.isOver()) {
             refresh(clock);
             clock.add(0,0,1);
         }
         $scope.timing.reset(old);
+        $scope.timing.stop();
         refresh();
         $scope.testing = false;
     };
