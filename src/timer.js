@@ -90,12 +90,12 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'play
      * Refresh function to update data.
      */
     var old_title = $scope.timing.getCurrentTitle();
-    function refresh(clock) {
+    function refresh() {
         if(DEBUG && old_title !== $scope.timing.getCurrentTitle()) {
             old_title = $scope.timing.getCurrentTitle();
             d($scope.timing.clock.toString() + ' ' + $scope.timing.getCurrentTitle());
         }
-        var sound = $scope.timing.refresh(clock);
+        var sound = $scope.timing.refresh();
         if(sound) {
             $scope.player.play(sound, $scope.testing ? $scope.timing.clock.toString() : null);
         }
@@ -151,26 +151,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'play
         $scope.timing.start();
     };
 
-    /**
-     * Run the program fast forward in debug mode and just print event changes and sounds.
-     */
-    $scope.testIt = function() {
-        // TODO: Take off the button and move this to the unit-test collection.
-        var old = $scope.timing.starting_time;
-        var clock = TimeStr.now();
-        $scope.testing = true;
-        $scope.timing.setStarting(clock);
-        $scope.timing.start();
-        refresh(clock);
-        while (!$scope.timing.isOver()) {
-            refresh(clock);
-            clock.add(0,0,1);
-        }
-        $scope.timing.reset(old);
-        $scope.timing.stop();
-        refresh();
-        $scope.testing = false;
-    };
+    // TODO: Take off the Test button.
 
     /**
      * Toggle visibility of the menu.

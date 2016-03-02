@@ -212,8 +212,9 @@
         * Check if the whole schedule is finished and how many seconds ago if it is.
         */
         TimingSystem.prototype.isOver = function() {
-            if (!this.running)
+            if (!this.running) {
                 return false;
+            }
             return this.training.schedule.program.timetable.isOver(this.clock);
         };
 

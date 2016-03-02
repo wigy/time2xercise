@@ -17,7 +17,7 @@
             {home_score: new TypeInt({default: 0})},
             {visitor_team: new TypeObj({class: 't2x.Team'})},
             {visitor_score: new TypeInt({default: 0})},
-        ])
+        ]);
         Match.prototype.__class = 't2x.Match';
 
         Match.prototype.getScore = function() {
