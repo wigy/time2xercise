@@ -5,6 +5,7 @@
      */
     function Program(schedule) {
 
+        // TODO: Refactor so that we don't need 2-directional linking (dumping JSON is circular).
         // The schedule this program belongs to.
         this.schedule = schedule;
         // Name of the program.

@@ -7,6 +7,7 @@
      */
     function Schedule(training) {
 
+        // TODO: Refactor so that we don't need 2-directional linking (dumping JSON is circular).
         // The training system this schedule belongs to.
         this.training = training;
         // Name of this schedule.

@@ -5,6 +5,7 @@
      */
     function TimeTable(program) {
 
+        // TODO: Refactor so that we don't need 2-directional linking (dumping JSON is circular).
         // The program this table table belongs to.
         this.program = program;
         // A list of events in the time table.
