@@ -42,7 +42,7 @@
                 var options = schedule.timing[i][2];
 
                 if(typeof(index) === 'string') {
-                    event = new Activity(i+1, duration, index, null, options);
+                    event = new Activity({number: i+1, duration: duration, title: index, options: options || {}});
                 } else {
                     // Find the code.
                     var code = program.list[index];
@@ -56,7 +56,7 @@
                     }
 
                     // Create event
-                    event = new Activity(i+1, duration, program.getText(code), this.program.info[code], options);
+                    event = new Activity({number: i+1, duration: duration, title: program.getText(code), description: this.program.info[code], options: options || {}});
 
                     // Find out the sound.
                     for (var regex in program.sounds) {
