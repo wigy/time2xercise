@@ -127,38 +127,38 @@ DATA.Rugby = {
         '<li>Increase the speed.' +
         '</ol>',
         H2 : '<h4>Passing around the Corner</h4>' +
-        '<img src="pics/rugby/H2.png">' +
+        '<img class="img-thumbnail" src="pics/rugby/H2.png">' +
         'In square formation equal number of players in each corner. Two balls in two of the opposite corners.<ol>' +
         '<li>Apporoach from opposite diagonals to the center passing to the left after getting around the opposing player.' +
         '<li>Change side by passing to the right side instead.' +
         '</ol>Increase the speed while progressing closer to the end.',
         H3 : '<h4>Passing in Lines</h4>' +
-        '<img src="pics/rugby/H3.png">' +
+        '<img class="img-thumbnail" src="pics/rugby/H3.png">' +
         'A square formation with six starting positions.<ol>' +
         '<li>One line at time from each side is passing from one player to the next. Short pass in the end switching to next line.' +
         '<li>Players in lines 1 and 2 do looping, i.e. switch positions and passing goes 1 to 2 to 1 to 3.' +
         '</ol>',
         H4 : '<h4>Tunnel Run</h4>' +
-        '<img src="pics/rugby/H4.png">' +
+        '<img class="img-thumbnail" src="pics/rugby/H4.png">' +
         'Form a queue for runners and a tunnel of 3 gates formed by players each side so that all players on one side are each holding a ball.<ol>' +
         '<li>A runner runs through the tunnel receiving a ball at each gate and passing it back to the other end of the gate. Turn in the end and repeat the same in reverse direction.' +
         '<li>After all runners have done one round, rotate 2 runners from the front of the queue to the first gate, all gates moving to the next and the last gate moving to the tail of queue.' +
         '</ol>',
         H5 : '<h4>Passing in Line and Behind</h4>' +
-        '<img src="pics/rugby/H5.png"><ol>' +
+        '<img class="img-thumbnail" src="pics/rugby/H5.png"><ol>' +
         '<li>Four lines runs passing from one side to another to the end of square.' +
         '<li>Runners continue running back with one side of square popping the ball back until the last player gets it.' +
         '<li>Last player pops it to the next runner.' +
         '</ol>',
         H6 : '<h4>Two Men Tunnel Run</h4>' +
-        '<img src="pics/rugby/H6.png">' +
+        '<img class="img-thumbnail" src="pics/rugby/H6.png">' +
         'Form a two queues for runners and a tunnel of 3 gates formed by players each side so that all players on one side are each holding a ball.<ol>' +
         '<li>Runners runs through the tunnel receiving a ball at each gate and passing it to the fellow runner, which in turn passes it back to the other end of the gate. Turn in the end and repeat the same in reverse direction.' +
         '<li>After all runners have done one round, rotate 2 runners from the front of the queue to the first gate, all gates moving to the next and the last gate moving to the tail of queue.' +
         '</ol>',
 
         T1 : '<h4>Defending against attackers</h4><ol>' +
-        '<img src="pics/rugby/T1-3.png"><img src="pics/rugby/T1-2.png"><img src="pics/rugby/T1-1.png">' +
+        '<img class="img-thumbnail" src="pics/rugby/T1-3.png"><img class="img-thumbnail" src="pics/rugby/T1-2.png"><img class="img-thumbnail" src="pics/rugby/T1-1.png">' +
         '<li>1 defender vs. 2 attackers.' +
         '<li>2 defenders vs. 3 attackers.' +
         '<li>3 defenders vs. 4 attackers.' +
@@ -183,7 +183,7 @@ DATA.Rugby = {
         '<li>Switch to Grubber kick.' +
         '</ol>',
         K2 : '<h4>Kicking Zig-Zag</h4>' +
-        '<img src="pics/rugby/K2.png">' +
+        '<img class="img-thumbnail" src="pics/rugby/K2.png">' +
         '<i>This needs an assistant or two.</i> Divide all players to the zig-zag line and all balls in one end.<ol>' +
         '<li>Players will kick directly the dropped ball from air aiming to give an easy to catch high ball the next player. In the end assistants deliver ball back to the beginning.' +
         '<li>Feed balls faster pace to the first kicker.' +
@@ -192,7 +192,7 @@ DATA.Rugby = {
         '</ol>',
 
         P1 : '<h4>Lineouts and Maul</h4>' +
-        '<img src="pics/rugby/P1.png">' +
+        '<img class="img-thumbnail" src="pics/rugby/P1.png">' +
         'Form groups with two dedicated throwers, 3-5 men in line and 2 receivers.<ol>' +
         '<li>Make a normal thrown in and lines are trying to grap a ball to the receiver, which tosses it to the thrower on the thrower in the other end.' +
         '<li>Optionally: try also lifting.' +
@@ -204,15 +204,15 @@ DATA.Rugby = {
         '<li>Three-on-three scrum with ball tossed in by scrum-half.' +
         '</ol>',
         P3 : '<h4>Tackle</h4>' +
-        '<img src="pics/rugby/P3-2.png">' +
-        '<img src="pics/rugby/P3-1.png"><ol>' +
+        '<img class="img-thumbnail" src="pics/rugby/P3-2.png">' +
+        '<img class="img-thumbnail" src="pics/rugby/P3-1.png"><ol>' +
         '<li>Tackle on walking opponent from kneeling position.' +
         '<li>Walk into tackler stopping the progress (not necessarily bringing to the ground), then offload the ball to the next.' +
         '<li>Tackle slowly approaching carrier, which offers ball to scrum-half passing it to next carrier.' +
         '</ol>',
         P4 : '<h4>Ruck Clearing</h4>' +
-        '<img src="pics/rugby/P4-2.png">' +
-        '<img src="pics/rugby/P4-1.png">' +
+        '<img class="img-thumbnail" src="pics/rugby/P4-2.png">' +
+        '<img class="img-thumbnail" src="pics/rugby/P4-1.png">' +
         'A line of tacklers with assistant "jackal". Groups of 2-3 players with one ball carrier taken down by the tackler and supported by the rest.' +
         ' Second assistant works as a scrum-half passing the ball from one group to the next.' +
         '<li>Repeat the tackle which after support players pushes the jackal out.' +

@@ -12,10 +12,7 @@
          * A description of an entry in the schedule.
          */
         Activity = function(data) {
-
             this.init(data);
-            // Make some manipulation for the description. TODO: Maybe move this to the data itself.
-            this.description = this.description.replace(/<img /g, '<img class="img-thumbnail"');
         }
 
         Activity.prototype = new Data([
