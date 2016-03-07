@@ -23,19 +23,18 @@
             // Options for the event.
             {options: new TypeOptions({default: {}, options: new Options({
                 start_on_pause: {
-                    // TODO: Here we could have %n and replace it automatically by name of the option.
-                    text: "Option value for start_on_pause must be boolean.",
+                    text: "Option value for %n must be boolean.",
                     type: "boolean",
                     default: false,
 
                 },
                 reverse_count: {
-                    text: "Option value for reverse_count must be boolean.",
+                    text: "Option value for %n must be boolean.",
                     type: "boolean",
                     default: false,
                 },
                 is_break: {
-                    text: "Option value for is_break must be boolean.",
+                    text: "Option value for %n must be boolean.",
                     type: "boolean",
                     default: false,
                 },
