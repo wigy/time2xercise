@@ -34,6 +34,8 @@ describe('class TimingSystem', function() {
 
         expect(timing.training.schedule.program.timetable.events[2].title).toBe('Lunge');
         expect(timing.training.schedule.program.timetable.events[2].time.toString()).toBe('00:01:00');
+        expect(timing.training.schedule.program.timetable.events[2].duration).toBe(40);
+        expect(timing.training.schedule.program.timetable.events[2].sounds).toEqual({ 0: 'start', '-1': 'done'});
     });
 
     it('runs Test schedule correctly', function() {
