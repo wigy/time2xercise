@@ -54,7 +54,6 @@
         ]);
         Activity.prototype.__class = 't2x.Activity';
 
-d(new Activity())
         /**
          * Calculate starting time of this event based on overall starting time and offset in seconds.
          */

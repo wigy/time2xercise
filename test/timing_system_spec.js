@@ -12,18 +12,33 @@ describe('class TimingSystem', function() {
         });
 
         timing = new TimingSystem();
+    });
+
+    it('loads Test data and calculates timetable', function() {
         timing.load('Test');
         timing.selectTraining('Test');
         timing.selectSchedule('Test');
         timing.setStarting('12:30:00');
-    });
 
-    it('loads data and calculates timetable', function() {
         expect(timing.training.schedule.program.timetable.events[0].title).toBe('Testing A');
         expect(timing.training.schedule.program.timetable.events[1].time.toString()).toBe('12:30:04');
     });
 
-    it('runs schedule correctly', function() {
+/*
+    it('loads Fitness data', function() {
+        timing.load('Fitness');
+        timing.selectTraining('Test');
+        timing.selectSchedule('Test');
+
+        expect(timing.training.schedule.program.timetable.events[0].title).toBe('Testing A');
+    });
+*/
+    it('runs Test schedule correctly', function() {
+
+        timing.load('Test');
+        timing.selectTraining('Test');
+        timing.selectSchedule('Test');
+
         var clock = new TimeStr('10:00:00');
         timing.setStarting(clock);
         timing.start();
