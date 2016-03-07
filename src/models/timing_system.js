@@ -52,7 +52,7 @@
         * Recalculate everything.
         */
         TimingSystem.prototype.recalc = function() {
-            this.training.recalc();
+            this.training.recalc(this.starting_time);
         };
 
         /**
@@ -63,6 +63,7 @@
             var schedules = this.training.getSchedules();
             this.selectSchedule(schedules.length ? schedules[0] : null);
             this.training_name = name;
+            this.recalc();
         };
 
         /**
@@ -73,6 +74,7 @@
             this.schedule_name = name;
             var programs = this.training.schedule.getPrograms();
             this.selectProgram(programs.length ? programs[0] : null);
+            this.recalc();
         };
 
         /**
@@ -81,6 +83,7 @@
         TimingSystem.prototype.selectProgram = function(name) {
             this.training.schedule.selectProgram(name);
             this.program_name = name;
+            this.recalc();
         };
 
         /**

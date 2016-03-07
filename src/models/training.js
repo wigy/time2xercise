@@ -36,8 +36,8 @@
         /**
          * Recalculate everything.
          */
-        Training.prototype.recalc = function() {
-            this.schedule.recalc();
+        Training.prototype.recalc = function(starting_time) {
+            this.schedule.recalc(starting_time);
         };
 
         /**

@@ -10,7 +10,7 @@
         this.program = program;
         // A list of events in the time table.
         this.events = [];
-        // A map of sound names to play indexed by offsets in seconds from the start.
+        // A calculated map of sound names to play indexed by offsets in seconds from the start.
         this.sounds = {};
         // The previous event.
         this.previous = null;

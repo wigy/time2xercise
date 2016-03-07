@@ -5,11 +5,8 @@
      * The offset refers to the index in the program list paired with the schedule.
      * In addition programs suitable for the schedule are stored here.
      */
-    function Schedule(training) {
+    function Schedule() {
 
-        // TODO: Refactor so that we don't need 2-directional linking (dumping JSON is circular).
-        // The training system this schedule belongs to.
-        this.training = training;
         // Name of this schedule.
         this.name = null;
         // Description of the schedule.
@@ -47,9 +44,9 @@
         /**
         * Recalculate everything.
         */
-        Schedule.prototype.recalc = function() {
+        Schedule.prototype.recalc = function(starting_time) {
             this.program.apply(this);
-            this.program.recalc();
+            this.program.recalc(starting_time);
         };
 
         /**

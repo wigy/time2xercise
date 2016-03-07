@@ -3,11 +3,8 @@
     /**
      * A program is a named list of event codes or names.
      */
-    function Program(schedule) {
+    function Program() {
 
-        // TODO: Refactor so that we don't need 2-directional linking (dumping JSON is circular).
-        // The schedule this program belongs to.
-        this.schedule = schedule;
         // Name of the program.
         this.name = null;
         // A list of codes or event names.
@@ -54,17 +51,16 @@
          * Rebuild the time table based on the given schedule.
          */
         Program.prototype.apply = function(schedule) {
-            var starting_time = this.schedule.training.timing.starting_time;
             this.timetable = new TimeTable(this);
             this.timetable.load(this, schedule);
-            this.timetable.schedule(starting_time);
+            this.timetable.schedule('00:00:00');
         };
 
         /**
          * Recalculate everything.
          */
-        Program.prototype.recalc = function() {
-            this.timetable.schedule(this.schedule.training.timing.starting_time);
+        Program.prototype.recalc = function(starting_time) {
+            this.timetable.schedule(starting_time);
         };
 
         /**
