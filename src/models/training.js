@@ -3,11 +3,8 @@
     /**
      * A single training target with own schedules and time tables.
      */
-    function Training(timing) {
+    function Training() {
 
-        // TODO: Get rid of circular references.
-        // Timing system where this training belongs to.
-        this.timing = timing;
         // Name of the training system.
         this.name = null;
         // A mapping of available schedule names to Schedule instances.
