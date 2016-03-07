@@ -38,6 +38,40 @@ describe('class TimingSystem', function() {
         expect(timing.training.schedule.program.timetable.events[2].sounds).toEqual({ 0: 'start', '-1': 'done'});
     });
 
+    it('loads Generic data', function() {
+        timing.load('Generic');
+        timing.selectTraining('Generic');
+        timing.selectSchedule('4 x 7 min + 2 min breaks');
+
+        expect(timing.training.schedule.program.timetable.events[1].title).toBe('Break');
+        expect(timing.training.schedule.program.timetable.events[1].time.toString()).toBe('00:07:00');
+
+        expect(timing.training.schedule.program.timetable.events[2].title).toBe('Exercise 2');
+        expect(timing.training.schedule.program.timetable.events[2].time.toString()).toBe('00:09:00');
+        expect(timing.training.schedule.program.timetable.events[2].duration).toBe(7*60);
+        expect(timing.training.schedule.program.timetable.events[2].sounds).toEqual({ 0: 'whistle', '-1': 'buzzer'});
+    });
+
+    it('loads Rugby data', function() {
+        timing.load('Rugby');
+        timing.selectTraining('Rugby');
+        timing.selectSchedule('XV Match');
+
+        expect(timing.training.schedule.program.timetable.events[0].title).toBe('1st Half');
+        expect(timing.training.schedule.program.timetable.events[0].time.toString()).toBe('00:00:00');
+        expect(timing.training.schedule.program.timetable.events[0].duration).toBe(40*60);
+        expect(timing.training.schedule.program.timetable.events[0].options).toEqual({start_on_pause: true, reverse_count: true, is_break: false});
+
+        expect(timing.training.schedule.program.timetable.events[1].title).toBe('Half-time');
+        expect(timing.training.schedule.program.timetable.events[1].time.toString()).toBe('00:40:00');
+        expect(timing.training.schedule.program.timetable.events[1].options).toEqual({start_on_pause: false, reverse_count: false, is_break: true});
+
+        expect(timing.training.schedule.program.timetable.events[2].title).toBe('2nd Half');
+        expect(timing.training.schedule.program.timetable.events[2].time.toString()).toBe('00:50:00');
+        expect(timing.training.schedule.program.timetable.events[2].duration).toBe(40*60);
+        expect(timing.training.schedule.program.timetable.events[2].options).toEqual({start_on_pause: true, reverse_count: true, is_break: false});
+    });
+
     it('runs Test schedule correctly', function() {
 
         timing.load('Test');

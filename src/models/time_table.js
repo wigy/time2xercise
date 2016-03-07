@@ -56,7 +56,7 @@
                     }
 
                     // Create event
-                    event = new Activity({number: i+1, duration: duration, title: program.getText(code), description: this.program.info[code], options: options || {}});
+                    event = new Activity({number: i+1, duration: duration, title: program.getText(code), description: this.program.info[code] || '', options: options || {}});
 
                     // Find out the sound.
                     for (var regex in program.sounds) {
