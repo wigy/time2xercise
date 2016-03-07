@@ -5,9 +5,6 @@
      */
     function TimeTable(program) {
 
-        // TODO: Refactor so that we don't need 2-directional linking (dumping JSON is circular).
-        // The program this table table belongs to.
-        this.program = program;
         // A list of events in the time table.
         this.events = [];
         // A calculated map of sound names to play indexed by offsets in seconds from the start.
@@ -56,7 +53,7 @@
                     }
 
                     // Create event
-                    event = new Activity({number: i+1, duration: duration, title: program.getText(code), description: this.program.info[code] || '', options: options || {}});
+                    event = new Activity({number: i+1, duration: duration, title: program.getText(code), description: program.info[code] || '', options: options || {}});
 
                     // Find out the sound.
                     for (var regex in program.sounds) {

@@ -5,6 +5,7 @@
      */
     function Training(timing) {
 
+        // TODO: Get rid of circular references.
         // Timing system where this training belongs to.
         this.timing = timing;
         // Name of the training system.
