@@ -14,7 +14,7 @@ describe('class TimingSystem', function() {
         timing = new TimingSystem();
     });
 
-    it('loads Test data and calculates timetable', function() {
+    it('loads Test data', function() {
         timing.load('Test');
         timing.selectTraining('Test');
         timing.selectSchedule('Test');
@@ -24,15 +24,18 @@ describe('class TimingSystem', function() {
         expect(timing.training.schedule.program.timetable.events[1].time.toString()).toBe('12:30:04');
     });
 
-/*
     it('loads Fitness data', function() {
         timing.load('Fitness');
-        timing.selectTraining('Test');
-        timing.selectSchedule('Test');
+        timing.selectTraining('Fitness');
+        timing.selectSchedule('Body Weight 40:20');
 
-        expect(timing.training.schedule.program.timetable.events[0].title).toBe('Testing A');
+        expect(timing.training.schedule.program.timetable.events[1].title).toBe('Break');
+        expect(timing.training.schedule.program.timetable.events[1].time.toString()).toBe('00:00:40');
+
+        expect(timing.training.schedule.program.timetable.events[2].title).toBe('Lunge');
+        expect(timing.training.schedule.program.timetable.events[2].time.toString()).toBe('00:01:00');
     });
-*/
+
     it('runs Test schedule correctly', function() {
 
         timing.load('Test');
