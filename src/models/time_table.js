@@ -1,27 +1,35 @@
 (function() {
 
-    /**
-     * A list of events forming the time table to be executed in order.
-     */
-    function TimeTable(program) {
+    var TimeTable;
 
-        // A list of events in the time table.
-        this.events = [];
-        // A calculated map of sound names to play indexed by offsets in seconds from the start.
-        this.sounds = {};
-        // The previous event.
-        this.previous = null;
-        // The current event.
-        this.current = null;
-        // The next event.
-        this.next = null;
-        // Starting time of this table as seconds.
-        this.starting_seconds = 0;
-    }
+    angular.module('t2x').factory('TimeTable', ['Activity', 'Data', 'TimeStr', 'TypeDict', 'TypeList', 'TypeObj', 'TypeInt', 'TypeStr', function(Activity, Data, TimeStr, TypeDict, TypeList, TypeObj, TypeInt, TypeStr) {
 
-    angular.module('t2x').factory('TimeTable', ['Activity', 'TimeStr', function(Activity, TimeStr) {
+        if (TimeTable) {
+            return TimeTable;
+        }
 
-        TimeTable.prototype = {}; // TODO: Should be Data.
+        /**
+         * A list of events forming the time table to be executed in order.
+         */
+        TimeTable = function(data) {
+            this.init(data);
+        };
+
+        TimeTable.prototype = new Data([
+            // A list of events in the time table.
+            {events: new TypeList({default: [], type: new TypeObj({class: 'tx.Activity'})})},
+            // A calculated map of sound names to play indexed by offsets in seconds from the start.
+            {sounds: new TypeDict({default: {}, type: new TypeStr()})},
+            // The current activity.
+            {current: new TypeObj({class: 'tx.Activity'})},
+            // The next activity.
+            {next: new TypeObj({class: 'tx.Activity'})},
+            // The previous activity.
+            {previous: new TypeObj({class: 'tx.Activity'})},
+            // Starting time of this table as seconds.
+            {starting_seconds: new TypeInt()},
+        ]);
+        TimeTable.prototype.__class = 't2x.TimeTable';
 
         /**
          * Fill in events based on the program and schedule.

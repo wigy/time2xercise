@@ -13,7 +13,7 @@
          */
         Activity = function(data) {
             this.init(data);
-        }
+        };
 
         Activity.prototype = new Data([
             // Name of the event.

@@ -28,7 +28,7 @@
         Program.prototype = {}; // TODO: Should be Data.
 
         Program.prototype.load = function(name, data) {
-            this.timetable = new TimeTable(this);
+            this.timetable = new TimeTable();
             this.name = name;
             this.list = data.programs[name];
             this.list = [];
@@ -51,7 +51,7 @@
          * Rebuild the time table based on the given schedule.
          */
         Program.prototype.apply = function(schedule) {
-            this.timetable = new TimeTable(this);
+            this.timetable = new TimeTable();
             this.timetable.load(this, schedule);
             this.timetable.schedule('00:00:00');
         };

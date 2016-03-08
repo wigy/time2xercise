@@ -24,7 +24,8 @@ describe('class TimingSystem', function() {
         expect(timing.training.schedule.program.timetable.events[1].time.toString()).toBe('12:30:04');
 
         // TODO: Validate whole timing object once whole chain is converted to Data.
-        expect(timing.training.schedule.program.timetable.events[0].isInvalid()).toBe(false);
+        expect(timing.training.schedule.program.timetable.isInvalid()).toBe(false);
+        d(timing.training.schedule.program.timetable)
     });
 
     it('loads Fitness data', function() {
