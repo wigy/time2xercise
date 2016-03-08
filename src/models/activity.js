@@ -46,7 +46,7 @@
             // Length of the event in seconds.
             {duration: new TypeInt()},
             // A sound mapping from offsets from the start (or end if negative) to sound names.
-            {sounds: new TypeDict({default: {}, type: new TypeDict({default: {}, type: new TypeStr()})})},
+            {sounds: new TypeDict({default: {}, type: new TypeStr()})},
         ]);
         Activity.prototype.__class = 't2x.Activity';
 
