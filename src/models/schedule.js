@@ -27,7 +27,7 @@
         * Initialize.
         */
         Schedule.prototype.load = function(name, data) {
-            this.program = new Program(this);
+            this.program = new Program();
             this.name = name;
             this.programs = {};
             this.timing = data.schedules[name];
@@ -36,7 +36,7 @@
             }
             for (var i in data.suitable[name]) {
                 var program = data.suitable[name][i];
-                this.programs[program] = new Program(this);
+                this.programs[program] = new Program();
                 this.programs[program].load(program, data);
             }
         };
@@ -59,8 +59,8 @@
         /**
         * Clear up everything.
         */
-        Schedule.prototype.reset = function() {
-            this.program.reset();
+        Schedule.prototype.resetValues = function() {
+            this.program.resetValues();
         };
 
         /**
@@ -68,7 +68,7 @@
         */
         Schedule.prototype.selectProgram = function(name) {
             if (!name) {
-                this.program = new Program(this);
+                this.program = new Program();
             } else {
                 this.program = this.programs[name];
             }

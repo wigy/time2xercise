@@ -13,6 +13,7 @@
         };
 
         Team.prototype = new Data([
+            // Name of the team.
             {name: new TypeStr()}
         ]);
         Team.prototype.__class = 't2x.Team';

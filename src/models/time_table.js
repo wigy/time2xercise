@@ -187,7 +187,7 @@
         /**
          * Clear up everything.
          */
-        TimeTable.prototype.reset = function() {
+        TimeTable.prototype.resetValues = function() {
             this.previous = new Activity();
             this.current = new Activity();
             this.next = new Activity();

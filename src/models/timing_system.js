@@ -157,8 +157,8 @@
         *
         * @param old {string} The clock time to be restored if any.
         */
-        TimingSystem.prototype.reset = function(old) {
-            this.training.reset();
+        TimingSystem.prototype.resetValues = function(old) {
+            this.training.resetValues();
             if (old) {
                 this.setStarting(new TimeStr(old));
             }

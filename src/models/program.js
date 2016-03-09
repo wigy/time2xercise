@@ -1,31 +1,46 @@
 (function() {
 
-    /**
-     * A program is a named list of event codes or names.
-     */
-    function Program() {
+    var Program;
 
-        // Name of the program.
-        this.name = null;
-        // A list of codes or event names.
-        this.list = [];
-        // Options for this program.
-        this.options = {};
-        // Mapping from codes to their full names.
-        this.codes = {};
-        // Translation table from language abbreviatios to codes to their full names.
-        this.translations = {};
-        // Mapping from regex matching to the codes to the mapping of offsets to sound names.
-        this.sounds = {};
-        // A time table applied to this program using the schedule this program belongs.
-        this.timetable = null;
-        // Info texts for each code.
-        this.info = {};
-    }
+    angular.module('t2x').factory('Program', ['TimeTable', 'Data', 'TypeDict', 'TypeList', 'TypeObj', 'TypeOptions', 'TypeStr', 'Options', function(TimeTable, Data, TypeDict, TypeList, TypeObj, TypeOptions, TypeStr, Options) {
 
-    angular.module('t2x').factory('Program', ['TimeTable', function(TimeTable) {
+        if (Program) {
+            return Program;
+        }
 
-        Program.prototype = {}; // TODO: Should be Data.
+        /**
+         * A program is a named list of event codes or names.
+         */
+        Program = function(data) {
+            this.init(data);
+        };
+
+        Program.prototype = new Data([
+            // Name of the program.
+            {name: new TypeStr()},
+            // A list of codes or event names.
+            {list: new TypeList({default: [], type: new TypeStr()})},
+            // Options for this program.
+            {options: new TypeOptions({default: {}, options: new Options({
+                match: {
+                    text: "Option value for %n must be boolean.",
+                    type: "boolean",
+                    default: false,
+                },
+            })})},
+            // Mapping from codes to their full names.
+            {codes: new TypeDict({default: {}, type: new TypeStr()})},
+            // Translation table from language abbreviatios to codes to their full names.
+            {translations: new TypeDict({default: {}, type: new TypeDict({default: {}, type: new TypeStr()})})},
+            // Mapping from regex matching to the codes to the mapping of offsets to sound names.
+            {sounds: new TypeDict({default: {}, type: new TypeStr()})},
+            // A time table applied to this program using the schedule this program belongs.
+            {timetable: new TypeObj({class: 't2x.TimeTable'})},
+            // Info texts for each code.
+            {info: new TypeDict({default: {}, type: new TypeStr()})},
+        ]);
+        Program.prototype.__class = 't2x.Program';
+
 
         Program.prototype.load = function(name, data) {
             this.timetable = new TimeTable();
@@ -66,8 +81,8 @@
         /**
          * Clear up everything.
          */
-        Program.prototype.reset = function() {
-            this.timetable.reset();
+        Program.prototype.resetValues = function() {
+            this.timetable.resetValues();
         };
 
         /**

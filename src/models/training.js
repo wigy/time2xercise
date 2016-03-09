@@ -41,8 +41,8 @@
         /**
          * Clear up everything.
          */
-        Training.prototype.reset = function() {
-            this.schedule.reset();
+        Training.prototype.resetValues = function() {
+            this.schedule.resetValues();
         };
 
         /**
