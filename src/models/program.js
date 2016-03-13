@@ -33,7 +33,7 @@
             // Translation table from language abbreviatios to codes to their full names.
             {translations: new TypeDict({default: {}, type: new TypeDict({default: {}, type: new TypeStr()})})},
             // Mapping from regex matching to the codes to the mapping of offsets to sound names.
-            {sounds: new TypeDict({default: {}, type: new TypeStr()})},
+            {sounds: new TypeDict({default: {}, type: new TypeDict({default: {}, type: new TypeStr()})})},
             // A time table applied to this program using the schedule this program belongs.
             {timetable: new TypeObj({class: 't2x.TimeTable'})},
             // Info texts for each code.

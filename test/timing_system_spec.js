@@ -24,7 +24,7 @@ describe('class TimingSystem', function() {
         expect(timing.training.schedule.program.timetable.events[1].time.toString()).toBe('12:30:04');
 
         // TODO: Validate whole timing object once whole chain is converted to Data.
-        expect(timing.training.schedule.program.timetable.isInvalid()).toBe(false);
+        expect(timing.training.schedule.program.isInvalid()).toBe(false);
     });
 
     it('loads Fitness data', function() {
@@ -41,7 +41,7 @@ describe('class TimingSystem', function() {
         expect(timing.training.schedule.program.timetable.events[2].sounds).toEqual({ 0: 'start', '-1': 'done'});
 
         // TODO: Validate whole timing object once whole chain is converted to Data.
-        expect(timing.training.schedule.program.timetable.isInvalid()).toBe(false);
+        expect(timing.training.schedule.program.isInvalid()).toBe(false);
     });
 
     it('loads Generic data', function() {
@@ -58,7 +58,7 @@ describe('class TimingSystem', function() {
         expect(timing.training.schedule.program.timetable.events[2].sounds).toEqual({ 0: 'whistle', '-1': 'buzzer'});
 
         // TODO: Validate whole timing object once whole chain is converted to Data.
-        expect(timing.training.schedule.program.timetable.isInvalid()).toBe(false);
+        expect(timing.training.schedule.program.isInvalid()).toBe(false);
     });
 
     it('loads Rugby data', function() {
@@ -81,7 +81,7 @@ describe('class TimingSystem', function() {
         expect(timing.training.schedule.program.timetable.events[2].options).toEqual({start_on_pause: true, reverse_count: true, is_break: false});
 
         // TODO: Validate whole timing object once whole chain is converted to Data.
-        expect(timing.training.schedule.program.timetable.isInvalid()).toBe(false);
+        expect(timing.training.schedule.program.isInvalid()).toBe(false);
     });
 
     it('runs Test schedule correctly', function() {
