@@ -43,35 +43,6 @@ DATA.Rugby = {
         G3: 'Game 3',
         G4: 'Game 4',
     },
-    translations: {
-        'fi': {
-            R1: 'Säännöt 1',
-            R2: 'Säännöt 2',
-            R3: 'Säännöt 3',
-            R4: 'Säännöt 4',
-            R5: 'Säännöt 5',
-            H1: 'Käsittely 1',
-            H2: 'Käsittely 2',
-            H3: 'Käsittely 3',
-            H4: 'Käsittely 4',
-            H5: 'Käsittely 5',
-            H6: 'Käsittely 6',
-            T1: 'Taktinen 1',
-            T2: 'Taktinen 2',
-            T3: 'Taktinen 3',
-            K1: 'Potkut 1',
-            K2: 'Potkut 2',
-            P1: 'Fyysinen 1',
-            P2: 'Fyysinen 2',
-            P3: 'Fyysinen 3',
-            P4: 'Fyysinen 4',
-            G1: 'Peliharjoitus 1',
-            G2: 'Peliharjoitus 2',
-            G3: 'Peliharjoitus 3',
-            G4: 'Peliharjoitus 4',
-        }
-    },
-    // TODO: Localized info?.
     info: {
         "Day 1": "Introduction and getting into basics of the game.",
         // TODO: More descriptions

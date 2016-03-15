@@ -30,8 +30,6 @@
             })})},
             // Mapping from codes to their full names.
             {codes: new TypeDict({type: new TypeStr()})},
-            // Translation table from language abbreviatios to codes to their full names.
-            {translations: new TypeDict({type: new TypeDict({type: new TypeStr()})})},
             // Mapping from regex matching to the codes to the mapping of offsets to sound names.
             {sounds: new TypeDict({type: new TypeDict({type: new TypeStr()})})},
             // A time table applied to this program using the schedule this program belongs.
@@ -57,7 +55,6 @@
             }
             this.codes = data.codes || {};
             this.sounds = data.sounds || {};
-            this.translations = data.translations || {};
             this.info = data.info || {};
             this.description = this.info[this.name] || '';
         };
@@ -89,9 +86,6 @@
          * Get the (possibly translated) text explanation for a code.
          */
         Program.prototype.getText = function(code) {
-            if (this.translations[LANGUAGE] && this.translations[LANGUAGE][code]) {
-                return this.translations[LANGUAGE][code];
-            }
             if (this.codes[code]) {
                 return this.codes[code];
             }
