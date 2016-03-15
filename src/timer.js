@@ -54,7 +54,6 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'play
     $scope.timing.starting_time = '00:00:00';
     $scope.timing.selectTraining('Generic');
     $scope.match = new Match({home_team: {name: 'Home'}, visitor_team: {name: 'Visitor'}});
-    $scope.testing = false;
     $scope.show_menu = true;
     $scope.player = player;
     $scope.add_home_score = 0;
@@ -97,7 +96,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'play
         }
         var sound = $scope.timing.refresh();
         if(sound) {
-            $scope.player.play(sound, $scope.testing ? $scope.timing.clock.toString() : null);
+            $scope.player.play(sound);
         }
         var over = $scope.timing.isOver();
         if (over && over > 10) {
@@ -111,9 +110,7 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'play
      * Regular interval timer to update data every second.
      */
     $interval(function() {
-        if (!$scope.testing) {
-            refresh();
-        }
+        refresh();
     }, 1000);
 
     /**
@@ -150,8 +147,6 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'play
         $scope.page = 'clock';
         $scope.timing.start();
     };
-
-    // TODO: Take off the Test button.
 
     /**
      * Toggle visibility of the menu.
