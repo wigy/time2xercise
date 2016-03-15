@@ -21,7 +21,7 @@
             // Description of the event.
             {description: new TypeStr({default: ''})},
             // Options for the event.
-            {options: new TypeOptions({default: {}, options: new Options({
+            {options: new TypeOptions({options: new Options({
                 start_on_pause: {
                     text: "Option value for %n must be boolean.",
                     type: "boolean",
@@ -46,7 +46,7 @@
             // Length of the event in seconds.
             {duration: new TypeInt()},
             // A sound mapping from offsets from the start (or end if negative) to sound names.
-            {sounds: new TypeDict({default: {}, type: new TypeStr()})},
+            {sounds: new TypeDict({type: new TypeStr()})},
         ]);
         Activity.prototype.__class = 't2x.Activity';
 

@@ -17,9 +17,9 @@
 
         TimeTable.prototype = new Data([
             // A list of events in the time table.
-            {events: new TypeList({default: [], type: new TypeObj({class: 't2x.Activity'})})},
+            {events: new TypeList({type: new TypeObj({class: 't2x.Activity'})})},
             // A calculated map of sound names to play indexed by offsets in seconds from the start.
-            {sounds: new TypeDict({default: {}, type: new TypeStr()})},
+            {sounds: new TypeDict({type: new TypeStr()})},
             // The current activity.
             {current: new TypeObj({class: 't2x.Activity'})},
             // The next activity.

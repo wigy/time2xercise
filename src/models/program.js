@@ -19,9 +19,9 @@
             // Name of the program.
             {name: new TypeStr()},
             // A list of codes or event names.
-            {list: new TypeList({default: [], type: new TypeStr()})},
+            {list: new TypeList({type: new TypeStr()})},
             // Options for this program.
-            {options: new TypeOptions({default: {}, options: new Options({
+            {options: new TypeOptions({options: new Options({
                 match: {
                     text: "Option value for %n must be boolean.",
                     type: "boolean",
@@ -29,15 +29,15 @@
                 },
             })})},
             // Mapping from codes to their full names.
-            {codes: new TypeDict({default: {}, type: new TypeStr()})},
+            {codes: new TypeDict({type: new TypeStr()})},
             // Translation table from language abbreviatios to codes to their full names.
-            {translations: new TypeDict({default: {}, type: new TypeDict({default: {}, type: new TypeStr()})})},
+            {translations: new TypeDict({type: new TypeDict({type: new TypeStr()})})},
             // Mapping from regex matching to the codes to the mapping of offsets to sound names.
-            {sounds: new TypeDict({default: {}, type: new TypeDict({default: {}, type: new TypeStr()})})},
+            {sounds: new TypeDict({type: new TypeDict({type: new TypeStr()})})},
             // A time table applied to this program using the schedule this program belongs.
             {timetable: new TypeObj({class: 't2x.TimeTable'})},
             // Info texts for each code.
-            {info: new TypeDict({default: {}, type: new TypeStr()})},
+            {info: new TypeDict({type: new TypeStr()})},
         ]);
         Program.prototype.__class = 't2x.Program';
 
