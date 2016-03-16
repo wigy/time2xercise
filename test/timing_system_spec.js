@@ -26,9 +26,10 @@ describe('class TimingSystem', function() {
         expect(timing.training.schedule.program.timetable.sounds['0']).toBe('start');
         expect(timing.training.schedule.program.name).toBe('Test');
         expect(timing.training.schedule.timing[1]).toEqual([1, "Break"]);
+        expect(timing.training.schedule.name).toBe('Test');
 
         // TODO: Validate whole timing object once whole chain is converted to Data.
-        expect(timing.training.schedule.program.isInvalid()).toBe(false);
+        expect(timing.training.schedule.isInvalid()).toBe(false);
     });
 
     it('loads Fitness data', function() {
@@ -47,9 +48,10 @@ describe('class TimingSystem', function() {
         expect(timing.training.schedule.program.timetable.sounds['0']).toBe('start');
         expect(timing.training.schedule.program.name).toBe('1 Monday');
         expect(timing.training.schedule.timing[1]).toEqual([20, "Break"]);
+        expect(timing.training.schedule.name).toBe('Body Weight 40:20');
 
         // TODO: Validate whole timing object once whole chain is converted to Data.
-        expect(timing.training.schedule.program.isInvalid()).toBe(false);
+        expect(timing.training.schedule.isInvalid()).toBe(false);
     });
 
     it('loads Generic data', function() {
@@ -69,9 +71,10 @@ describe('class TimingSystem', function() {
         expect(timing.training.schedule.program.timetable.sounds['0']).toBe('whistle');
         expect(timing.training.schedule.program.name).toBe('Exercises');
         expect(timing.training.schedule.timing[1]).toEqual([120, "Break"]);
+        expect(timing.training.schedule.name).toBe('4 x 7 min + 2 min breaks');
 
         // TODO: Validate whole timing object once whole chain is converted to Data.
-        expect(timing.training.schedule.program.isInvalid()).toBe(false);
+        expect(timing.training.schedule.isInvalid()).toBe(false);
     });
 
     it('loads Rugby data', function() {
@@ -95,10 +98,11 @@ describe('class TimingSystem', function() {
 
         expect(timing.training.schedule.program.timetable.sounds).toEqual({});
         expect(timing.training.schedule.program.name).toBe('Match');
-        expect(timing.training.schedule.timing[1]).toEqual([600, "Half-time"]);
+        expect(timing.training.schedule.timing[1]).toEqual([600, "Half-time", {is_break: true}]);
+        expect(timing.training.schedule.name).toBe('XV Match');
 
         // TODO: Validate whole timing object once whole chain is converted to Data.
-        expect(timing.training.schedule.program.isInvalid()).toBe(false);
+        expect(timing.training.schedule.isInvalid()).toBe(false);
     });
 
     it('runs Test schedule correctly', function() {

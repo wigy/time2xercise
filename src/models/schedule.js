@@ -2,7 +2,7 @@
 
     var Schedule;
 
-    angular.module('t2x').factory('Schedule', ['Program', 'Data', 'TypeStr', 'TypeInt', 'TypeObj', 'TypeList', 'TypeDict', 'TypePair', function(Program, Data, TypeStr, TypeInt, TypeObj, TypeList, TypeDict, TypePair) {
+    angular.module('t2x').factory('Schedule', ['Program', 'Data', 'TypeStr', 'TypeInt', 'TypeObj', 'TypeList', 'TypeDict', 'TypeAny', function(Program, Data, TypeStr, TypeInt, TypeObj, TypeList, TypeDict, TypeAny) {
 
         if (Schedule) {
             return Schedule;
@@ -23,7 +23,7 @@
             // Description of the schedule.
             {description: new TypeStr()},
            // A list of (duration, offset) triplets.
-            {timing: new TypeList({type: new TypePair({types: [new TypeInt(), new TypeInt()]})})},
+            {timing: new TypeList({type: new TypeList({type: new TypeAny()})})},
             // A mapping from program names available to this schedule to the program instances.
             {programs: new TypeDict({type: new TypeObj({class: 't2x.Program'})})},
             // Currently selected program.
