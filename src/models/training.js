@@ -21,12 +21,12 @@
          * Initialize data for this training program.
          */
         Training.prototype.load = function(name, data) {
-            this.schedule = new Schedule(this);
+            this.schedule = new Schedule();
             this.name = name;
             this.schedules = {};
             var names = Object.keys(data.schedules);
             for (var i in names) {
-                this.schedules[names[i]] = new Schedule(this);
+                this.schedules[names[i]] = new Schedule();
                 this.schedules[names[i]].load(names[i], data);
             }
         };
@@ -50,7 +50,7 @@
          */
         Training.prototype.selectSchedule = function(name) {
             if (!name) {
-                this.schedule = new Schedule(this);
+                this.schedule = new Schedule();
             }
             else {
                 this.schedule = this.schedules[name];

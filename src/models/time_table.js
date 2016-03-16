@@ -212,6 +212,9 @@
             return new TimeStr();
         };
 
+        /**
+         * Check if the clock points to the starting time of this current activity.
+         */
         TimeTable.prototype.isAtStart = function(clock) {
             if (this.current) {
                 return clock.toString() === this.current.startTime().toString();

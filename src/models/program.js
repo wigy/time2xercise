@@ -39,7 +39,6 @@
         ]);
         Program.prototype.__class = 't2x.Program';
 
-
         Program.prototype.load = function(name, data) {
             this.timetable = new TimeTable();
             this.name = name;

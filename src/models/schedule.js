@@ -1,27 +1,35 @@
 (function() {
 
-    /**
-     * A list of pairs containing <i>duration, offset</i> of event timings.
-     * The offset refers to the index in the program list paired with the schedule.
-     * In addition programs suitable for the schedule are stored here.
-     */
-    function Schedule() {
+    var Schedule;
 
-        // Name of this schedule.
-        this.name = null;
-        // Description of the schedule.
-        this.description = null;
-        // A list of (duration, offset) pairs.
-        this.timing = [];
-        // A mapping from program names available to this schedule to the program instances.
-        this.programs = {};
-        // Currently selected program.
-        this.program = null;
-    }
+    angular.module('t2x').factory('Schedule', ['Program', 'Data', 'TypeStr', 'TypeInt', 'TypeObj', 'TypeList', 'TypeDict', 'TypePair', function(Program, Data, TypeStr, TypeInt, TypeObj, TypeList, TypeDict, TypePair) {
 
-    angular.module('t2x').factory('Schedule', ['Program', function(Program) {
+        if (Schedule) {
+            return Schedule;
+        }
 
-        Schedule.prototype = {}; // TODO: Should be Data.
+        /**
+         * A list of pairs containing <i>duration, offset</i> of event timings.
+         * The offset refers to the index in the program list paired with the schedule.
+         * In addition programs suitable for the schedule are stored here.
+         */
+        Schedule = function(data) {
+            this.init(data);
+        }
+
+        Schedule.prototype = new Data([
+            // Name of this schedule.
+            {name: new TypeStr()},
+            // Description of the schedule.
+            {description: new TypeStr()},
+           // A list of (duration, offset) triplets.
+            {timing: new TypeList({type: new TypePair({types: [new TypeInt(), new TypeInt()]})})},
+            // A mapping from program names available to this schedule to the program instances.
+            {programs: new TypeDict({type: new TypeObj({class: 't2x.Program'})})},
+            // Currently selected program.
+            {program: new TypeObj({class: 't2x.Program'})},
+        ]);
+        Schedule.prototype.__class = 't2x.Schedule';
 
         /**
         * Initialize.
