@@ -53,8 +53,7 @@ describe('class TimingSystem', function() {
         expect(timing.training.name).toBe('Fitness');
         expect(timing.starting_time).toBe('00:00:00');
 
-        // TODO: Validate whole timing object once whole chain is converted to Data.
-        expect(timing.training.isInvalid()).toBe(false);
+        expect(timing.isInvalid()).toBe(false);
     });
 
     it('loads Generic data', function() {
@@ -78,8 +77,7 @@ describe('class TimingSystem', function() {
         expect(timing.training.name).toBe('Generic');
         expect(timing.starting_time).toBe('00:00:00');
 
-        // TODO: Validate whole timing object once whole chain is converted to Data.
-        expect(timing.training.isInvalid()).toBe(false);
+        expect(timing.isInvalid()).toBe(false);
     });
 
     it('loads Rugby data', function() {
@@ -108,8 +106,7 @@ describe('class TimingSystem', function() {
         expect(timing.training.name).toBe('Rugby');
         expect(timing.starting_time).toBe('00:00:00');
 
-        // TODO: Validate whole timing object once whole chain is converted to Data.
-        expect(timing.training.schedule.isInvalid()).toBe(false);
+        expect(timing.isInvalid()).toBe(false);
     });
 
     it('runs Test schedule correctly', function() {

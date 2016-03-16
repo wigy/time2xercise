@@ -35,7 +35,7 @@
             // Name of the currently selected program.
             {program_name: new TypeStr()},
         ]);
-        Training.prototype.__class = 't2x.TimingSystem';
+        TimingSystem.prototype.__class = 't2x.TimingSystem';
 
 
         /**
