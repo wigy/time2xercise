@@ -36,13 +36,13 @@
 
             this.clock = new TimeStr();
             this.clock.setNow();
-            this.training = new Training(this);
+            this.training = new Training();
 
             if (!DATA[name]) {
                 d("Cannot load training data for '" + name + "'.");
             }
             else {
-                var training = new Training(this);
+                var training = new Training();
                 training.load(name, DATA[name]);
                 this.trainings[name] = training;
             }

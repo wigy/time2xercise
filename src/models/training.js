@@ -1,21 +1,29 @@
 (function() {
 
-    /**
-     * A single training target with own schedules and time tables.
-     */
-    function Training() {
+    var Training;
 
-        // Name of the training system.
-        this.name = null;
-        // A mapping of available schedule names to Schedule instances.
-        this.schedules = {};
-        // The currently selected schedule.
-        this.schedule = null;
-    }
+    angular.module('t2x').factory('Training', ['Schedule', 'Data', 'TypeStr', 'TypeObj', 'TypeDict', function(Schedule, Data, TypeStr, TypeObj, TypeDict) {
 
-    angular.module('t2x').factory('Training', ['Schedule', function(Schedule) {
+        if (Training) {
+            return Training;
+        }
 
-        Training.prototype = {}; // TODO: Should be Data.
+        /**
+         * A single training target with own schedules and time tables.
+         */
+        Training = function(data) {
+            this.init(data);
+        }
+
+        Training.prototype = new Data([
+            // Name of the training system.
+            {name: new TypeStr()},
+            // A mapping of available schedule names to Schedule instances.
+            {schedules: new TypeDict({type: new TypeObj({class: 't2x.Schedule'})})},
+            // The currently selected schedule.
+            {schedule: new TypeObj({class: 't2x.Schedule'})},
+        ]);
+        Training.prototype.__class = 't2x.Training';
 
         /**
          * Initialize data for this training program.
