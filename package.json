@@ -28,7 +28,7 @@
   "dependencies": {
     "angular": "^1.4.8",
     "bootstrap": "^3.3.6",
-    "chronicles_of_angular": "^0.5.1",
+    "chronicles_of_angular": "^0.5.2",
     "chronicles_of_grunt": "^1.11.5",
     "jquery": "^2.1.4"
   }
