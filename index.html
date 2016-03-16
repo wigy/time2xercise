@@ -39,6 +39,7 @@
           <button class="btn btn-default navbar-btn" ng-click="goPage('admin')"><span class="glyphicon glyphicon-cog"></span> Admin</button>
           <button class="btn btn-default navbar-btn" ng-click="goPage('options')"><span class="glyphicon glyphicon-wrench"></span> Options</button>
           <button class="btn btn-default navbar-btn" ng-click="goPage('clock')"><span class="glyphicon glyphicon-time"></span> Clock</button>
+          <button class="btn btn-info navbar-btn" ng-click="goPage('help')"><span class="glyphicon glyphicon-info-sign"></span> Help</button>
           <button ng-if="DEBUG" class="btn btn-info navbar-btn" ng-click="goPage('soundtest')"><span class="glyphicon glyphicon-sound-dolby"></span> Sound Test</button>
         </div>
         <div class="btn-group" role="navigation">
@@ -174,6 +175,22 @@
       <span ng-repeat="sound in player.list()">
         <a class="btn btn-default" ng-click="player.play(sound)">{{sound}}</a>
       </span>
+    </div>
+
+    <div ng-if="page=='help'" class="container help-page">
+        <h3>Using the Match Timer (for rugby)</h3>
+            Click <b>Options</b> and fill in both home and visitor team names.<br>
+            Click <b>Admin</b>.<br>
+            Select <b>Subject</b> as <i>Rugby</i> and <b>Schedule</b> as <i>XV Match</i>.<br>
+            Click <b>Start Now</b> and you are switched to the Match Timer screen.<br>
+        <br>
+        <h3>Controls for the Match Timer</h3>
+            <code>P</code> - Start and stop timer.<br>
+            <code>H</code> - Add next numeric key press to home team score.<br>
+            <code>V</code> - Add next numeric key press to visitor team score.<br>
+            <code>0..9</code> - Add numeric score (`0` adds 10) to the selected team score.<br>
+            <code>-</code> - Negate next addition, i.e. substract next numeric key press from score.<br>
+            <code>M</code> - Display menu.<br>
     </div>
 
   </body>
