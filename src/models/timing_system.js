@@ -1,33 +1,42 @@
 (function() {
 
-    /**
-     * The state of the system managing a scheduled program.
-     */
-    function TimingSystem() {
+    var TimingSystem;
 
-        // Official time.
-        this.clock = null;
-        // Boolean to indicate if the system is running.
-        this.running = false;
-        // Boolean to pause the whole system.
-        this.pause = false;
-        // The starting time of the scheduling.
-        this.starting_time = '00:00:00';
-        // A mapping of available training names to Training instances.
-        this.trainings = {};
-        // Currently selected training.
-        this.training = null;
-        // Name of the currently selected training.
-        this.training_name = null;
-        // Name of the currently selected schedule.
-        this.schedule_name = null;
-        // Name of the currently selected program.
-        this.program_name = null;
-    }
+    angular.module('t2x').factory('TimingSystem', ['Training', 'Data', 'TimeStr', 'TypeBool', 'TypeStr', 'TypeObj', 'TypeDict', function(Training, Data, TimeStr, TypeBool, TypeStr, TypeObj, TypeDict) {
 
-    angular.module('t2x').factory('TimingSystem', ['Training', 'TimeStr', function(Training, TimeStr) {
+        if (TimingSystem) {
+            return TimingSystem;
+        }
 
-        TimingSystem.prototype = {}; // TODO: Should be Data.
+        /**
+         * The state of the system managing a scheduled program.
+         */
+        TimingSystem = function(data) {
+            this.init(data);
+        }
+
+        TimingSystem.prototype = new Data([
+            // Official time.
+            {clock: new TypeObj({class: 'coa.datetime.TimeStr'})},
+            // The starting time of the scheduling.
+            {starting_time: new TypeStr({default: '00:00:00'})},
+            // Boolean to indicate if the system is running.
+            {running: new TypeBool({default: false})},
+            // Boolean to pause the whole system.
+            {pause: new TypeBool({default: false})},
+            // A mapping of available training names to Training instances.
+            {trainings: new TypeDict({type: new TypeObj({class: 't2x.Training'})})},
+            // Currently selected training.
+            {training: new TypeObj({class: 't2x.Training'})},
+            // Name of the currently selected training.
+            {training_name: new TypeStr()},
+            // Name of the currently selected schedule.
+            {schedule_name: new TypeStr()},
+            // Name of the currently selected program.
+            {program_name: new TypeStr()},
+        ]);
+        Training.prototype.__class = 't2x.TimingSystem';
+
 
         /**
         * Load data for the named training system.
