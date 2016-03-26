@@ -45,14 +45,17 @@ DATA.Rugby = {
     },
     info: {
         "Day 1": "Introduction and getting into basics of the game.",
-        // TODO: More descriptions
-        // TODO: Add section 5. Time to rules.
+        "Day 2": "Continue basics including kicking game and line-out.",
+        "Day 3": "Get familiar with offsides and scrums.",
+        "Day 4": "Introduce tackling and ruck.",
+        "Day 5": "Complete the rugby studies by applying all the knowledge.",
 
         R1 : '<h4>Introduction and Basics of the Game</h4>' +
         '<ul>' +
         '<li>Introduction: trainer, mission, daily program' +
         '<li>Rugby: history, active areas, current local development, spirit of rugby' +
         '<li>Rules variants: 15-players, 7-players, touch rugby' +
+        '<li>Time: durations of games, "the last play"' +
         '<li>Mode of play: kick-off, carrying, passing, kicking' +
         '<li>Scoring: try, penalty try, conversion goal, penalty goal, dropped goal' +
         '<li>Knock-on and throw forward: knock-on, throw forward, charge down, bounce forward' +

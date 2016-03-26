@@ -43,11 +43,10 @@ Just load the `index.html` and go!
 ### Done
 
 - Remove changelog from the application pages.
-- Convert all data models to use dependency injection.
 - Moved instructions from README to seprate Help-page in the application itself.
+- Some fine tuning for rugby course information.
 
 ### Not Yet Done
-
 
 ## Future Ideas
 
