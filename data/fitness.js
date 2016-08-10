@@ -37,10 +37,11 @@ DATA.Fitness = {
                                   [120, 1, {is_break: true}], [50,10],
                                   [120, 2, {is_break: true}], [50,10],
                                   [120, 3, {is_break: true}], [50,10]],
-        'Weight Lifting 4 x 5': [[15, 0, {is_break: true}],  [30,11],
-                                 [150, 1, {is_break: true}], [30,11],
-                                 [150, 2, {is_break: true}], [30,11],
-                                 [150, 3, {is_break: true}], [30,11]],
+        'Weight Lifting 5 x 5': [[15, 0, {is_break: true}],  [25,11],
+                                 [120, 1, {is_break: true}], [25,11],
+                                 [120, 2, {is_break: true}], [25,11],
+                                 [120, 3, {is_break: true}], [25,11],
+                                 [120, 4, {is_break: true}], [25,11]],
     },
     programs: {
         '1 Monday': ['BW-P', 'BW-L', 'BW-PU', 'BW-SJ'],
@@ -50,7 +51,7 @@ DATA.Fitness = {
         '5 Friday': ['BW-BR', 'BW-PPU', 'BW-LJ', 'BW-MR'],
         'Generic Session': ['WL-10x10-R1', 'WL-10x10-R2', 'WL-10x10-R3', 'WL-10x10-R4', 'WL-10x10-R5',
                             'WL-10x10-R6', 'WL-10x10-R7', 'WL-10x10-R8', 'WL-10x10-R9', 'WL-10x10-RL',
-                            'WL-10x10-DO', 'WL-4x5-DO'],
+                            'WL-10x10-DO', 'WL-5x5-DO'],
     },
     suitable: {
         'Body Weight 30:30': ['1 Monday', '2 Tuesday', '3 Wednesday', '4 Thursday', '5 Friday'],
@@ -63,7 +64,7 @@ DATA.Fitness = {
 
         'Weight Lifting 10 x 10': ['Generic Session'],
         'Weight Lifting 4 x 10': ['Generic Session'],
-        'Weight Lifting 4 x 5': ['Generic Session'],
+        'Weight Lifting 5 x 5': ['Generic Session'],
     },
     codes: {
         'BW-P': 'Plank',
@@ -97,7 +98,7 @@ DATA.Fitness = {
         'WL-10x10-R9': 'Round 9',
         'WL-10x10-RL': 'Last Round',
         'WL-10x10-DO': 'Lifting',
-        'WL-4x5-DO': 'Lifting',
+        'WL-5x5-DO': 'Lifting',
     },
     info: {
         '1 Monday': 'This is Rugby Fitness Bodyweight Challenge Day 1. <br> See <a target="new" href="http://www.youtube.com/watch?v=mXOy5YYQEoY">http://www.youtube.com/watch?v=mXOy5YYQEoY</a>',
@@ -107,7 +108,7 @@ DATA.Fitness = {
         '5 Friday': 'This is Rugby Fitness Bodyweight Challenge Day 5. <br> See <a target="new" href="http://www.youtube.com/watch?v=E6WEriUAw-A">http://www.youtube.com/watch?v=E6WEriUAw-A</a>',
         'Weight Lifting 10 x 10': 'In this exercise you do 10 series of 10 repeats. Each repeat takes 5 seconds. Recommended weight is 60% of your maximum performance.',
         'Weight Lifting 4 x 10': 'In this exercise you do 4 series of 10 repeats. Each repeat takes 5 seconds. Recommended weight is 80% of your maximum performance.',
-        'Weight Lifting 4 x 5': 'In this exercise you do 4 series of 5 repeats. Each repeat takes 5 seconds. Recommended weight is 85% of your maximum performance.',
+        'Weight Lifting 5 x 5': 'In this exercise you do 5 series of 5 repeats. Each repeat takes 5 seconds. Recommended weight is 85% of your maximum performance.',
     },
     sounds: {
         'BW-.*' : {0: 'start', '-1': 'done'},
@@ -123,6 +124,6 @@ DATA.Fitness = {
         'WL-10x10-RL' : {'-7': 'last-round'},
         'WL-10x10-DO' : {0: 'lift', 5: 'lift', 10: 'lift', 15: 'lift', 20: 'lift', 25: 'lift',
                          30: 'lift', 35: '3', 40: '2', 45: '1', '-1': 'relax'},
-        'WL-4x5-DO' : {0: '5', 5: '4', 10: '3', 15: '2', 20: '1', '-1': 'relax'},
+        'WL-5x5-DO' : {0: '5', 5: '4', 10: '3', 15: '2', 20: '1', '-1': 'relax'},
     }
 };
