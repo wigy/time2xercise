@@ -15,7 +15,7 @@
          */
         Schedule = function(data) {
             this.init(data);
-        }
+        };
 
         Schedule.prototype = new Data([
             // Name of this schedule.

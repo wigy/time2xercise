@@ -13,7 +13,7 @@
          */
         TimingSystem = function(data) {
             this.init(data);
-        }
+        };
 
         TimingSystem.prototype = new Data([
             // Official time.

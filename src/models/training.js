@@ -13,7 +13,7 @@
          */
         Training = function(data) {
             this.init(data);
-        }
+        };
 
         Training.prototype = new Data([
             // Name of the training system.
