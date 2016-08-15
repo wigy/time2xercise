@@ -45,6 +45,7 @@ Just load the `index.html` and go!
 - Remove changelog from the application pages.
 - Moved instructions from README to seprate Help-page in the application itself.
 - Some fine tuning for rugby course information.
+. Change 4x5 program to 5x5.
 
 ### Not Yet Done
 
