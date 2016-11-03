@@ -29,7 +29,7 @@
     "angular": "^1.4.8",
     "bootstrap": "^3.3.6",
     "chronicles_of_angular": "^0.5.4",
-    "chronicles_of_grunt": "^1.11.7",
+    "chronicles_of_grunt": "^1.12.0",
     "jquery": "^2.1.4"
   }
 }
