@@ -5,11 +5,13 @@ Just load the `index.html` and go!
 
 ## Release History
 
+* v1.15.0
+    - Faster 10x10 program.
 * v1.14.0
     - Remove changelog from the application pages.
     - Moved instructions from README to seprate Help-page in the application itself.
     - Some fine tuning for rugby course information.
-    - . Change 4x5 program to 5x5.
+    - Change 4x5 program to 5x5.
 * v1.13
     - Change now the running system so that it is not always on.
     - Weight lifting schedules 4 x 5 and 4 x 10.

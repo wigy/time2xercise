@@ -1,6 +1,6 @@
 {
   "name": "time2xercise",
-  "version": "1.14.0",
+  "version": "1.15.0",
   "description": "Pure HTML-based application for timing various workouts. Just load the index.html and go!",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
