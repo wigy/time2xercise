@@ -55,6 +55,10 @@ DATA.Fitness = {
                                  [120, 1, {is_break: true}], [40,14],
                                  [120, 2, {is_break: true}], [40,14],
                                  [120, 3, {is_break: true}], [40,14]],
+        'Weight Lifting 4 x 2': [[15, 0, {is_break: true}],  [14,15],
+                                 [120, 1, {is_break: true}], [14,15],
+                                 [120, 2, {is_break: true}], [14,15],
+                                 [120, 3, {is_break: true}], [14,15]],
         'Weight Lifting 5 x 5': [[15, 0, {is_break: true}],  [25,11],
                                  [120, 1, {is_break: true}], [25,11],
                                  [120, 2, {is_break: true}], [25,11],
@@ -74,7 +78,7 @@ DATA.Fitness = {
         '5 Friday': ['BW-BR', 'BW-PPU', 'BW-LJ', 'BW-MR'],
         'Generic Session': ['WL-WAIT-R1', 'WL-WAIT-R2', 'WL-WAIT-R3', 'WL-WAIT-R4', 'WL-WAIT-R5',
             'WL-WAIT-R6', 'WL-WAIT-R7', 'WL-WAIT-R8', 'WL-WAIT-R9', 'WL-WAIT-RL',
-            'WL-10x10-DO', 'WL-5x5-DO', 'WL-5x6-DO', 'WL-3x7-DO', 'WL-4x8-DO'],
+            'WL-10x10-DO', 'WL-5x5-DO', 'WL-5x6-DO', 'WL-3x7-DO', 'WL-4x8-DO', 'WL-4x2-DO'],
         'Fast Session': ['WL-WAIT-R1', 'WL-WAIT-R2', 'WL-WAIT-R3', 'WL-WAIT-R4', 'WL-WAIT-R5',
             'WL-WAIT-R6', 'WL-WAIT-R7', 'WL-WAIT-R8', 'WL-WAIT-R9', 'WL-WAIT-RL',
             'WL-10x10-FAST-DO'],
@@ -95,6 +99,7 @@ DATA.Fitness = {
         'Weight Lifting 5 x 6': ['Generic Session'],
         'Weight Lifting 3 x 7': ['Generic Session'],
         'Weight Lifting 4 x 8': ['Generic Session'],
+        'Weight Lifting 4 x 2': ['Generic Session'],
     },
     codes: {
         'BW-P': 'Plank',
@@ -133,6 +138,7 @@ DATA.Fitness = {
         'WL-5x6-DO': 'Lifting',
         'WL-3x7-DO': 'Lifting',
         'WL-4x8-DO': 'Lifting',
+        'WL-4x2-DO': 'Lifting',
     },
     info: {
         '1 Monday': 'This is Rugby Fitness Bodyweight Challenge Day 1. <br> See <a target="new" href="http://www.youtube.com/watch?v=mXOy5YYQEoY">http://www.youtube.com/watch?v=mXOy5YYQEoY</a>',
@@ -165,5 +171,6 @@ DATA.Fitness = {
         'WL-5x6-DO' : {0: 'lift', 5: 'lift', 10: 'lift', 15: '3', 20: '2', 25: '1', '-1': 'relax'},
         'WL-3x7-DO' : {0: 'lift', 5: 'lift', 10: 'lift', 15: 'lift', 20: '3', 25: '2', 30: '1', '-1': 'relax'},
         'WL-4x8-DO' : {0: 'lift', 5: 'lift', 10: 'lift', 15: 'lift', 20: 'lift', 25: '3', 30: '2', 35: '1', '-1': 'relax'},
+        'WL-4x2-DO' : {0: 'lift', 7: 'lift', '-1': 'relax'},
     }
 };
