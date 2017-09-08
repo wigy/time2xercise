@@ -5,6 +5,8 @@ Just load the `index.html` and go!
 
 ## Release History
 
+* v1.16.0
+    - New programs 3x7, 4x8, 4x2, 6x1.
 * v1.15.0
     - Faster 10x10 program.
 * v1.14.0
