@@ -5,13 +5,15 @@ Just load the `index.html` and go!
 
 ## Release History
 
+* v1.17.0
+    - Count 3, 2, 1 in BW.
 * v1.16.0
     - New programs 3x7, 4x8, 4x2, 6x1.
 * v1.15.0
     - Faster 10x10 program.
 * v1.14.0
     - Remove changelog from the application pages.
-    - Moved instructions from README to seprate Help-page in the application itself.
+    - Moved instructions from README to separate Help-page in the application itself.
     - Some fine tuning for rugby course information.
     - Change 4x5 program to 5x5.
 * v1.13
@@ -62,7 +64,6 @@ Just load the `index.html` and go!
 - Language selector.
 - Random shuffle option.
 - Clean up index.html to the smaller directives so that there is eventually only one left.
-- Deploy in Heroku.
 - Template builder, which collects html files and converts them to javascript strings.
 - Study how to implement (most of) CSS as Bootstrap theme add-on.
 - Proper API-documentation using CoG.

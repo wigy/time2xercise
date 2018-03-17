@@ -159,7 +159,7 @@ DATA.Fitness = {
         'Weight Lifting 5 x 6': 'In this exercise you do 5 series of 6 repeats. Each repeat takes 5 seconds. Recommended weight is 85% of your maximum performance.',
     },
     sounds: {
-        'BW-.*' : {0: 'start', '-1': 'done'},
+        'BW-.*' : {0: 'start', '-4': '3', '-3': '2', '-2': '1', '-1': 'done'},
         'WL-WAIT-R1' : {'-7': '1st-round'},
         'WL-WAIT-R2' : {'-7': '2nd-round'},
         'WL-WAIT-R3' : {'-7': '3rd-round'},
