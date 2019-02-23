@@ -48,11 +48,11 @@ TimerApp.controller('TimerController', ['$scope', '$interval', '$timeout', 'play
     $scope.YEAR = YEAR;
     $scope.page = DEBUG ? 'admin' : 'loading';
     $scope.timing = new TimingSystem();
+    $scope.timing.load('Fitness');
     $scope.timing.load('Generic');
     $scope.timing.load('Rugby');
-    $scope.timing.load('Fitness');
     $scope.timing.starting_time = '00:00:00';
-    $scope.timing.selectTraining('Generic');
+    $scope.timing.selectTraining('Fitness');
     $scope.match = new Match({home_team: {name: 'Home'}, visitor_team: {name: 'Visitor'}});
     $scope.show_menu = true;
     $scope.player = player;
